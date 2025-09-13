@@ -1,574 +1,502 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { ChefHat, Utensils, Wine, Users, Leaf, Star, CheckCircle, ArrowRight, TrendingUp } from "lucide-react"
-import OptimizedImage from "@/components/optimized-image"
+import {
+  ArrowLeft,
+  ChefHat,
+  Truck,
+  Leaf,
+  CheckCircle,
+  Utensils,
+  Recycle,
+  Target,
+  ArrowRight,
+  Play,
+  Star,
+  MapPin,
+  Users,
+  Building,
+  Music,
+  Award,
+  Globe,
+  Heart,
+} from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Soluciones Gastronómicas Eventos Argentina | Food Trucks Patios Gastronómicos | DER EVENT HUB",
+  title: "Soluciones Gastronómicas - Curaduría y Sustentabilidad | DER EVENT HUB",
   description:
-    "Soluciones gastronómicas eventos: food trucks curados, patios gastronómicos, curaduría especializada. Buenos Aires Trap 120K personas, Expo Autos CeNARD, Fiesta Manzana. Gestión sustentable.",
-  keywords:
-    "soluciones gastronomicas eventos argentina, food trucks eventos, patios gastronomicos, curacion gastronomica, buenos aires trap gastronomia, expo autos cenard food trucks, fiesta manzana zona gastronomica, gestion sustentable eventos, economia circular eventos",
+    "Patios gastronómicos de excelencia, food trucks curados y experiencias gastronómicas sustentables. Casos reales: Buenos Aires Trap 120K personas, Fiesta Nacional de la Manzana. Economía circular y gestión integral.",
+  keywords: [
+    "soluciones gastronomicas eventos",
+    "food trucks eventos",
+    "patios gastronomicos",
+    "buenos aires trap gastronomia",
+    "fiesta manzana gastronomia",
+    "catering sustentable",
+    "DER Event Hub gastronomia",
+  ],
   openGraph: {
-    title: "Soluciones Gastronómicas Eventos | Food Trucks y Patios Argentina",
+    title: "Soluciones Gastronómicas | DER EVENT HUB",
     description:
-      "Food trucks curados, patios gastronómicos, curaduría especializada. Buenos Aires Trap 120K personas, Expo Autos CeNARD.",
-    images: ["/og-soluciones-gastronomicas.jpg"],
-  },
-  alternates: {
-    canonical: "https://somosder.ar/servicios/soluciones-gastronomicas",
+      "Curaduría especializada y gestión sustentable para eventos de cualquier escala. Desde 4,000 hasta 120,000 personas con identidad regional.",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dtuh208kh/image/upload/v1746637535/DSC_0019_er9zhy.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Soluciones Gastronómicas DER Event Hub",
+      },
+    ],
   },
 }
 
 export default function SolucionesGastronomicasPage() {
+  const features = [
+    {
+      icon: Star,
+      title: "Curaduría Gastronómica Especializada",
+      description: "Selección y gestión de marcas gastronómicas con identidad y trayectoria, priorizando propuestas nacionales y regionales",
+      color: "text-orange-500",
+    },
+    {
+      icon: Building,
+      title: "Patios Gastronómicos de Excelencia",
+      description: "Diseño y operación de espacios gastronómicos integrales que combinan diversidad culinaria y coherencia estética",
+      color: "text-red-500",
+    },
+    {
+      icon: Truck,
+      title: "Food Trucks y Street Food",
+      description: "Gestión completa de food trucks con estructuras visualmente atractivas y coordinación logística profesional",
+      color: "text-orange-600",
+    },
+    {
+      icon: ChefHat,
+      title: "Diversidad Gastronómica Curada",
+      description: "Desde street food hasta cocinas tradicionales argentinas, opciones saludables, dulces y bebidas con coherencia operativa",
+      color: "text-red-600",
+    },
+    {
+      icon: MapPin,
+      title: "Economía Circular Local",
+      description: "Sistema que prioriza proveedores locales, cocinas cercanas y producción regional sin generar circuitos externos",
+      color: "text-orange-500",
+    },
+    {
+      icon: Leaf,
+      title: "Gestión Sustentable Integral",
+      description: "Plan de manejo de residuos, clasificación en origen, disposición responsable y acuerdos con cooperativas de reciclado",
+      color: "text-red-500",
+    },
+  ]
+
+  const casosUso = [
+    {
+      icon: Music,
+      title: "Festivales y Eventos Masivos",
+      description: "Zonas gastronómicas para grandes multitudes",
+      examples: ["Buenos Aires Trap - 120,000 personas", "Gestión de múltiples food trucks", "Coordinación logística de 4 días"],
+    },
+    {
+      icon: Award,
+      title: "Eventos Regionales con Identidad",
+      description: "Gastronomía que refleja la cultura local",
+      examples: ["Fiesta Nacional de la Manzana", "Identidad regional auténtica", "Documentación fotográfica profesional"],
+    },
+    {
+      icon: Building,
+      title: "Experiencias Corporativas Premium",
+      description: "Soluciones gastronómicas para eventos empresariales",
+      examples: ["Patios gastronómicos corporativos", "Catering ejecutivo personalizado", "Experiencias gourmet exclusivas"],
+    },
+  ]
+
+  const tecnologia = [
+    {
+      feature: "Curaduría y Selección",
+      description: "Identificación de marcas gastronómicas con trayectoria, evaluación de propuestas y coordinación de contratos",
+      icon: Star,
+    },
+    {
+      feature: "Diseño y Montaje",
+      description: "Planificación de espacios, coherencia estética, distribución funcional y coordinación de infraestructura",
+      icon: Building,
+    },
+    {
+      feature: "Operación y Logística",
+      description: "Gestión de proveedores locales, coordinación de entregas, control de calidad y supervisión operativa",
+      icon: Truck,
+    },
+    {
+      feature: "Sustentabilidad y Cierre",
+      description: "Manejo de residuos, clasificación en origen, disposición responsable y medición de impacto local",
+      icon: Leaf,
+    },
+  ]
+
+  const proyectosReales = [
+    {
+      nombre: "Buenos Aires Trap - Zona Gastronómica",
+      asistentes: "120,000",
+      tecnologia: "Gestión Completa + Mind Market",
+      resultado: "4 días operación exitosa",
+      badge: "Masivo",
+    },
+    {
+      nombre: "Fiesta Nacional de la Manzana",
+      asistentes: "Regional",
+      tecnologia: "Identidad Local + Fotografía",
+      resultado: "Área gastronómica completa",
+      badge: "Cultural",
+    },
+  ]
+
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
+      {/* Breadcrumb */}
+      <section className="py-4 bg-white border-b">
+        <div className="container px-4 md:px-6">
+          <div className="flex items-center text-sm text-gray-600">
+            <Link href="/" className="hover:text-orange-600">
+              Inicio
+            </Link>
+            <span className="mx-2">/</span>
+            <Link href="/servicios" className="hover:text-orange-600">
+              Servicios
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="text-gray-900">Soluciones Gastronómicas</span>
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-50 to-orange-100 py-20 md:py-32">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-600/10" />
-        <div className="container relative px-4 md:px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge className="mb-6 bg-orange-100 text-orange-800 hover:bg-orange-200">Soluciones Gastronómicas</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Soluciones <span className="text-orange-500">Gastronómicas</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Patios gastronómicos de excelencia, food trucks curados y experiencias gastronómicas que generan impacto
-              real. Desde 4,000 hasta 120,000 personas con curaduría especializada y gestión sustentable.
-            </p>
+      <section className="relative py-16 md:py-24 bg-gradient-to-br from-orange-500 via-orange-600 to-red-600 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">120K</div>
-                <div className="text-sm font-medium text-gray-900">Personas</div>
-                <div className="text-xs text-gray-600">Buenos Aires Trap</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">4 días</div>
-                <div className="text-sm font-medium text-gray-900">Operación</div>
-                <div className="text-xs text-gray-600">Expo Autos CeNARD</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">Regional</div>
-                <div className="text-sm font-medium text-gray-900">Curaduría</div>
-                <div className="text-xs text-gray-600">Identidad local</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-orange-500 mb-2">Sustentable</div>
-                <div className="text-sm font-medium text-gray-900">Gestión</div>
-                <div className="text-xs text-gray-600">Economía circular</div>
-              </div>
-            </div>
+        <div className="container px-4 md:px-6 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Contenido */}
+              <div>
+                <Link href="/servicios" className="inline-flex items-center text-orange-200 hover:text-white mb-6">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Volver a Servicios
+                </Link>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contacto">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg">
-                  Solicitar Propuesta
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/portfolio">
-                <Button
-                  variant="outline"
-                  className="border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-6 text-lg bg-transparent"
-                >
-                  Ver Casos de Éxito
-                </Button>
-              </Link>
+                <div className="flex items-center gap-3 mb-6">
+                  <Badge className="bg-orange-500 text-white">Curaduría Regional</Badge>
+                  <Badge className="bg-red-500 text-white">Identidad Local</Badge>
+                  <Badge className="bg-white text-orange-600">Sustentable</Badge>
+                </div>
+
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                  Soluciones <span className="text-yellow-300">Gastronómicas</span>
+                </h1>
+
+                <p className="text-xl md:text-2xl mb-8 opacity-90">
+                  <strong>Patios gastronómicos de excelencia, food trucks curados y experiencias gastronómicas que generan impacto real</strong>. 
+                  Desde 4,000 hasta 120,000 personas con <strong>curaduría especializada y gestión sustentable</strong>.
+                </p>
+
+                {/* Quick Stats */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-300">120K</div>
+                    <div className="text-sm opacity-80">Personas</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-300">4 días</div>
+                    <div className="text-sm opacity-80">Operación</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-300">Regional</div>
+                    <div className="text-sm opacity-80">Curaduría</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-300">♻️</div>
+                    <div className="text-sm opacity-80">Sustentable</div>
+                  </div>
+                </div>
+
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link href="/cotizador">
+                    <Button
+                      size="lg"
+                      className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg shadow-xl"
+                    >
+                      <ChefHat className="mr-2 h-5 w-5" />
+                      Solicitar Propuesta
+                    </Button>
+                  </Link>
+
+                  <Link href="/contacto">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg"
+                    >
+                      Ver Casos de Éxito
+                      <Play className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Imagen Principal */}
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="https://res.cloudinary.com/dtuh208kh/image/upload/v1746637535/DSC_0019_er9zhy.jpg"
+                    alt="Soluciones Gastronómicas DER Event Hub"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white text-sm">Buenos Aires Trap - Zona gastronómica para 120,000 personas</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 md:py-32 bg-white">
+      {/* Características Principales */}
+      <section className="py-16 bg-white">
         <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Experiencias Gastronómicas de Excelencia
-            </h2>
-            <p className="text-xl text-gray-600">
-              Curaduría especializada, gestión sustentable y coordinación logística para eventos de cualquier escala
-            </p>
-          </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Experiencias Gastronómicas <span className="text-orange-500">de Excelencia</span>
+              </h2>
+              <p className="text-xl text-gray-700">Curaduría especializada, gestión sustentable y coordinación logística</p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <Card className="border-orange-100 hover:border-orange-200 transition-colors">
-              <CardHeader>
-                <ChefHat className="h-12 w-12 text-orange-500 mb-4" />
-                <CardTitle className="text-xl">Curaduría Gastronómica Especializada</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Selección y gestión de marcas gastronómicas con identidad y trayectoria, priorizando propuestas
-                  nacionales y regionales que aporten valor cultural y culinario al evento.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-100 hover:border-orange-200 transition-colors">
-              <CardHeader>
-                <Utensils className="h-12 w-12 text-orange-500 mb-4" />
-                <CardTitle className="text-xl">Patios Gastronómicos de Excelencia</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Diseño y operación de espacios gastronómicos integrales que combinan diversidad culinaria, coherencia
-                  estética y funcionalidad operativa para eventos masivos.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-100 hover:border-orange-200 transition-colors">
-              <CardHeader>
-                <Wine className="h-12 w-12 text-orange-500 mb-4" />
-                <CardTitle className="text-xl">Food Trucks y Street Food</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Gestión completa de food trucks con estructuras visualmente atractivas, línea estética común y
-                  coordinación logística que jerarquiza el espacio gastronómico.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-100 hover:border-orange-200 transition-colors">
-              <CardHeader>
-                <Users className="h-12 w-12 text-orange-500 mb-4" />
-                <CardTitle className="text-xl">Diversidad Gastronómica Curada</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Desde street food hasta cocinas tradicionales argentinas, opciones saludables, dulces y bebidas, con
-                  coherencia estética y operativa que enriquece la experiencia.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-100 hover:border-orange-200 transition-colors">
-              <CardHeader>
-                <Leaf className="h-12 w-12 text-orange-500 mb-4" />
-                <CardTitle className="text-xl">Economía Circular Local</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Sistema que prioriza proveedores de insumos locales, cocinas de elaboración cercanas y producción
-                  regional, sin generar circuitos económicos externos al territorio.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-100 hover:border-orange-200 transition-colors">
-              <CardHeader>
-                <Star className="h-12 w-12 text-orange-500 mb-4" />
-                <CardTitle className="text-xl">Gestión Sustentable Integral</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Plan de manejo de residuos, clasificación en origen, disposición responsable de aceite vegetal usado y
-                  acuerdos con cooperativas de reciclado. Incluimos sponsoreo e inversión local.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Features List */}
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Nuestros Servicios Incluyen</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                "Curaduría gastronómica especializada con identidad regional",
-                "Patios gastronómicos de excelencia con coherencia estética",
-                "Gestión integral de food trucks con estructuras atractivas",
-                "Diversidad culinaria: street food, cocinas tradicionales, opciones saludables",
-                "Economía circular que prioriza proveedores locales",
-                "Gestión sustentable con plan de manejo de residuos",
-                "Cumplimiento bromatológico y normativas de seguridad",
-                "Coordinación logística para eventos de múltiples días",
-                "Integración visual con la estética general del evento",
-                "Impacto positivo en la comunidad local",
-              ].map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">{feature}</span>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <Card
+                  key={index}
+                  className="hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-500"
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <feature.icon className={`w-8 h-8 ${feature.color}`} />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+                    <p className="text-gray-700 text-sm">{feature.description}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Cases Section */}
-      <section className="py-20 md:py-32 bg-gray-50">
+      {/* Casos de Uso */}
+      <section className="py-16 bg-gray-50">
         <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Casos de Éxito Reales</h2>
-            <p className="text-xl text-gray-600">
-              Experiencias gastronómicas que han marcado la diferencia en eventos masivos
-            </p>
-          </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Casos de <span className="text-red-500">Uso</span>
+              </h2>
+              <p className="text-xl text-gray-700">Adaptamos la curaduría según el tipo de evento</p>
+            </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Buenos Aires Trap */}
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <OptimizedImage
-                  src="/placeholder.svg?height=200&width=400&text=Buenos+Aires+Trap+Gastronomía"
-                  alt="Buenos Aires Trap - Zona Gastronómica"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <Badge className="w-fit mb-2 bg-orange-100 text-orange-800">Festival Trap</Badge>
-                <CardTitle className="text-xl">Buenos Aires Trap - Zona Gastronómica</CardTitle>
-                <CardDescription>
-                  Gestión de zona gastronómica en festival urbano para 120,000 personas, en colaboración con Mind Market
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-orange-500" />
-                    <span className="text-sm text-gray-600">
-                      Coordinación de múltiples proveedores gastronómicos para 120,000 asistentes
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-orange-500" />
-                    <span className="text-sm text-gray-600">
-                      Integración perfecta con el sistema general del festival
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-orange-500" />
-                    <span className="text-sm text-gray-600">
-                      Experiencia gastronómica alineada con la estética urbana del trap
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 bg-orange-50 rounded-lg">
-                  <p className="text-sm font-medium text-orange-800">
-                    Resultado: 120,000 personas con experiencia gastronómica integrada a la estética urbana
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {casosUso.map((caso, index) => (
+                <Card key={index} className="hover:shadow-xl transition-all duration-300">
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <caso.icon className="w-5 h-5 text-orange-500 mr-2" />
+                      {caso.title}
+                    </CardTitle>
+                    <p className="text-gray-600">{caso.description}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <h4 className="font-semibold text-gray-900 mb-3">Casos reales:</h4>
+                    <ul className="space-y-2">
 
-            {/* Expo Autos CeNARD */}
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <OptimizedImage
-                  src="/placeholder.svg?height=200&width=400&text=Expo+Autos+CeNARD+Food+Trucks"
-                  alt="Expo Autos CeNARD"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <Badge className="w-fit mb-2 bg-orange-100 text-orange-800">Secretaría de Turismo</Badge>
-                <CardTitle className="text-xl">Expo Autos CeNARD</CardTitle>
-                <CardDescription>
-                  Provisión de food trucks para 4,000 personas durante 4 días en evento de exposición de vehículos y
-                  deporte motor
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-orange-500" />
-                    <span className="text-sm text-gray-600">
-                      Coordinación logística para servicio continuo durante 4 días
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-orange-500" />
-                    <span className="text-sm text-gray-600">
-                      Gestión de food trucks con diversas opciones culinarias
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-orange-500" />
-                    <span className="text-sm text-gray-600">Distribución estratégica en el predio del CeNARD</span>
-                  </div>
-                </div>
-                <div className="p-4 bg-orange-50 rounded-lg">
-                  <p className="text-sm font-medium text-orange-800">
-                    Resultado: Gestión exitosa de food trucks para 4,000+ asistentes durante 4 días consecutivos
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Fiesta Nacional de la Manzana */}
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <OptimizedImage
-                  src="/placeholder.svg?height=200&width=400&text=Fiesta+Manzana+Gastronomía"
-                  alt="Fiesta Nacional de la Manzana - Zona Gastronómica"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <Badge className="w-fit mb-2 bg-orange-100 text-orange-800">Fiesta Nacional</Badge>
-                <CardTitle className="text-xl">Fiesta Nacional de la Manzana</CardTitle>
-                <CardDescription>
-                  Organización del área gastronómica con identidad regional y servicio de fotografía profesional para
-                  documentación
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-orange-500" />
-                    <span className="text-sm text-gray-600">
-                      Propuesta gastronómica que destacaba productos regionales
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-orange-500" />
-                    <span className="text-sm text-gray-600">
-                      Operación continua durante múltiples jornadas del festival
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-orange-500" />
-                    <span className="text-sm text-gray-600">
-                      Cobertura fotográfica profesional de toda el área gastronómica
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 bg-orange-50 rounded-lg">
-                  <p className="text-sm font-medium text-orange-800">
-                    Resultado: Espacio gastronómico con identidad regional operando múltiples jornadas
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+                      {caso.examples.map((example, exampleIndex) => (
+                        <li key={exampleIndex} className="flex items-start text-sm">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700">{example}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20 md:py-32 bg-white">
+      {/* Metodología Detallada */}
+      <section className="py-16 bg-white">
         <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Planes y Precios</h2>
-            <p className="text-xl text-gray-600">Soluciones gastronómicas adaptadas a eventos de cualquier escala</p>
-          </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Proceso <span className="text-orange-500">Gastronómico</span>
+              </h2>
+              <p className="text-xl text-gray-700">4 etapas para una experiencia culinaria perfecta</p>
+            </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Basic Plan */}
-            <Card className="border-2 border-gray-200 hover:border-orange-200 transition-colors">
-              <CardHeader>
-                <CardTitle className="text-2xl">Food Trucks Básico</CardTitle>
-                <div className="text-3xl font-bold text-orange-500">USD 2,000-4,000</div>
-                <CardDescription>Para eventos hasta 2,000 personas con food trucks seleccionados</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    "Selección de 3-5 food trucks especializados",
-                    "Coordinación logística básica",
-                    "Gestión de permisos y documentación",
-                    "Distribución estratégica en el predio",
-                    "Supervisión durante el evento",
-                    "Cumplimiento de normativas básicas",
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm text-gray-500 mb-6">
-                  Ideal para: Eventos corporativos, festivales pequeños, activaciones de marca
-                </p>
-                <Link href="/contacto">
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600">Solicitar Cotización</Button>
-                </Link>
-              </CardContent>
-            </Card>
-
-            {/* Premium Plan */}
-            <Card className="border-2 border-orange-500 relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-orange-500 text-white">Más Popular</Badge>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-2xl">Patio Gastronómico Curado</CardTitle>
-                <div className="text-3xl font-bold text-orange-500">USD 6,000-12,000</div>
-                <CardDescription>
-                  Para eventos hasta 10,000 personas con curaduría gastronómica completa
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    "Curaduría gastronómica especializada con identidad",
-                    "Diseño integral del espacio gastronómico",
-                    "Gestión de 8-15 proveedores coordinados",
-                    "Coherencia estética y operativa",
-                    "Plan de manejo de residuos sustentable",
-                    "Economía circular con proveedores locales",
-                    "Supervisión técnica especializada",
-                    "Documentación fotográfica incluida",
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm text-gray-500 mb-6">
-                  Ideal para: Festivales masivos, eventos culturales, ferias gastronómicas
-                </p>
-                <Link href="/contacto">
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600">Solicitar Cotización</Button>
-                </Link>
-              </CardContent>
-            </Card>
-
-            {/* Enterprise Plan */}
-            <Card className="border-2 border-gray-200 hover:border-orange-200 transition-colors">
-              <CardHeader>
-                <CardTitle className="text-2xl">Experiencia Gastronómica Masiva</CardTitle>
-                <div className="text-3xl font-bold text-orange-500">USD 15,000+</div>
-                <CardDescription>
-                  Para eventos masivos +50,000 personas con gestión integral sustentable
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    "Curaduría gastronómica de excelencia nacional/regional",
-                    "Patios gastronómicos múltiples con identidad unificada",
-                    "Gestión de +20 proveedores especializados",
-                    "Economía circular completa con impacto local",
-                    "Plan de sostenibilidad con certificación",
-                    "Gestión de residuos con cooperativas de reciclado",
-                    "Equipo técnico dedicado on-site",
-                    "Análisis de impacto económico local",
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm text-gray-500 mb-6">
-                  Ideal para: Festivales masivos, eventos gubernamentales, activaciones nacionales
-                </p>
-                <Link href="/contacto">
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600">Solicitar Cotización</Button>
-                </Link>
-              </CardContent>
-            </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {tecnologia.map((tech, index) => (
+                <Card key={index} className="hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-start">
+                      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <tech.icon className="w-6 h-6 text-red-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{tech.feature}</h3>
+                        <p className="text-gray-700 text-sm">{tech.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 md:py-32 bg-gray-50">
+      {/* Proyectos Reales */}
+      <section className="py-16 bg-gray-50">
         <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Preguntas Frecuentes</h2>
-            <p className="text-xl text-gray-600">
-              Respuestas a las consultas más comunes sobre nuestras soluciones gastronómicas
-            </p>
-          </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Proyectos <span className="text-orange-500">Reales</span>
+              </h2>
+              <p className="text-xl text-gray-700">Casos donde transformamos la experiencia gastronómica</p>
+            </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {proyectosReales.map((proyecto, index) => (
+                <Card key={index} className="hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{proyecto.nombre}</h3>
+                        <Badge className="bg-orange-100 text-orange-800">{proyecto.badge}</Badge>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-orange-600">{proyecto.asistentes}</div>
+                        <div className="text-sm text-gray-600">escala</div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-gray-700">Gestión:</span>
+                        <span className="font-semibold text-gray-900">{proyecto.tecnologia}</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-gray-700">Resultado:</span>
+                        <span className="font-semibold text-green-600">{proyecto.resultado}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Específico */}
+      <section className="py-16 bg-white">
+        <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Preguntas <span className="text-orange-500">Frecuentes</span>
+              </h2>
+              <p className="text-xl text-gray-700">Todo lo que necesitás saber sobre soluciones gastronómicas</p>
+            </div>
+
             <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="bg-white rounded-lg border">
-                <AccordionTrigger className="px-6 py-4 text-left">
-                  ¿Cómo seleccionan los food trucks y proveedores gastronómicos?
+              <AccordionItem 
+                value="item-1"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué incluye exactamente la curaduría gastronómica?
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-gray-600">
-                    Realizamos una curaduría especializada priorizando propuestas nacionales y regionales con identidad
-                    y trayectoria comprobada. Evaluamos calidad culinaria, capacidad operativa, cumplimiento de
-                    normativas, coherencia estética y aporte cultural al evento. En Buenos Aires Trap seleccionamos
-                    proveedores que complementaran la estética urbana, mientras que en Fiesta de la Manzana priorizamos
-                    productos regionales.
-                  </p>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Incluye selección y gestión de marcas gastronómicas con identidad y trayectoria, priorizando propuestas nacionales y regionales. Como en Buenos Aires Trap, gestionamos múltiples food trucks con una línea estética coherente, y en la Fiesta Nacional de la Manzana implementamos una propuesta gastronómica con identidad regional auténtica.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-2" className="bg-white rounded-lg border">
-                <AccordionTrigger className="px-6 py-4 text-left">
-                  ¿Pueden manejar eventos masivos como Buenos Aires Trap?
+              <AccordionItem 
+                value="item-2"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Cómo manejan la sostenibilidad en eventos gastronómicos?
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-gray-600">
-                    Sí, tenemos experiencia comprobada en eventos masivos. En Buenos Aires Trap coordinamos la zona
-                    gastronómica para 120,000 personas en colaboración con Mind Market. Implementamos sistemas de
-                    gestión escalables, coordinación de múltiples proveedores simultáneos y logística optimizada para
-                    alto volumen. Cada evento masivo requiere planificación específica según el perfil de audiencia.
-                  </p>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Implementamos un sistema de economía circular que prioriza proveedores locales, cocinas de elaboración cercanas y producción regional. Incluimos plan de manejo de residuos, clasificación en origen, disposición responsable de aceite vegetal y acuerdos con cooperativas de reciclado. En Buenos Aires Trap logramos un impacto local significativo con esta metodología.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-3" className="bg-white rounded-lg border">
-                <AccordionTrigger className="px-6 py-4 text-left">
-                  ¿Qué incluye la gestión sustentable y economía circular?
+              <AccordionItem 
+                value="item-3"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Pueden manejar eventos de diferentes escalas?
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-gray-600">
-                    Nuestro sistema prioriza proveedores de insumos locales, cocinas de elaboración cercanas y
-                    producción regional sin generar circuitos económicos externos al territorio. Incluimos plan de
-                    manejo de residuos, clasificación en origen, disposición responsable de aceite vegetal usado y
-                    acuerdos con cooperativas de reciclado. También gestionamos sponsoreo e inversión local como aporte
-                    no reembolsable al municipio.
-                  </p>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Sí, nuestra experiencia abarca desde eventos pequeños hasta grandes festivales masivos. En Buenos Aires Trap gestionamos una zona gastronómica para 120,000 personas durante 4 días, mientras que en eventos más pequeños adaptamos nuestra curaduría y logística manteniendo los mismos estándares de calidad y sostenibilidad.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-4" className="bg-white rounded-lg border">
-                <AccordionTrigger className="px-6 py-4 text-left">
-                  ¿Cómo garantizan el cumplimiento de normativas bromatológicas?
+              <AccordionItem 
+                value="item-4"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué tipos de cocinas y propuestas pueden incluir?
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-gray-600">
-                    Trabajamos únicamente con proveedores que cumplen todas las normativas ANMAT y municipales.
-                    Verificamos habilitaciones, certificados de manipulación de alimentos, seguros de responsabilidad
-                    civil y protocolos sanitarios. En Expo Autos CeNARD gestionamos todos los permisos para servicio
-                    gastronómico durante 4 días consecutivos. Realizamos inspecciones previas y seguimiento continuo.
-                  </p>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Ofrecemos una diversidad gastronómica curada que incluye street food, cocinas tradicionales argentinas, opciones saludables, dulces y bebidas. En la Fiesta Nacional de la Manzana implementamos una propuesta que reflejaba la identidad regional, mientras que en Buenos Aires Trap creamos una zona gastronómica con múltiples opciones para diferentes gustos y necesidades.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-5" className="bg-white rounded-lg border">
-                <AccordionTrigger className="px-6 py-4 text-left">
-                  ¿Pueden integrar la propuesta gastronómica con la identidad del evento?
+              <AccordionItem 
+                value="item-5"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Incluyen servicio de fotografía para documentar la experiencia?
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-gray-600">
-                    Absolutamente. Es nuestra especialidad. En Buenos Aires Trap desarrollamos un concepto de 'street
-                    food urbano' integrado con la estética del trap. En Fiesta de la Manzana destacamos productos
-                    regionales, especialmente derivados de la manzana. Cada propuesta gastronómica se diseña
-                    específicamente para complementar y enriquecer la experiencia general del evento.
-                  </p>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Sí, como en la Fiesta Nacional de la Manzana, ofrecemos servicio de fotografía profesional para documentar la experiencia gastronómica. Capturamos la estética de los food trucks, la diversidad culinaria, momentos de interacción y la identidad del evento, proporcionando un registro visual completo de la propuesta gastronómica.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-6" className="bg-white rounded-lg border">
-                <AccordionTrigger className="px-6 py-4 text-left">
-                  ¿Incluyen documentación fotográfica del área gastronómica?
+              <AccordionItem 
+                value="item-6"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Cuánto tiempo necesitan para planificar una solución gastronómica?
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-gray-600">
-                    Sí, en nuestros planes premium incluimos cobertura fotográfica profesional del área gastronómica.
-                    Como hicimos en Fiesta de la Manzana, documentamos sistemáticamente la preparación de platos,
-                    experiencia de asistentes, ambiente del espacio y momentos destacados. El material se entrega
-                    editado para uso en comunicación inmediata y archivo post-evento.
-                  </p>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  La planificación varía según la escala del evento. Para eventos pequeños necesitamos 4-6 semanas, mientras que para eventos masivos como Buenos Aires Trap (120,000 personas) requiere 3-4 meses de anticipación. El tiempo incluye curaduría de marcas, logística, diseño del espacio, coordinación de proveedores y planificación de sostenibilidad.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -576,33 +504,98 @@ export default function SolucionesGastronomicasPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-r from-orange-600 to-orange-500">
+      {/* CTA Final */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-orange-500 via-orange-600 to-red-600 text-white">
         <div className="container px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Crea experiencias gastronómicas únicas con DER
-            </h2>
-            <p className="text-white text-opacity-90 mb-8 text-lg">
-              Solicita una consulta personalizada y descubre cómo nuestras soluciones gastronómicas pueden enriquecer tu
-              evento con curaduría especializada y gestión sustentable.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
+                <ChefHat className="w-4 h-4 mr-2" />
+                ¿Necesitás una solución gastronómica para tu evento?
+              </div>
+
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Experiencias que <span className="text-yellow-300">alimentan recuerdos</span>
+              </h2>
+
+              <p className="text-xl md:text-2xl mb-8 opacity-90">
+                Desde <strong>Buenos Aires Trap con 120,000 personas hasta la Fiesta Nacional de la Manzana</strong>, 
+                creamos soluciones gastronómicas que transforman eventos con identidad, sostenibilidad y sabor.
+              </p>
+            </div>
+
+            {/* Botones CTA */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Link href="/cotizador">
+                <Button
+                  size="lg"
+                  className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <ChefHat className="mr-2 h-5 w-5" />
+                  Solicitar Propuesta
+                </Button>
+              </Link>
+
               <Link href="/contacto">
-                <Button className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-6 text-lg">
-                  Contactar Ahora
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/portfolio">
-                <Button className="bg-transparent border border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                >
                   Ver Casos de Éxito
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
+            </div>
+
+            {/* Garantías Finales */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold mb-2">Curaduría</h3>
+                <p className="text-sm opacity-80">Especializada</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Leaf className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold mb-2">Economía</h3>
+                <p className="text-sm opacity-80">Circular</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Globe className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold mb-2">Impacto</h3>
+                <p className="text-sm opacity-80">Local</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold mb-2">Experiencia</h3>
+                <p className="text-sm opacity-80">Memorable</p>
+              </div>
+            </div>
+
+            {/* Mensaje Final */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mt-12">
+              <h3 className="text-2xl font-bold mb-4">Tu evento merece una experiencia gastronómica única</h3>
+              <p className="text-lg opacity-90">
+                Con casos reales como Buenos Aires Trap (120,000 personas, 4 días de operación) y 
+                Fiesta Nacional de la Manzana (identidad regional auténtica), creamos soluciones 
+                gastronómicas que van más allá de la comida.
+                <strong> Curaduría especializada, sostenibilidad e impacto local garantizados.</strong>
+              </p>
             </div>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
