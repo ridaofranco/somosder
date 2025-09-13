@@ -1,0 +1,27 @@
+{
+  "name": "DER Eventos - Soluciones Integrales para Eventos",
+  "short_name": "DER Eventos",
+  "description": "Especialistas en eventos corporativos, sociales y deportivos",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/der-logo-final.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/der-logo-final.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "events", "productivity"],
+  "lang": "es",
+  "dir": "ltr"
+}

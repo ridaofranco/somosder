@@ -1,0 +1,10 @@
+# Agregar estos registros DNS en tu proveedor de hosting:
+
+# SPF Record
+TXT @ "v=spf1 include:_spf.google.com include:mailgun.org ~all"
+
+# DMARC Record  
+TXT _dmarc "v=DMARC1; p=quarantine; rua=mailto:dmarc@somosder.ar; ruf=mailto:dmarc@somosder.ar; fo=1"
+
+# DKIM (si usas Google Workspace)
+TXT google._domainkey "v=DKIM1; k=rsa; p=YOUR_DKIM_PUBLIC_KEY"
