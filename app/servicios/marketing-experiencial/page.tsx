@@ -4,42 +4,48 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
   ArrowLeft,
-  Palette,
-  Heart,
-  CheckCircle,
-  BarChart3,
-  Megaphone,
-  Lightbulb,
-  Target,
   Sparkles,
-  Award,
+  Camera,
+  Megaphone,
+  CheckCircle,
+  Heart,
+  BarChart3,
+  Target,
   ArrowRight,
   Play,
-  Wand2,
+  Lightbulb,
+  Palette,
+  Users,
+  Trophy,
+  Building,
+  Award,
+  Zap,
+  Eye,
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Marketing Experiencial - Creatividad que Conecta | DER EVENT HUB",
+  title: "Marketing Experiencial - Creatividad Sin Límites | DER EVENT HUB",
   description:
-    "Marketing experiencial que transforma eventos en recuerdos imborrables. Creatividad sin límites, engagement emocional, historias de marca. Activaciones Manchester City, campañas integradas.",
+    "Creatividad que convierte eventos en recuerdos imborrables. Casos reales: Manchester City experiencias inmersivas, Saint Mary of the Hills acompañamiento de marcas. Engagement emocional y ROI medible.",
   keywords: [
     "marketing experiencial",
-    "creatividad eventos",
     "activaciones de marca",
+    "experiencias inmersivas",
+    "manchester city activacion",
+    "saint mary marketing",
     "engagement emocional",
-    "experiencias memorables",
-    "campañas integradas",
     "DER Event Hub marketing",
   ],
   openGraph: {
-    title: "Marketing Experiencial - Creatividad que Conecta | DER EVENT HUB",
+    title: "Marketing Experiencial | DER EVENT HUB",
     description:
-      "Uniendo estrategia y arte, creamos experiencias que hablan el lenguaje de tu marca y resuenan en tu público. Creatividad sin límites.",
+      "Uniendo estrategia y arte, creamos experiencias que hablan el lenguaje de tu marca. Manchester City y Saint Mary of the Hills con engagement garantizado.",
     images: [
       {
-        url: "https://res.cloudinary.com/dqiwqlu8v/image/upload/v1234567890/marketing-experiencial-hero.jpg",
+        url: "https://res.cloudinary.com/dtuh208kh/image/upload/v1746637535/DSC_0019_er9zhy.jpg",
         width: 1200,
         height: 630,
         alt: "Marketing Experiencial DER Event Hub",
@@ -51,49 +57,61 @@ export const metadata: Metadata = {
 export default function MarketingExperiencialPage() {
   const features = [
     {
-      icon: Lightbulb,
-      title: "Creatividad Conceptual",
-      description: "Conceptos fuera de lo común que transforman ideas en experiencias memorables",
+      icon: Sparkles,
+      title: "Activaciones de Marca Inmersivas",
+      description: "Experiencias que transforman la percepción de marca y generan conexión emocional profunda",
       color: "text-orange-500",
     },
     {
-      icon: Palette,
-      title: "Diseño & Multimedia",
-      description: "Branding personalizado, escenarios temáticos y activaciones visuales impactantes",
+      icon: Camera,
+      title: "Experiencias Interactivas y Photobooth",
+      description: "Momentos instagrameables, photo walls personalizados e instalaciones artísticas memorables",
       color: "text-red-500",
     },
     {
       icon: Megaphone,
-      title: "Campañas Integradas",
-      description: "Estrategias 360° que conectan con tu audiencia en todos los touchpoints",
+      title: "Eventos de Lanzamiento y Ruedas de Prensa",
+      description: "Presentaciones que generan impacto mediático y experiencias de marca únicas",
       color: "text-orange-600",
     },
     {
-      icon: Heart,
-      title: "Engagement Emocional",
-      description: "Experiencias que sorprenden, deleitan y crean vínculos duraderos con la marca",
+      icon: Target,
+      title: "Promociones y Sampling",
+      description: "Activaciones directas con el consumidor, degustaciones y experiencias de producto",
       color: "text-red-600",
+    },
+    {
+      icon: Users,
+      title: "Fan Zones y Espacios Experienciales",
+      description: "Espacios temáticos que sumergen al público en el universo de la marca",
+      color: "text-orange-500",
+    },
+    {
+      icon: BarChart3,
+      title: "Medición de Engagement y ROI",
+      description: "Analytics de engagement, reach, sentiment analysis y ROI medible de experiencias",
+      color: "text-red-500",
     },
   ]
 
   const casosUso = [
     {
-      icon: Award,
+      icon: Trophy,
       title: "Activaciones Deportivas",
       description: "Experiencias de marca en eventos deportivos",
-      examples: ["Manchester City experiencias inmersivas", "Activaciones en estadios", "Fan engagement premium"],
+      examples: ["Manchester City experiencias inmersivas", "Activaciones en estadios y competencias", "Fan engagement premium y memorabilia"],
     },
     {
-      icon: Target,
+      icon: Building,
       title: "Lanzamientos de Marca",
       description: "Presentaciones que generan impacto",
-      examples: ["Eventos de producto innovadores", "Experiencias de marca únicas", "Activaciones corporativas"],
+      examples: ["Eventos de producto innovadores", "Experiencias de marca únicas", "Activaciones corporativas memorables"],
     },
     {
-      icon: Sparkles,
+      icon: Award,
       title: "Experiencias Premium",
       description: "Momentos extraordinarios de marca",
-      examples: ["Eventos VIP exclusivos", "Experiencias personalizadas", "Activaciones de lujo"],
+      examples: ["Saint Mary acompañamiento de marcas", "Eventos VIP exclusivos", "Activaciones de lujo personalizadas"],
     },
   ]
 
@@ -101,17 +119,17 @@ export default function MarketingExperiencialPage() {
     {
       feature: "Proceso Creativo Integral",
       description: "Entendemos tu marca, definimos la experiencia, diseñamos la activación y medimos el impacto",
-      icon: Wand2,
+      icon: Lightbulb,
     },
     {
       feature: "Storytelling de Marca",
       description: "Narrativas que conectan emocionalmente, transmiten valores y generan recordación",
-      icon: Megaphone,
+      icon: Heart,
     },
     {
       feature: "Activaciones Interactivas",
       description: "Experiencias inmersivas, photo walls, instalaciones artísticas y momentos instagrameables",
-      icon: Sparkles,
+      icon: Eye,
     },
     {
       feature: "Medición de Impacto",
@@ -122,25 +140,18 @@ export default function MarketingExperiencialPage() {
 
   const proyectosReales = [
     {
-      nombre: "Manchester City Brand Experience",
-      asistentes: "2,000+",
-      tecnologia: "Activación 360° Inmersiva",
-      resultado: "Engagement emocional máximo",
+      nombre: "Manchester City Treble Trophy Tour",
+      asistentes: "1,000",
+      tecnologia: "Experiencia Inmersiva Completa",
+      resultado: "74% engagement rate",
       badge: "Deportivo",
     },
     {
-      nombre: "Activaciones Corporativas Premium",
-      asistentes: "Variable",
-      tecnologia: "Experiencias Personalizadas",
-      resultado: "Impacto de marca garantizado",
-      badge: "Corporativo",
-    },
-    {
-      nombre: "Campañas Integradas Multi-Canal",
-      asistentes: "Masivo",
-      tecnologia: "Marketing 360°",
-      resultado: "Alcance y recordación óptimos",
-      badge: "Integral",
+      nombre: "Saint Mary of the Hills",
+      asistentes: "Premium",
+      tecnologia: "Acompañamiento de Marcas",
+      resultado: "Sponsors integrados exitosamente",
+      badge: "Institucional",
     },
   ]
 
@@ -180,7 +191,7 @@ export default function MarketingExperiencialPage() {
                 <div className="flex items-center gap-3 mb-6">
                   <Badge className="bg-orange-500 text-white">Creatividad Sin Límites</Badge>
                   <Badge className="bg-red-500 text-white">Engagement Emocional</Badge>
-                  <Badge className="bg-white text-orange-600">Historias de Marca</Badge>
+                  <Badge className="bg-white text-orange-600">ROI Medible</Badge>
                 </div>
 
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -188,10 +199,9 @@ export default function MarketingExperiencialPage() {
                 </h1>
 
                 <p className="text-xl md:text-2xl mb-8 opacity-90">
-                  <strong>Creatividad que convierte eventos en recuerdos imborrables.</strong> Uniendo estrategia y
-                  arte, creamos experiencias que hablan el lenguaje de tu marca y{" "}
-                  <strong>resuenan en tu público</strong>
-                  con engagement emocional garantizado.
+                  <strong>Creatividad que convierte eventos en recuerdos imborrables</strong>. Uniendo estrategia y arte, 
+                  creamos experiencias que hablan el lenguaje de tu marca y resuenan en tu público 
+                  <strong> con engagement emocional garantizado</strong>.
                 </p>
 
                 {/* Quick Stats */}
@@ -221,7 +231,7 @@ export default function MarketingExperiencialPage() {
                       size="lg"
                       className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg shadow-xl"
                     >
-                      <Wand2 className="mr-2 h-5 w-5" />
+                      <Sparkles className="mr-2 h-5 w-5" />
                       Cotizar Marketing Experiencial
                     </Button>
                   </Link>
@@ -243,7 +253,7 @@ export default function MarketingExperiencialPage() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="https://res.cloudinary.com/dqiwqlu8v/image/upload/v1234567890/marketing-experiencial-hero.jpg"
+                    src="https://res.cloudinary.com/dtuh208kh/image/upload/v1746637535/DSC_0019_er9zhy.jpg"
                     alt="Marketing Experiencial DER Event Hub"
                     width={600}
                     height={400}
@@ -271,7 +281,7 @@ export default function MarketingExperiencialPage() {
               <p className="text-xl text-gray-700">Experiencias que sorprenden y deleitan</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <Card
                   key={index}
@@ -330,7 +340,7 @@ export default function MarketingExperiencialPage() {
         </div>
       </section>
 
-      {/* Proceso Creativo */}
+      {/* Metodología Detallada */}
       <section className="py-16 bg-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
@@ -370,7 +380,7 @@ export default function MarketingExperiencialPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Proyectos <span className="text-orange-500">Reales</span>
               </h2>
-              <p className="text-xl text-gray-700">Casos donde implementamos marketing experiencial</p>
+              <p className="text-xl text-gray-700">Casos donde aplicamos marketing experiencial</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -384,7 +394,7 @@ export default function MarketingExperiencialPage() {
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-orange-600">{proyecto.asistentes}</div>
-                        <div className="text-sm text-gray-600">impacto</div>
+                        <div className="text-sm text-gray-600">escala</div>
                       </div>
                     </div>
 
@@ -406,323 +416,90 @@ export default function MarketingExperiencialPage() {
         </div>
       </section>
 
-      {/* Precios y Paquetes */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Precios <span className="text-red-500">Orientativos</span>
-              </h2>
-              <p className="text-xl text-gray-700">Inversión según la complejidad creativa y alcance</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Básico */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-orange-100 text-orange-800 mx-auto mb-4">Activaciones Simples</Badge>
-                  <CardTitle className="text-2xl">Creatividad Básica</CardTitle>
-                  <p className="text-gray-600">Para eventos hasta 1,000 personas</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-orange-600 mb-4">
-                    $3,000-6,000
-                    <span className="text-lg text-gray-600 font-normal">USD</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Concepto creativo personalizado</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Branding y elementos visuales</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Activación interactiva básica</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Métricas de engagement</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/cotizador">
-                    <Button className="w-full bg-orange-500 hover:bg-orange-600">Cotizar Creatividad Básica</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Premium */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-red-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-red-100 text-red-800 mx-auto mb-4">Más Popular</Badge>
-                  <CardTitle className="text-2xl">Experiencia Premium</CardTitle>
-                  <p className="text-gray-600">Para eventos hasta 5,000 personas</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-red-600 mb-4">
-                    $8,000-15,000
-                    <span className="text-lg text-gray-600 font-normal">USD</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Campaña experiencial 360°</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Activaciones inmersivas múltiples</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Storytelling de marca avanzado</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">ROI y analytics completos</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/cotizador">
-                    <Button className="w-full bg-red-500 hover:bg-red-600">Cotizar Experiencia Premium</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Enterprise */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-gray-100 text-gray-800 mx-auto mb-4">Campañas Masivas</Badge>
-                  <CardTitle className="text-2xl">Marketing Enterprise</CardTitle>
-                  <p className="text-gray-600">Para campañas multi-evento</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-gray-900 mb-4">
-                    Consultar
-                    <span className="text-lg text-gray-600 font-normal">Precio</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Campañas integradas multi-canal</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Experiencias de marca globales</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Activaciones simultáneas</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Equipo creativo dedicado</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/contacto">
-                    <Button variant="outline" className="w-full border-gray-300 hover:border-orange-500 bg-transparent">
-                      Consultar Campaña Enterprise
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Específico */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Preguntas <span className="text-orange-500">Frecuentes</span>
               </h2>
-              <p className="text-xl text-gray-700">Todo lo que necesitás saber sobre nuestro marketing experiencial</p>
+              <p className="text-xl text-gray-700">Todo lo que necesitás saber sobre marketing experiencial</p>
             </div>
 
-            <div className="space-y-6">
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué incluye una campaña de marketing experiencial completa?
-                  </h3>
-                  <p className="text-gray-700">
-                    Incluye proceso creativo integral desde el brief hasta la medición de resultados: análisis de marca
-                    y audiencia, conceptualización creativa, diseño de experiencias, activaciones interactivas, branding
-                    personalizado, storytelling, implementación técnica y analytics de impacto. Como en Manchester City,
-                    creamos experiencias memorables que conectan emocionalmente con la audiencia.
-                  </p>
-                </CardContent>
-              </Card>
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem 
+                value="item-1"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué diferencia el marketing experiencial de la publicidad tradicional?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  El marketing experiencial crea conexiones emocionales reales a través de experiencias memorables. En lugar de solo comunicar, permite vivir la marca. Como en Manchester City con 74% engagement rate y photobooth con 650 shares, generamos momentos que las personas quieren compartir. No es publicidad que interrumpe, sino experiencias que las personas buscan y recuerdan.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Cómo garantizan que la experiencia sea memorable y diferente?
-                  </h3>
-                  <p className="text-gray-700">
-                    Nuestro proceso creativo se basa en "creatividad sin límites" - entendemos profundamente tu marca,
-                    analizamos la competencia, identificamos oportunidades únicas y diseñamos experiencias fuera de lo
-                    común. Cada activación es personalizada, nunca usamos plantillas. Nos enfocamos en crear momentos
-                    "instagrameables" que generen engagement orgánico y recordación duradera.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-2"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Cómo miden el ROI de las experiencias de marca?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Medimos engagement rate, reach orgánico, shares en redes sociales, tiempo de interacción, sentiment analysis y conversión a ventas. En Manchester City logramos 74% engagement rate y 650 shares del photobooth (74% de participación). También medimos brand recall, intención de compra post-experiencia, y generación de leads calificados. Cada activación incluye dashboard de métricas en tiempo real.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Pueden integrar marketing experiencial con otros servicios de DER?
-                  </h3>
-                  <p className="text-gray-700">
-                    Absolutamente. Nuestra ventaja competitiva es la integración 360°: combinamos marketing experiencial
-                    con producción integral, tecnología (AR/VR, apps), control de accesos inteligente, fotografía
-                    profesional y analytics. Esto garantiza coherencia en toda la experiencia y maximiza el impacto de
-                    marca en cada touchpoint del evento.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-3"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué tipo de activaciones pueden crear para eventos deportivos?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Creamos experiencias inmersivas como photo walls temáticos, simuladores deportivos, meet & greets con atletas, zonas de autógrafos, activaciones con realidad aumentada, y experiencias VIP exclusivas. En Manchester City desarrollamos una experiencia completa que cuidó la marca bajo todo punto de vista, generando momentos memorables y contenido orgánico masivo para redes sociales.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Cómo miden el ROI y el impacto de las experiencias de marca?
-                  </h3>
-                  <p className="text-gray-700">
-                    Utilizamos métricas cuantitativas y cualitativas: engagement rate, alcance orgánico, shares virales,
-                    tiempo de interacción, sentiment analysis, brand recall, NPS post-evento, y conversión a ventas.
-                    Implementamos tracking en tiempo real durante activaciones, análisis de redes sociales, encuestas de
-                    recordación y estudios de impacto de marca a largo plazo.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-4"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Pueden integrar múltiples marcas en una sola experiencia?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Sí, como en Saint Mary of the Hills donde gestionamos el acompañamiento de múltiples marcas hacia el colegio, integrando sponsors de manera orgánica y coherente. Creamos experiencias donde cada marca tiene su momento sin competir, sino complementándose. Desarrollamos narrativas que permiten que múltiples marcas convivan y se potencien mutuamente en la misma activación.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué diferencia su enfoque creativo de otras agencias de marketing?
-                  </h3>
-                  <p className="text-gray-700">
-                    Nuestra diferencia está en la especialización exclusiva en eventos y la capacidad de ejecutar
-                    integralmente. No solo diseñamos campañas, sino que las implementamos con nuestros servicios propios
-                    (producción, tecnología, logística). Esto garantiza coherencia creativa desde el concepto hasta la
-                    ejecución. Además, nuestro enfoque es "creatividad sin límites" - no nos limitamos por restricciones
-                    técnicas porque controlamos toda la cadena de valor.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-5"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué incluyen las experiencias interactivas y photobooth?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Incluyen photo walls personalizados con branding de la marca, props temáticos, fondos interactivos, realidad aumentada, filtros personalizados, impresión instantánea, sharing automático a redes sociales, y analytics de participación. Como en Manchester City, el photobooth generó 650 shares con 74% de participación, creando contenido orgánico valioso y momentos memorables para los asistentes.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Trabajan con marcas internacionales y eventos globales?
-                  </h3>
-                  <p className="text-gray-700">
-                    Sí, tenemos experiencia con marcas globales como Manchester City y eventos internacionales.
-                    Adaptamos nuestras campañas a diferentes culturas y mercados, manteniendo la coherencia de marca
-                    global pero con relevancia local. Manejamos activaciones simultáneas en múltiples países y
-                    coordinamos campañas integradas que trascienden fronteras geográficas.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparación con Competencia */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                ¿Por qué elegir <span className="text-red-500">DER</span>?
-              </h2>
-              <p className="text-xl text-gray-700">Comparación con agencias de marketing tradicionales</p>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse bg-white rounded-lg shadow-lg">
-                <thead>
-                  <tr className="bg-gray-50">
-                    <th className="px-6 py-4 text-left font-semibold text-gray-900">Característica</th>
-                    <th className="px-6 py-4 text-center font-semibold text-orange-600">DER Marketing</th>
-                    <th className="px-6 py-4 text-center font-semibold text-gray-600">Competencia</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Especialización</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">100% Marketing Experiencial</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Marketing genérico</span>
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Capacidad de Ejecución</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Creatividad + Producción</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Solo conceptos</span>
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Experiencias Memorables</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Manchester City Comprobado</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Activaciones estándar</span>
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Integración Tecnológica</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">AR/VR + Apps Propias</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Dependencia externa</span>
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">ROI Medible</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Analytics Completos</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Métricas básicas</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              <AccordionItem 
+                value="item-6"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Cuánto tiempo necesitan para desarrollar una experiencia de marca?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Para activaciones simples necesitamos 2-3 semanas, para experiencias complejas como Manchester City requerimos 4-6 semanas. El tiempo incluye proceso creativo integral, diseño de la experiencia, desarrollo de materiales, coordinación con proveedores, y testing pre-evento. Cuanto más tiempo tengamos, más personalizada y impactante será la experiencia final.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
@@ -733,17 +510,17 @@ export default function MarketingExperiencialPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
               <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
-                <Wand2 className="w-4 h-4 mr-2" />
-                ¿Necesitás marketing experiencial que sorprenda?
+                <Sparkles className="w-4 h-4 mr-2" />
+                ¿Necesitás experiencias de marca memorables?
               </div>
 
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Creemos experiencias que <span className="text-yellow-300">nunca se olvidan</span>
+                Creatividad que <span className="text-yellow-300">nunca se olvida</span>
               </h2>
 
               <p className="text-xl md:text-2xl mb-8 opacity-90">
-                Desde <strong>activaciones simples hasta campañas masivas</strong>, tenemos la creatividad y capacidad
-                de ejecución para hacer que tu marca brille.
+                Desde <strong>Manchester City con 74% engagement rate hasta Saint Mary con acompañamiento integral de marcas</strong>, 
+                creamos experiencias que hablan el lenguaje de tu marca y resuenan en tu público.
               </p>
             </div>
 
@@ -775,10 +552,10 @@ export default function MarketingExperiencialPage() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Lightbulb className="h-6 w-6 text-white" />
+                  <Sparkles className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Creatividad Sin Límites</h3>
-                <p className="text-sm opacity-80">Conceptos únicos siempre</p>
+                <h3 className="font-semibold mb-2">Creatividad Infinita</h3>
+                <p className="text-sm opacity-80">Sin límites</p>
               </div>
 
               <div className="text-center">
@@ -786,15 +563,15 @@ export default function MarketingExperiencialPage() {
                   <Heart className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="font-semibold mb-2">Engagement Emocional</h3>
-                <p className="text-sm opacity-80">Conexiones memorables</p>
+                <p className="text-sm opacity-80">74% Manchester City</p>
               </div>
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Palette className="h-6 w-6 text-white" />
+                  <Eye className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Ejecución Integral</h3>
-                <p className="text-sm opacity-80">De concepto a realidad</p>
+                <h3 className="font-semibold mb-2">Experiencias 360°</h3>
+                <p className="text-sm opacity-80">Momentos memorables</p>
               </div>
 
               <div className="text-center">
@@ -802,17 +579,19 @@ export default function MarketingExperiencialPage() {
                   <BarChart3 className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="font-semibold mb-2">ROI Medible</h3>
-                <p className="text-sm opacity-80">Resultados comprobables</p>
+                <p className="text-sm opacity-80">Analytics completos</p>
               </div>
+
             </div>
 
             {/* Mensaje Final */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mt-12">
-              <h3 className="text-2xl font-bold mb-4">Tu marca merece experiencias extraordinarias</h3>
+              <h3 className="text-2xl font-bold mb-4">Tu marca merece experiencias inolvidables</h3>
               <p className="text-lg opacity-90">
-                Con casos reales como Manchester City (experiencias inmersivas memorables) y múltiples activaciones
-                corporativas, nuestro marketing experiencial está probado en eventos de todas las escalas.
-                <strong> Creatividad sin límites, engagement emocional y ROI garantizado.</strong>
+                Con casos reales como Manchester City Treble Trophy Tour (74% engagement rate, 650 shares en photobooth) y 
+                Saint Mary of the Hills (acompañamiento integral de marcas), creamos experiencias que transforman la percepción 
+                de tu marca y generan conexiones emocionales duraderas.
+                <strong> Creatividad sin límites, engagement emocional y ROI medible garantizado.</strong>
               </p>
             </div>
           </div>
