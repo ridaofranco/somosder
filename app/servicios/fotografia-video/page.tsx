@@ -4,26 +4,33 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
   ArrowLeft,
   Camera,
   Video,
-  Users,
-  CheckCircle,
-  Zap,
   Edit,
+  CheckCircle,
+  Clock,
+  Zap,
   Eye,
-  Play,
-  ImageIcon,
-  Award,
   ArrowRight,
-  Heart,
+  Play,
+  Aperture,
+  Film,
+  Palette,
+  Building,
+  Users,
+  Award,
+  Globe,
+  Monitor,
+  Heart, // Added Heart icon as it was in the original file
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Fotografía y Video - Momentos Imborrables | DER EVENT HUB",
+  title: "Fotografía y Video Profesional - Calidad Cinematográfica | DER EVENT HUB",
   description:
-    "Cobertura fotográfica y videográfica profesional para eventos. Capturamos momentos únicos con calidad cinematográfica. Casos reales: SYNERFY IASP 2025, Fiesta Manzana. Edición y entrega rápida.",
+    "Inmortalizamos los momentos más importantes de tu evento. Casos reales: SYNERFY IASP Latinoamérica 2025, Fiesta Nacional de la Manzana. Cobertura 4K, entrega 24h, ojo experto.",
   keywords: [
     "fotografia eventos",
     "video eventos",
@@ -330,7 +337,7 @@ export default function FotografiaVideoPage() {
         </div>
       </section>
 
-      {/* Proceso Creativo */}
+      {/* Metodología Detallada */}
       <section className="py-16 bg-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
@@ -406,326 +413,90 @@ export default function FotografiaVideoPage() {
         </div>
       </section>
 
-      {/* Precios y Paquetes */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Precios <span className="text-red-500">Orientativos</span>
-              </h2>
-              <p className="text-xl text-gray-700">Inversión según la duración y complejidad de cobertura</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Básico */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-orange-100 text-orange-800 mx-auto mb-4">Eventos Cortos</Badge>
-                  <CardTitle className="text-2xl">Cobertura Básica</CardTitle>
-                  <p className="text-gray-600">Para eventos hasta 4 horas</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-orange-600 mb-4">
-                    $800-1,500
-                    <span className="text-lg text-gray-600 font-normal">USD</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">1 fotógrafo profesional</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">100-200 fotos editadas</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Entrega en 48-72h</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Galería online privada</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/cotizador">
-                    <Button className="w-full bg-orange-500 hover:bg-orange-600">Cotizar Cobertura Básica</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Premium */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-red-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-red-100 text-red-800 mx-auto mb-4">Más Popular</Badge>
-                  <CardTitle className="text-2xl">Cobertura Premium</CardTitle>
-                  <p className="text-gray-600">Para eventos de día completo</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-red-600 mb-4">
-                    $2,000-4,000
-                    <span className="text-lg text-gray-600 font-normal">USD</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Foto + Video multicámara</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">300-500 fotos + aftermovie</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Highlights en 24h</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Insta-service redes sociales</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/cotizador">
-                    <Button className="w-full bg-red-500 hover:bg-red-600">Cotizar Cobertura Premium</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Enterprise */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-gray-100 text-gray-800 mx-auto mb-4">Cinematográfico</Badge>
-                  <CardTitle className="text-2xl">Cobertura Enterprise</CardTitle>
-                  <p className="text-gray-600">Para eventos multi-día</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-gray-900 mb-4">
-                    Consultar
-                    <span className="text-lg text-gray-600 font-normal">Precio</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Equipo completo especializado</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Streaming + documentación</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Entrevistas y testimoniales</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Banco de contenido completo</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/contacto">
-                    <Button variant="outline" className="w-full border-gray-300 hover:border-orange-500 bg-transparent">
-                      Consultar Proyecto Enterprise
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Específico */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Preguntas <span className="text-orange-500">Frecuentes</span>
               </h2>
-              <p className="text-xl text-gray-700">Todo lo que necesitás saber sobre nuestra cobertura audiovisual</p>
+              <p className="text-xl text-gray-700">Todo lo que necesitás saber sobre fotografía y video</p>
             </div>
 
-            <div className="space-y-6">
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué incluye la cobertura fotográfica y videográfica completa?
-                  </h3>
-                  <p className="text-gray-700">
-                    Incluye fotógrafos y videógrafos especializados con equipamiento profesional 4K, cobertura integral
-                    del evento (llegada, momentos clave, networking, ceremonias), fotografías grupales e
-                    institucionales, video resumen/aftermovie, entrevistas y testimoniales, edición profesional con
-                    branding, galería online privada y entrega en múltiples formatos. Como en SYNERFY IASP, documentamos
-                    cada momento importante sin interferir.
-                  </p>
-                </CardContent>
-              </Card>
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem 
+                value="item-1"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué incluye exactamente la cobertura fotográfica y de video?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Incluye fotografía profesional (grupales, ambiente, producto, institucionales y espontáneas), video cinematográfico multicámara, aftermovies, livestream, entrevistas, tomas aéreas con drones 4K, edición avanzada con branding, y entrega rápida de highlights en 24-48h. Como en SYNERFY IASP Latinoamérica 2025 proporcionamos documentación profesional completa, y en Fiesta Nacional de la Manzana capturamos todos los momentos del evento masivo.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Cómo garantizan capturar los momentos más importantes?
-                  </h3>
-                  <p className="text-gray-700">
-                    Nuestro equipo tiene experiencia específica en eventos y sabe estar en el lugar preciso en el
-                    momento justo. Realizamos briefing previo para identificar momentos clave, VIPs importantes y shots
-                    obligatorios. Utilizamos múltiples fotógrafos estratégicamente posicionados, comunicación por
-                    auriculares y coordinación con el equipo de producción para anticipar momentos únicos sin interferir
-                    en la experiencia.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-2"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Cómo garantizan que no interfieren con el desarrollo del evento?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Nuestro equipo está entrenado para ser invisible pero efectivo. Conocemos los momentos clave, nos posicionamos estratégicamente antes de que sucedan, usamos equipamiento silencioso, y coordinamos previamente con organizadores para identificar momentos críticos. Sabemos estar en el lugar preciso en el instante justo, captando emociones genuinas sin interrumpir el flujo natural del evento.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Ofrecen servicio de streaming en vivo y transmisión?
-                  </h3>
-                  <p className="text-gray-700">
-                    Sí, ofrecemos streaming profesional multicámara con calidad broadcast, transmisión simultánea a
-                    múltiples plataformas (YouTube, Facebook, LinkedIn, plataformas privadas), switching en vivo, audio
-                    profesional, gráficos y lower thirds personalizados, y grabación simultánea para posterior edición.
-                    Ideal para eventos híbridos donde parte de la audiencia participa remotamente.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-3"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué es el insta-service y cómo funciona?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  El insta-service es edición y entrega de fotos en tiempo real durante el evento. Capturamos, editamos rápidamente con branding del evento, y las compartimos inmediatamente para redes sociales. Esto permite que los organizadores tengan contenido fresco para postear mientras el evento está sucediendo, maximizando el engagement y la cobertura orgánica en tiempo real.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué es el "insta-service" para redes sociales?
-                  </h3>
-                  <p className="text-gray-700">
-                    Es nuestro servicio de edición y entrega rápida durante el evento. Seleccionamos las mejores fotos
-                    en tiempo real, aplicamos edición básica y branding, y las entregamos vía WhatsApp o email para que
-                    puedas subirlas a redes sociales inmediatamente. Perfecto para mantener engagement durante eventos
-                    largos y generar expectativa. Las fotos del insta-service también están incluidas en la galería
-                    final completa.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-4"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Pueden hacer cobertura multicámara para eventos grandes?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Sí, manejamos producciones multicámara con grabación simultánea desde múltiples ángulos, streaming en vivo, entrevistas profesionales, y testimonios. Para eventos masivos como Fiesta Nacional de la Manzana coordinamos varios equipos de filmación, cámaras fijas estratégicas, drones para tomas aéreas, y edición en tiempo real. El resultado es cobertura cinematográfica completa desde todas las perspectivas importantes.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Pueden trabajar en eventos masivos como la Fiesta de la Manzana?
-                  </h3>
-                  <p className="text-gray-700">
-                    Absolutamente. Tenemos experiencia comprobada en eventos masivos como la Fiesta Nacional de la
-                    Manzana. Para este tipo de eventos utilizamos múltiples fotógrafos distribuidos estratégicamente,
-                    drones para tomas aéreas, equipos de video móviles, comunicación por radio y coordinación
-                    centralizada. Capturamos tanto la magnitud del evento como momentos íntimos y espontáneos del
-                    público.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-5"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué formatos de entrega proporcionan post-evento?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Entregamos banco completo de fotos en alta resolución, highlights editados en 24-48h, aftermovies cinematográficos, versiones para redes sociales (cuadradas, verticales, horizontales), galería web privada para descarga, videos cortos para Instagram/TikTok, y analytics de visualizaciones. Todo con branding personalizado y formatos optimizados para diferentes usos: marketing, comunicación interna, redes sociales, y archivo institucional.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué diferencia su cobertura de otros fotógrafos de eventos?
-                  </h3>
-                  <p className="text-gray-700">
-                    Nuestra diferencia está en la especialización exclusiva en eventos y la integración con nuestros
-                    otros servicios. Conocemos la dinámica de eventos, sabemos cuándo y dónde estarán los momentos
-                    clave, y coordinamos la cobertura con la producción y logística. Nuestro equipo entiende de eventos,
-                    no solo de fotografía, lo que resulta en imágenes más auténticas y completas de la experiencia.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparación con Competencia */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                ¿Por qué elegir <span className="text-red-500">DER</span>?
-              </h2>
-              <p className="text-xl text-gray-700">Comparación con fotógrafos tradicionales</p>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse bg-white rounded-lg shadow-lg">
-                <thead>
-                  <tr className="bg-gray-50">
-                    <th className="px-6 py-4 text-left font-semibold text-gray-900">Característica</th>
-                    <th className="px-6 py-4 text-center font-semibold text-orange-600">DER Audiovisual</th>
-                    <th className="px-6 py-4 text-center font-semibold text-gray-600">Competencia</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Especialización</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">100% Eventos</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Fotografía genérica</span>
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Conocimiento del Evento</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Coordinación con Producción</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Sin contexto del evento</span>
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Experiencia Masiva</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Fiesta Manzana Comprobado</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Solo eventos pequeños</span>
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Entrega Rápida</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Insta-Service 24h</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Semanas de espera</span>
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Integración de Servicios</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Foto + Video + Streaming</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Solo fotografía</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              <AccordionItem 
+                value="item-6"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Pueden adaptarse a diferentes estilos según el tipo de evento?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Absolutamente. Para eventos corporativos como SYNERFY IASP usamos estilo profesional y sobrio, para eventos masivos como Fiesta Nacional de la Manzana aplicamos enfoque dinámico y colorido, y para eventos premium adoptamos estilo cinematográfico elegante. Adaptamos iluminación, composición, edición y narrativa visual según la personalidad del evento y objetivos de comunicación del cliente.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
@@ -737,16 +508,16 @@ export default function FotografiaVideoPage() {
             <div className="mb-8">
               <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
                 <Camera className="w-4 h-4 mr-2" />
-                ¿Querés inmortalizar tu evento?
+                ¿Necesitás cobertura fotográfica y de video profesional?
               </div>
 
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Cada momento merece ser <span className="text-yellow-300">recordado para siempre</span>
+                Momentos que <span className="text-yellow-300">nunca se olvidan</span>
               </h2>
 
               <p className="text-xl md:text-2xl mb-8 opacity-90">
-                Desde <strong>eventos corporativos hasta festivales masivos</strong>, capturamos la esencia de tu evento
-                con calidad cinematográfica y entrega rápida.
+                Desde <strong>SYNERFY IASP Latinoamérica 2025 hasta la Fiesta Nacional de la Manzana</strong>, 
+                capturamos la esencia de cada evento con calidad cinematográfica y ojo experto.
               </p>
             </div>
 
@@ -757,7 +528,7 @@ export default function FotografiaVideoPage() {
                   size="lg"
                   className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
-                  <ImageIcon className="mr-2 h-5 w-5" />
+                  <Camera className="mr-2 h-5 w-5" />
                   Cotizar Fotografía y Video
                 </Button>
               </Link>
@@ -778,7 +549,7 @@ export default function FotografiaVideoPage() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Camera className="h-6 w-6 text-white" />
+                  <Video className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="font-semibold mb-2">Calidad 4K</h3>
                 <p className="text-sm opacity-80">Cinematográfica</p>
@@ -786,37 +557,37 @@ export default function FotografiaVideoPage() {
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="font-semibold mb-2">Entrega 24-48h</h3>
+                <p className="text-sm opacity-80">Highlights rápidos</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Eye className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="font-semibold mb-2">Ojo Experto</h3>
-                <p className="text-sm opacity-80">Momentos únicos</p>
+                <p className="text-sm opacity-80">Sin interferir</p>
               </div>
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="h-6 w-6 text-white" />
+                  <Monitor className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Entrega Rápida</h3>
-                <p className="text-sm opacity-80">Highlights en 24h</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="font-semibold mb-2">Casos Reales</h3>
-                <p className="text-sm opacity-80">SYNERFY, Fiesta Manzana</p>
+                <h3 className="font-semibold mb-2">Banco Completo</h3>
+                <p className="text-sm opacity-80">Todos los formatos</p>
               </div>
             </div>
 
             {/* Mensaje Final */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mt-12">
-              <h3 className="text-2xl font-bold mb-4">Tu evento merece ser inmortalizado</h3>
+              <h3 className="text-2xl font-bold mb-4">Tu evento merece la mejor cobertura visual</h3>
               <p className="text-lg opacity-90">
-                Con casos reales como SYNERFY IASP Latinoamérica 2025 (cobertura fotográfica internacional) y Fiesta
-                Nacional de la Manzana (evento masivo), nuestro equipo audiovisual está probado en todas las escalas.
-                Capturamos emociones genuinas sin interferir.
-                <strong> Cada imagen cuenta una historia única.</strong>
+                Con casos reales como SYNERFY IASP Latinoamérica 2025 (documentación profesional internacional) y 
+                Fiesta Nacional de la Manzana (cobertura masiva completa), inmortalizamos cada momento importante 
+                con calidad cinematográfica y ojo experto.
+                <strong> Cobertura 4K, entrega en 24-48h y recuerdos imborrables garantizados.</strong>
               </p>
             </div>
           </div>
