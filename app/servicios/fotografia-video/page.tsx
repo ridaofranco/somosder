@@ -142,13 +142,6 @@ export default function FotografiaVideoPage() {
       resultado: "Momentos capturados",
       badge: "Cultural",
     },
-    {
-      nombre: "Eventos Premium DER",
-      asistentes: "Variable",
-      tecnologia: "Cobertura Cinematográfica",
-      resultado: "Calidad garantizada",
-      badge: "Premium",
-    },
   ]
 
   return (
