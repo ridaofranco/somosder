@@ -574,10 +574,10 @@ export default function ProduccionIntegralPage() {
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="h-6 w-6 text-white" />
+                  <Clock className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Casos Internacionales</h3>
-                <p className="text-sm opacity-80">Manchester City</p>
+                <h3 className="font-semibold mb-2">Setup en 1 Semana</h3>
+                <p className="text-sm opacity-80">Implementación rápida</p>
               </div>
 
               <div className="text-center">
