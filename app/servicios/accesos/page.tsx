@@ -96,28 +96,22 @@ export default function ControlAccesosPage() {
 
   const casosUso = [
     {
-      icon: Music,
+      icon: Users,
       title: "Festivales y Conciertos Masivos",
-      description: "Eventos musicales de gran escala",
-      examples: ["Abel Pintos - 26,000+ fans en 30 fechas", "Anuel AA - 4 fechas sin incidentes", "Leyendas de México - 25,000+ asistentes"],
+      description: "Control de acceso para eventos musicales de gran escala",
+      examples: ["Abel Pintos - 26,000+ fans en 30 fechas", "Anuel AA - 4 fechas con múltiples accesos", "Leyendas de México - 25,000+ asistentes en 2 horas"],
     },
     {
       icon: Building,
-      title: "Eventos Corporativos y Tech",
-      description: "Conferencias y eventos empresariales",
-      examples: ["Campus Party - 13,000+ inscriptos", "Espacio Shell 2024 - 1,500 Face ID", "Manchester City - 1,000 asistentes"],
+      title: "Eventos Corporativos y Conferencias",
+      description: "Acreditaciones inteligentes para networking y control VIP",
+      examples: ["Campus Party - 13,000+ inscriptos con QR dinámicos", "Espacio Shell - 1,500 Face ID sub-3 segundos", "Manchester City - 1,000 asistentes sin incidentes"],
     },
     {
-      icon: Trophy,
-      title: "Eventos Deportivos",
-      description: "Competencias y torneos deportivos",
-      examples: ["Buenos Aires Trap Festival - 120,000", "Expo Autos CeNARD - 4,000", "Wave Conference - 5,000+"],
-    },
-    {
-      icon: Globe,
-      title: "Eventos Internacionales",
-      description: "Eventos de escala global y regional",
-      examples: ["SYNERFY IASP Latinoamérica 2025", "Camondo WWR - 300+ ejecutivos", "Fiesta Nacional de la Manzana"],
+      icon: Shield,
+      title: "Eventos con Alta Seguridad",
+      description: "Control de acceso con validación biométrica avanzada",
+      examples: ["Face ID para eventos VIP exclusivos", "Doble validación QR + biométrica", "Control de acceso por sectores diferenciados"],
     },
   ]
 

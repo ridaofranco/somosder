@@ -98,28 +98,22 @@ export default function GestionDeportivaPage() {
 
   const casosUso = [
     {
-      icon: Building,
-      title: "Torneos Institucionales",
-      description: "Competencias educativas y comunitarias",
-      examples: ["Saint Mary Hills torneo fútbol", "Campeonatos escolares", "Ligas barriales organizadas"],
-    },
-    {
       icon: Trophy,
-      title: "Eventos Deportivos Premium",
-      description: "Experiencias deportivas de alto nivel",
-      examples: ["Manchester City experiencias", "Exhibiciones profesionales", "Activaciones de marca deportiva"],
+      title: "Competencias Oficiales con Federaciones",
+      description: "Torneos con cronometraje certificado y rankings",
+      examples: ["Mundial Sub-17 Halterofilia 2026", "Coordinación con federaciones internacionales", "Cronometraje homologado y resultados oficiales"],
     },
     {
-      icon: Globe,
-      title: "Competencias Internacionales",
-      description: "Eventos de escala mundial",
-      examples: ["Mundial Sub-17 Halterofilia 2026", "Campeonatos federativos", "Competencias olímpicas"],
+      icon: Award,
+      title: "Torneos Institucionales Completos",
+      description: "Gestión integral de competencias locales",
+      examples: ["Saint Mary of the Hills - Torneo completo", "Gestión de inscripciones y fixture", "Ceremonias de premiación incluidas"],
     },
     {
-      icon: Medal,
-      title: "Eventos Corporativos Deportivos",
-      description: "Activaciones deportivas empresariales",
-      examples: ["Torneos corporativos", "Team building deportivo", "Competencias de empleados"],
+      icon: Users,
+      title: "Eventos Deportivos Corporativos",
+      description: "Competencias empresariales y team building",
+      examples: ["Torneos inter-empresas", "Activaciones deportivas de marca", "Gestión de delegaciones corporativas"],
     },
   ]
 

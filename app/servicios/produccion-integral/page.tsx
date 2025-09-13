@@ -97,28 +97,22 @@ export default function ProduccionIntegralPage() {
 
   const casosUso = [
     {
-      icon: Building,
-      title: "Eventos Corporativos Internacionales",
-      description: "Producciones para marcas globales",
-      examples: ["Manchester City Treble Trophy Tour", "Lanzamientos de producto internacionales", "Conferencias ejecutivas premium"],
+      icon: Globe,
+      title: "Eventos Internacionales Premium",
+      description: "Producción completa para marcas globales",
+      examples: ["Manchester City Treble Trophy Tour", "Coordinación con estándares internacionales", "Protocolos de seguridad globales"],
     },
     {
-      icon: Trophy,
-      title: "Eventos Deportivos",
-      description: "Torneos y competencias deportivas",
-      examples: ["Saint Mary of the Hills - Torneo completo", "Competencias regionales", "Eventos deportivos corporativos"],
+      icon: Handshake,
+      title: "Eventos con Gestión de Sponsors",
+      description: "Producción integral incluyendo patrocinadores",
+      examples: ["Saint Mary of the Hills - 4 sponsors conseguidos", "Activaciones de marca integradas", "Negociación y coordinación de partnerships"],
     },
     {
-      icon: Music,
-      title: "Festivales y Entretenimiento",
-      description: "Eventos masivos de entretenimiento",
-      examples: ["Conciertos y festivales", "Eventos culturales", "Activaciones de marca masivas"],
-    },
-    {
-      icon: Award,
-      title: "Eventos Institucionales",
-      description: "Ceremonias y eventos oficiales",
-      examples: ["Premiaciones corporativas", "Eventos gubernamentales", "Ceremonias institucionales"],
+      icon: Camera,
+      title: "Eventos con Cobertura Completa",
+      description: "Producción integral con documentación profesional",
+      examples: ["Fotografía profesional incluida", "Cobertura para redes sociales", "Entregables post-evento editados"],
     },
   ]
 

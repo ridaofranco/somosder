@@ -98,28 +98,22 @@ export default function TecnologiaEventosPage() {
 
   const casosUso = [
     {
-      icon: Music,
-      title: "Eventos Corporativos y Conferencias",
-      description: "Tecnología para networking y engagement",
-      examples: ["Apps con agenda personalizada", "Sistemas de networking inteligente", "Encuestas y feedback en tiempo real"],
+      icon: Smartphone,
+      title: "Apps Personalizadas para Eventos",
+      description: "Aplicaciones móviles con funcionalidades específicas",
+      examples: ["Apps con agenda interactiva y networking", "Gamificación y encuestas en tiempo real", "Push notifications y análisis de comportamiento"],
     },
     {
-      icon: Building,
-      title: "Festivales y Eventos Masivos",
-      description: "Soluciones para grandes audiencias",
-      examples: ["Control de accesos masivo", "Social walls y activaciones", "Streaming multicámara HD"],
+      icon: Video,
+      title: "Streaming y Eventos Híbridos",
+      description: "Plataformas de transmisión multicámara",
+      examples: ["Conexión audiencia presencial y virtual", "Chat interactivo y networking virtual", "Grabación automática y salas de breakout"],
     },
     {
-      icon: Trophy,
-      title: "Eventos Deportivos",
-      description: "Tecnología especializada para competencias",
-      examples: ["Sistemas de cronometraje", "Apps de seguimiento de resultados", "Transmisión en vivo especializada"],
-    },
-    {
-      icon: Globe,
-      title: "Eventos Híbridos Internacionales",
-      description: "Conexión global presencial y virtual",
-      examples: ["Plataformas de interacción global", "Traducción simultánea integrada", "Networking internacional"],
+      icon: Eye,
+      title: "Experiencias Inmersivas y Activaciones",
+      description: "AR/VR y activaciones digitales personalizadas",
+      examples: ["Sistema de sorteos La Mirona con Migor", "Dashboard personalizado Indie Dev 2025", "Photo booths interactivos con IA"],
     },
   ]
 
