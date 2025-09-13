@@ -4,42 +4,50 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
   ArrowLeft,
   Trophy,
   Users,
-  Target,
+  Timer,
   CheckCircle,
-  Medal,
-  BellIcon as Whistle,
-  Flag,
-  Shield,
+  Clock,
   Award,
+  Target,
   ArrowRight,
   Play,
-  Crown,
+  Clipboard,
+  Network,
+  Wrench,
+  BarChart3,
+  Building,
+  Music,
+  Globe,
+  Medal,
+  Flag,
+  Zap,
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Gestión Deportiva - Modelo Dxtivamente | DER EVENT HUB",
+  title: "Gestión Deportiva Profesional - Competencias y Torneos | DER EVENT HUB",
   description:
-    "Gestión deportiva integral con modelo Dxtivamente. Organizamos torneos, competencias y eventos deportivos. Casos reales: Saint Mary Hills, Manchester City, Mundial Sub-17 Halterofilia 2026.",
+    "Gestión integral de eventos deportivos con experiencia comprobada. Casos reales: Saint Mary of the Hills, Campeonato Mundial Sub 17 Halterofilia Buenos Aires 2026. Cronometraje, premiaciones y ceremonias.",
   keywords: [
     "gestion deportiva",
-    "organizacion torneos",
     "eventos deportivos",
-    "modelo dxtivamente",
-    "saint mary hills",
-    "manchester city deportivo",
-    "DER Event Hub deportes",
+    "cronometraje profesional",
+    "saint mary hills torneo",
+    "mundial halterofilia 2026",
+    "ceremonias deportivas",
+    "DER Event Hub deportivo",
   ],
   openGraph: {
-    title: "Gestión Deportiva - Pasión y Profesionalismo | DER EVENT HUB",
+    title: "Gestión Deportiva Profesional | DER EVENT HUB",
     description:
-      "Gestionamos pasiones deportivas con profesionalismo. Modelo Dxtivamente: valores deportivos, experiencia del atleta y entretenimiento del público.",
+      "Experiencia deportiva comprobada en torneos y competencias internacionales. Saint Mary of the Hills y Mundial Sub 17 Halterofilia 2026.",
     images: [
       {
-        url: "https://res.cloudinary.com/dqiwqlu8v/image/upload/v1234567890/gestion-deportiva-hero.jpg",
+        url: "https://res.cloudinary.com/dtuh208kh/image/upload/v1747826156/IMG_4354_rz7xrv.jpg",
         width: 1200,
         height: 630,
         alt: "Gestión Deportiva DER Event Hub",
@@ -51,49 +59,67 @@ export const metadata: Metadata = {
 export default function GestionDeportivaPage() {
   const features = [
     {
-      icon: Trophy,
-      title: "Modelo Dxtivamente",
-      description: "Valores deportivos, experiencia del atleta y entretenimiento del público en equilibrio perfecto",
+      icon: Clipboard,
+      title: "Planificación Estratégica",
+      description: "Desarrollo completo del evento desde la conceptualización hasta la ejecución final",
       color: "text-orange-500",
     },
     {
-      icon: Medal,
-      title: "Organización Integral",
-      description: "Federaciones, clubes, sponsors, inscripciones, fixtures, arbitrajes y ceremonias",
+      icon: Users,
+      title: "Gestión de Participantes",
+      description: "Registro, acreditación y coordinación de atletas, equipos y oficiales",
       color: "text-red-500",
     },
     {
-      icon: Shield,
-      title: "Logística Deportiva",
-      description: "Seguridad, hidratación, equipamiento, transporte y alojamiento de delegaciones",
+      icon: Timer,
+      title: "Cronometraje Profesional",
+      description: "Sistemas de medición de tiempo precisos y certificados para competencias oficiales",
       color: "text-orange-600",
     },
     {
-      icon: Flag,
-      title: "Experiencia del Fan",
-      description: "Fan zones, activaciones, merchandising y momentos memorables para el público",
+      icon: Award,
+      title: "Ceremonias y Premiación",
+      description: "Organización de ceremonias de apertura, clausura y premiación memorable",
       color: "text-red-600",
+    },
+    {
+      icon: Network,
+      title: "Coordinación con Federaciones",
+      description: "Articulación con federaciones deportivas, clubes y organismos oficiales",
+      color: "text-orange-500",
+    },
+    {
+      icon: BarChart3,
+      title: "Gestión de Resultados",
+      description: "Seguimiento de resultados en tiempo real, rankings y estadísticas oficiales",
+      color: "text-red-500",
     },
   ]
 
   const casosUso = [
     {
-      icon: Trophy,
+      icon: Building,
       title: "Torneos Institucionales",
       description: "Competencias educativas y comunitarias",
       examples: ["Saint Mary Hills torneo fútbol", "Campeonatos escolares", "Ligas barriales organizadas"],
     },
     {
-      icon: Crown,
+      icon: Trophy,
       title: "Eventos Deportivos Premium",
       description: "Experiencias deportivas de alto nivel",
       examples: ["Manchester City experiencias", "Exhibiciones profesionales", "Activaciones de marca deportiva"],
     },
     {
-      icon: Medal,
+      icon: Globe,
       title: "Competencias Internacionales",
       description: "Eventos de escala mundial",
       examples: ["Mundial Sub-17 Halterofilia 2026", "Campeonatos federativos", "Competencias olímpicas"],
+    },
+    {
+      icon: Medal,
+      title: "Eventos Corporativos Deportivos",
+      description: "Activaciones deportivas empresariales",
+      examples: ["Torneos corporativos", "Team building deportivo", "Competencias de empleados"],
     },
   ]
 
@@ -101,12 +127,12 @@ export default function GestionDeportivaPage() {
     {
       feature: "Planificación Deportiva",
       description: "Fixtures, inscripciones, categorías, reglamentos y coordinación con federaciones oficiales",
-      icon: Target,
+      icon: Clipboard,
     },
     {
       feature: "Operativa de Competencia",
       description: "Arbitrajes certificados, cronometraje, resultados en vivo y protocolos deportivos",
-      icon: Whistle,
+      icon: Timer,
     },
     {
       feature: "Gestión de Stakeholders",
@@ -116,31 +142,24 @@ export default function GestionDeportivaPage() {
     {
       feature: "Experiencia Integral",
       description: "Ceremonias, premiaciones, fan zones, activaciones y legado deportivo sostenible",
-      icon: Award,
+      icon: Trophy,
     },
   ]
 
   const proyectosReales = [
     {
       nombre: "Saint Mary of the Hills",
-      asistentes: "Comunidad",
-      tecnologia: "Torneo Fútbol Completo",
-      resultado: "Evento comunitario exitoso",
-      badge: "Educativo",
+      asistentes: "Torneo",
+      tecnologia: "Gestión Integral + Sponsors",
+      resultado: "Torneo exitoso completo",
+      badge: "Institucional",
     },
     {
-      nombre: "Manchester City Experience",
-      asistentes: "2,000+",
-      tecnologia: "Gestión Deportiva Premium",
-      resultado: "Experiencia deportiva memorable",
-      badge: "Premium",
-    },
-    {
-      nombre: "Mundial Sub-17 Halterofilia 2026",
+      nombre: "Campeonato Mundial Sub 17 Halterofilia Buenos Aires 2026",
       asistentes: "Internacional",
-      tecnologia: "Propuesta CEO Olímpica",
-      resultado: "Estándares mundiales aplicados",
-      badge: "Olímpico",
+      tecnologia: "Consultoría CEO Deportiva",
+      resultado: "Propuesta integral aprobada",
+      badge: "Mundial",
     },
   ]
 
@@ -178,9 +197,9 @@ export default function GestionDeportivaPage() {
                 </Link>
 
                 <div className="flex items-center gap-3 mb-6">
-                  <Badge className="bg-orange-500 text-white">Modelo Dxtivamente</Badge>
-                  <Badge className="bg-red-500 text-white">Pasión Deportiva</Badge>
-                  <Badge className="bg-white text-orange-600">Profesionalismo Total</Badge>
+                  <Badge className="bg-orange-500 text-white">Experiencia Deportiva</Badge>
+                  <Badge className="bg-red-500 text-white">Competencias Oficiales</Badge>
+                  <Badge className="bg-white text-orange-600">Mundial 2026</Badge>
                 </div>
 
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -188,9 +207,8 @@ export default function GestionDeportivaPage() {
                 </h1>
 
                 <p className="text-xl md:text-2xl mb-8 opacity-90">
-                  <strong>Gestionamos pasiones deportivas con profesionalismo.</strong> Aplicamos nuestro modelo{" "}
-                  <strong>Dxtivamente</strong> para llevar eventos deportivos al siguiente nivel: valores deportivos,
-                  experiencia del atleta y entretenimiento del público en equilibrio perfecto.
+                  <strong>Gestionamos pasiones deportivas con profesionalismo</strong> y experiencia comprobada en competencias oficiales. 
+                  Desde <strong>torneos institucionales hasta campeonatos mundiales</strong> con cronometraje certificado y ceremonias memorables.
                 </p>
 
                 {/* Quick Stats */}
@@ -204,12 +222,12 @@ export default function GestionDeportivaPage() {
                     <div className="text-sm opacity-80">Mundial Sub-17</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-300">100%</div>
-                    <div className="text-sm opacity-80">Profesional</div>
+                    <div className="text-3xl font-bold text-yellow-300">Pro</div>
+                    <div className="text-sm opacity-80">Cronometraje</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-300">🏆</div>
-                    <div className="text-sm opacity-80">Dxtivamente</div>
+                    <div className="text-3xl font-bold text-yellow-300">100%</div>
+                    <div className="text-sm opacity-80">Deportivo</div>
                   </div>
                 </div>
 
@@ -242,7 +260,7 @@ export default function GestionDeportivaPage() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="https://res.cloudinary.com/dqiwqlu8v/image/upload/v1234567890/gestion-deportiva-hero.jpg"
+                    src="https://res.cloudinary.com/dtuh208kh/image/upload/v1747826156/IMG_4354_rz7xrv.jpg"
                     alt="Gestión Deportiva DER Event Hub"
                     width={600}
                     height={400}
@@ -250,7 +268,7 @@ export default function GestionDeportivaPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white text-sm">Saint Mary Hills - Torneo de fútbol con gestión integral</p>
+                    <p className="text-white text-sm">Gestión deportiva profesional - Saint Mary y Mundial 2026</p>
                   </div>
                 </div>
               </div>
@@ -265,12 +283,12 @@ export default function GestionDeportivaPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Modelo <span className="text-orange-500">Dxtivamente</span>
+                Experiencia <span className="text-orange-500">Deportiva</span>
               </h2>
-              <p className="text-xl text-gray-700">Llevamos la emoción del deporte a otro nivel</p>
+              <p className="text-xl text-gray-700">6 pilares de nuestra gestión deportiva profesional</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <Card
                   key={index}
@@ -301,7 +319,7 @@ export default function GestionDeportivaPage() {
               <p className="text-xl text-gray-700">Adaptamos la gestión según el nivel deportivo</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {casosUso.map((caso, index) => (
                 <Card key={index} className="hover:shadow-xl transition-all duration-300">
                   <CardHeader>
@@ -329,7 +347,7 @@ export default function GestionDeportivaPage() {
         </div>
       </section>
 
-      {/* Metodología Deportiva */}
+      {/* Metodología Detallada */}
       <section className="py-16 bg-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
@@ -369,7 +387,7 @@ export default function GestionDeportivaPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Proyectos <span className="text-orange-500">Reales</span>
               </h2>
-              <p className="text-xl text-gray-700">Casos donde implementamos gestión deportiva integral</p>
+              <p className="text-xl text-gray-700">Casos donde aplicamos gestión deportiva</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -383,7 +401,7 @@ export default function GestionDeportivaPage() {
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-orange-600">{proyecto.asistentes}</div>
-                        <div className="text-sm text-gray-600">alcance</div>
+                        <div className="text-sm text-gray-600">escala</div>
                       </div>
                     </div>
 
@@ -405,323 +423,90 @@ export default function GestionDeportivaPage() {
         </div>
       </section>
 
-      {/* Precios y Paquetes */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Precios <span className="text-red-500">Orientativos</span>
-              </h2>
-              <p className="text-xl text-gray-700">Inversión según la complejidad y duración del evento deportivo</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Básico */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-orange-100 text-orange-800 mx-auto mb-4">Torneos Locales</Badge>
-                  <CardTitle className="text-2xl">Gestión Básica</CardTitle>
-                  <p className="text-gray-600">Para competencias hasta 500 participantes</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-orange-600 mb-4">
-                    $2,500-5,000
-                    <span className="text-lg text-gray-600 font-normal">USD</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Planificación y fixture completo</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Coordinación de inscripciones</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Arbitrajes y cronometraje</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Ceremonia de premiación</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/cotizador">
-                    <Button className="w-full bg-orange-500 hover:bg-orange-600">Cotizar Gestión Básica</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Premium */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-red-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-red-100 text-red-800 mx-auto mb-4">Más Popular</Badge>
-                  <CardTitle className="text-2xl">Gestión Premium</CardTitle>
-                  <p className="text-gray-600">Para eventos hasta 2,000 participantes</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-red-600 mb-4">
-                    $8,000-15,000
-                    <span className="text-lg text-gray-600 font-normal">USD</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Gestión deportiva 360° completa</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Coordinación con federaciones</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Fan zones y activaciones</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Logística integral deportiva</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/cotizador">
-                    <Button className="w-full bg-red-500 hover:bg-red-600">Cotizar Gestión Premium</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Enterprise */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-gray-100 text-gray-800 mx-auto mb-4">Internacional</Badge>
-                  <CardTitle className="text-2xl">Gestión Enterprise</CardTitle>
-                  <p className="text-gray-600">Para competencias internacionales</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-gray-900 mb-4">
-                    Consultar
-                    <span className="text-lg text-gray-600 font-normal">Precio</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Estándares olímpicos aplicados</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Gestión multi-sede internacional</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Coordinación con autoridades</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Equipo deportivo especializado</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/contacto">
-                    <Button variant="outline" className="w-full border-gray-300 hover:border-orange-500 bg-transparent">
-                      Consultar Proyecto Enterprise
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Específico */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Preguntas <span className="text-orange-500">Frecuentes</span>
               </h2>
-              <p className="text-xl text-gray-700">Todo lo que necesitás saber sobre nuestra gestión deportiva</p>
+              <p className="text-xl text-gray-700">Todo lo que necesitás saber sobre gestión deportiva</p>
             </div>
 
-            <div className="space-y-6">
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué incluye la gestión deportiva integral completa?
-                  </h3>
-                  <p className="text-gray-700">
-                    Incluye planificación deportiva completa (fixtures, inscripciones, categorías), coordinación con
-                    federaciones y clubes, gestión de arbitrajes certificados, logística deportiva (hidratación,
-                    equipamiento, seguridad), fan zones y activaciones, ceremonias de premiación y coordinación con
-                    sponsors. Como en Saint Mary Hills, manejamos todos los aspectos deportivos y de entretenimiento.
-                  </p>
-                </CardContent>
-              </Card>
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem 
+                value="item-1"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué incluye exactamente la gestión deportiva integral?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Incluye planificación estratégica completa, gestión de inscripciones y participantes, coordinación con federaciones deportivas, cronometraje profesional certificado, ceremonias de apertura y premiación, y gestión de resultados en tiempo real. Como en Saint Mary of the Hills manejamos el torneo completo con sponsors incluidos, y para el Mundial Sub-17 Halterofilia 2026 desarrollamos la consultoría CEO deportiva integral.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Pueden manejar eventos deportivos de nivel internacional?
-                  </h3>
-                  <p className="text-gray-700">
-                    Sí, tenemos experiencia comprobada en eventos internacionales. Para el Mundial Sub-17 Halterofilia
-                    2026 desarrollamos la propuesta CEO completa con estándares olímpicos, incluyendo coordinación
-                    multi-sede, protocolos deportivos internacionales, gestión de delegaciones y ceremonias oficiales.
-                    Manejamos la complejidad de eventos deportivos de escala mundial.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-2"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Pueden manejar competencias internacionales como el Mundial Sub-17?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Sí, tenemos experiencia comprobada en eventos deportivos internacionales. Para el Campeonato Mundial Sub-17 Halterofilia Buenos Aires 2026 desarrollamos la consultoría CEO deportiva completa, incluyendo estructura organizacional, protocolos internacionales, coordinación con federaciones mundiales, y gestión de delegaciones internacionales. Nuestra experiencia deportiva nos permite manejar la complejidad de eventos de nivel mundial.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Cómo coordinan con federaciones y autoridades deportivas?
-                  </h3>
-                  <p className="text-gray-700">
-                    Tenemos protocolos establecidos para trabajar con federaciones deportivas oficiales, clubes y
-                    autoridades regulatorias. Gestionamos inscripciones oficiales, homologaciones de árbitros,
-                    certificaciones de competencia y cumplimiento de reglamentos deportivos. Coordinamos directamente
-                    con dirigentes, comisiones técnicas y organismos de control para garantizar legitimidad deportiva
-                    completa.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-3"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué tipo de cronometraje profesional utilizan?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Utilizamos sistemas de cronometraje certificados y precisos según el tipo de competencia. Para eventos oficiales trabajamos con equipamiento homologado por federaciones, cronometraje electrónico con respaldo manual, sistemas de foto finish cuando es necesario, y resultados en tiempo real. Todos nuestros sistemas cumplen con estándares internacionales para competencias oficiales y rankings.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué diferencia su gestión deportiva de otros organizadores?
-                  </h3>
-                  <p className="text-gray-700">
-                    Nuestra diferencia está en la integración completa con nuestros otros servicios: no solo organizamos
-                    la competencia deportiva, sino que creamos la experiencia integral con tecnología propia (control de
-                    accesos, apps), producción completa, marketing experiencial y logística especializada. Esto
-                    garantiza coherencia entre lo deportivo y lo experiencial, algo único en el mercado.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-4"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Cómo coordinan con federaciones deportivas oficiales?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Tenemos experiencia directa trabajando con federaciones deportivas nacionales e internacionales. Coordinamos homologaciones, permisos oficiales, reglamentos específicos, designación de árbitros certificados, y validación de resultados para rankings oficiales. Para el Mundial Sub-17 Halterofilia trabajamos directamente con la federación internacional, y en Saint Mary coordinamos con organismos locales para validación oficial.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Pueden trabajar con instituciones educativas como Saint Mary?
-                  </h3>
-                  <p className="text-gray-700">
-                    Absolutamente. Tenemos experiencia específica en eventos deportivos educativos e institucionales. En
-                    Saint Mary of the Hills organizamos el torneo de fútbol completo, adaptando nuestra metodología al
-                    contexto educativo, valores institucionales y presupuestos escolares. Entendemos las
-                    particularidades de eventos deportivos comunitarios y educativos.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-5"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Incluyen ceremonias de apertura y premiación?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Sí, las ceremonias son parte integral de nuestra gestión deportiva. Organizamos ceremonias de apertura memorables, premiaciones oficiales con protocolos deportivos, himnos nacionales, entrega de medallas y trofeos, y ceremonias de clausura. Cada ceremonia respeta las tradiciones deportivas y crea momentos memorables para atletas y espectadores, adaptándose al nivel y magnitud de la competencia.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Incluyen gestión de sponsors y activaciones comerciales?
-                  </h3>
-                  <p className="text-gray-700">
-                    Sí, incluimos gestión integral de sponsors deportivos: identificación de marcas afines, desarrollo
-                    de propuestas de patrocinio, activaciones branded durante la competencia, espacios comerciales,
-                    naming rights y medición de impacto para sponsors. En Saint Mary Hills coordinamos marcas
-                    patrocinadoras y sorteos en vivo, maximizando el valor para todos los stakeholders.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparación con Competencia */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                ¿Por qué elegir <span className="text-red-500">DER</span>?
-              </h2>
-              <p className="text-xl text-gray-700">Comparación con organizadores deportivos tradicionales</p>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse bg-white rounded-lg shadow-lg">
-                <thead>
-                  <tr className="bg-gray-50">
-                    <th className="px-6 py-4 text-left font-semibold text-gray-900">Característica</th>
-                    <th className="px-6 py-4 text-center font-semibold text-orange-600">DER Deportivo</th>
-                    <th className="px-6 py-4 text-center font-semibold text-gray-600">Competencia</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Enfoque</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Gestión Deportiva 360°</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Solo organización básica</span>
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Experiencia del Fan</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Fan Zones + Activaciones</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Solo competencia</span>
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Experiencia Internacional</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Mundial Sub-17 2026</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Solo eventos locales</span>
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Integración de Servicios</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Deportivo + Tecnología + Producción</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Servicios fragmentados</span>
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Gestión de Sponsors</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Activaciones Integradas</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Gestión básica</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              <AccordionItem 
+                value="item-6"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Pueden gestionar desde torneos barriales hasta campeonatos mundiales?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Absolutamente. Nuestra experiencia deportiva nos permite adaptarnos a cualquier escala: desde torneos institucionales como Saint Mary of the Hills hasta competencias mundiales como el Campeonato Sub-17 Halterofilia 2026. Escalamos recursos, protocolos y servicios según el nivel de la competencia, manteniendo siempre profesionalismo y estándares de calidad apropiados para cada evento deportivo.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
@@ -737,12 +522,12 @@ export default function GestionDeportivaPage() {
               </div>
 
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Llevemos tu evento deportivo <span className="text-yellow-300">al siguiente nivel</span>
+                Experiencia deportiva que <span className="text-yellow-300">transforma competencias</span>
               </h2>
 
               <p className="text-xl md:text-2xl mb-8 opacity-90">
-                Desde <strong>torneos comunitarios hasta competencias internacionales</strong>, tenemos la experiencia y
-                metodología para gestionar la pasión deportiva con profesionalismo total.
+                Desde <strong>Saint Mary of the Hills hasta el Mundial Sub-17 Halterofilia Buenos Aires 2026</strong>, 
+                nuestra experiencia deportiva garantiza competencias profesionales de cualquier escala.
               </p>
             </div>
 
@@ -753,7 +538,7 @@ export default function GestionDeportivaPage() {
                   size="lg"
                   className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
-                  <Medal className="mr-2 h-5 w-5" />
+                  <Trophy className="mr-2 h-5 w-5" />
                   Cotizar Gestión Deportiva
                 </Button>
               </Link>
@@ -776,43 +561,43 @@ export default function GestionDeportivaPage() {
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Trophy className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Gestión 360°</h3>
-                <p className="text-sm opacity-80">Deportivo + Experiencial</p>
+                <h3 className="font-semibold mb-2">Experiencia Deportiva</h3>
+                <p className="text-sm opacity-80">Nuestro fuerte</p>
               </div>
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-6 w-6 text-white" />
+                  <Timer className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Profesionalismo</h3>
-                <p className="text-sm opacity-80">Estándares deportivos</p>
+                <h3 className="font-semibold mb-2">Cronometraje Pro</h3>
+                <p className="text-sm opacity-80">Certificado oficial</p>
               </div>
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Flag className="h-6 w-6 text-white" />
+                  <Globe className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Escala Internacional</h3>
-                <p className="text-sm opacity-80">Mundial Sub-17 2026</p>
+                <h3 className="font-semibold mb-2">Escala Mundial</h3>
+                <p className="text-sm opacity-80">Mundial 2026</p>
               </div>
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-6 w-6 text-white" />
+                  <Award className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Casos Reales</h3>
-                <p className="text-sm opacity-80">Saint Mary, Manchester City</p>
+                <h3 className="font-semibold mb-2">Ceremonias Memorables</h3>
+                <p className="text-sm opacity-80">Apertura y premiación</p>
               </div>
             </div>
 
             {/* Mensaje Final */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mt-12">
-              <h3 className="text-2xl font-bold mb-4">Tu evento deportivo merece gestión profesional</h3>
+              <h3 className="text-2xl font-bold mb-4">Tu competencia merece la mejor gestión deportiva</h3>
               <p className="text-lg opacity-90">
-                Con casos reales como Saint Mary of the Hills (torneo fútbol completo), Manchester City (gestión
-                deportiva premium) y Mundial Sub-17 Halterofilia 2026 (propuesta CEO olímpica), nuestra gestión
-                deportiva está probada en todos los niveles.
-                <strong> Pasión deportiva con profesionalismo total garantizado.</strong>
+                Con casos reales como Saint Mary of the Hills (torneo integral con sponsors) y 
+                Campeonato Mundial Sub-17 Halterofilia Buenos Aires 2026 (consultoría CEO deportiva), 
+                nuestra experiencia deportiva está probada en competencias de todas las escalas.
+                <strong> Cronometraje profesional, ceremonias memorables y gestión integral garantizada.</strong>
               </p>
             </div>
           </div>
