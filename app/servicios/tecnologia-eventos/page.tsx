@@ -4,42 +4,50 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
   ArrowLeft,
   Smartphone,
-  Video,
-  Users,
-  CheckCircle,
-  BarChart3,
   Monitor,
-  Gamepad2,
+  Zap,
+  CheckCircle,
+  Clock,
+  Users,
   Camera,
-  Award,
   ArrowRight,
   Play,
-  Cpu,
+  QrCode,
+  Eye,
+  Database,
+  Wifi,
+  Building,
+  Music,
+  Trophy,
+  Globe,
+  Gamepad2,
+  Video,
 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Tecnología para Eventos - Apps, Streaming, AR/VR | DER EVENT HUB",
   description:
-    "Soluciones tecnológicas avanzadas para eventos. Apps personalizadas, streaming híbrido, experiencias AR/VR, activaciones digitales. Casos reales: Campus Party (5K+), Manchester City AR.",
+    "Soluciones tecnológicas integrales para eventos: acreditaciones inteligentes, apps personalizadas, streaming híbrido, experiencias inmersivas. Casos reales: La Mirona con Migor, Indie Dev 2025.",
   keywords: [
     "tecnologia eventos",
     "apps eventos",
     "streaming eventos",
     "realidad aumentada eventos",
-    "activaciones digitales",
-    "eventos hibridos",
+    "acreditaciones inteligentes",
+    "indie dev argentina",
     "DER Event Hub tecnologia",
   ],
   openGraph: {
-    title: "Tecnología para Eventos - Innovación Digital | DER EVENT HUB",
+    title: "Tecnología para Eventos | DER EVENT HUB",
     description:
-      "Transformamos eventos con tecnología de vanguardia. Apps, streaming, AR/VR, activaciones digitales. Campus Party, Manchester City comprobados.",
+      "Soluciones tech integrales: desde acreditaciones inteligentes hasta experiencias inmersivas. Casos reales con desarrollo a medida.",
     images: [
       {
-        url: "https://res.cloudinary.com/dqiwqlu8v/image/upload/v1234567890/tecnologia-eventos-hero.jpg",
+        url: "https://res.cloudinary.com/dtuh208kh/image/upload/v1747908990/Captura_de_pantalla_2024-05-10_153233_mlh6y3.png",
         width: 1200,
         height: 630,
         alt: "Tecnología para Eventos DER Event Hub",
@@ -51,96 +59,107 @@ export const metadata: Metadata = {
 export default function TecnologiaEventosPage() {
   const features = [
     {
-      icon: Smartphone,
-      title: "Apps Personalizadas",
-      description: "Aplicaciones móviles nativas con agenda, networking, gamificación y push notifications",
+      icon: QrCode,
+      title: "Acreditaciones Inteligentes",
+      description: "Sistema de pre-registro, validación en tiempo real, generación de credenciales y control de accesos por QR",
       color: "text-orange-500",
     },
     {
-      icon: Video,
-      title: "Streaming Híbrido",
-      description: "Transmisiones en vivo multi-plataforma con interacción en tiempo real",
+      icon: Smartphone,
+      title: "Apps Personalizadas",
+      description: "Aplicaciones móviles a medida con agenda interactiva, networking, encuestas, gamificación y análisis de comportamiento",
       color: "text-red-500",
     },
     {
-      icon: Camera,
-      title: "Experiencias AR/VR",
-      description: "Realidad aumentada y virtual para activaciones inmersivas memorables",
+      icon: Video,
+      title: "Streaming y Eventos Híbridos",
+      description: "Plataformas de transmisión multicámara en alta definición, interacción entre público presencial y virtual",
       color: "text-orange-600",
     },
     {
-      icon: Gamepad2,
-      title: "Activaciones Digitales",
-      description: "Photo booths inteligentes, social walls, NFC, gamificación y engagement",
+      icon: Eye,
+      title: "Experiencias Inmersivas",
+      description: "Realidad aumentada, realidad virtual, instalaciones interactivas y mapping para experiencias únicas",
       color: "text-red-600",
+    },
+    {
+      icon: Camera,
+      title: "Activaciones Digitales",
+      description: "Photo booths interactivos, social walls, concursos digitales y activaciones con tecnología NFC",
+      color: "text-orange-500",
+    },
+    {
+      icon: Zap,
+      title: "Desarrollo a Medida",
+      description: "Soluciones tecnológicas personalizadas según las necesidades específicas de tu evento o marca",
+      color: "text-red-500",
     },
   ]
 
   const casosUso = [
     {
-      icon: Users,
-      title: "Eventos Masivos Tech",
-      description: "Tecnología para grandes audiencias",
-      examples: ["Campus Party (5,000+ con apps)", "Conferencias tecnológicas", "Festivales digitales"],
+      icon: Music,
+      title: "Eventos Corporativos y Conferencias",
+      description: "Tecnología para networking y engagement",
+      examples: ["Apps con agenda personalizada", "Sistemas de networking inteligente", "Encuestas y feedback en tiempo real"],
     },
     {
-      icon: Award,
-      title: "Activaciones de Marca",
-      description: "Experiencias digitales inmersivas",
-      examples: ["Manchester City AR (650 shares)", "Lanzamientos de producto", "Experiencias premium"],
+      icon: Building,
+      title: "Festivales y Eventos Masivos",
+      description: "Soluciones para grandes audiencias",
+      examples: ["Control de accesos masivo", "Social walls y activaciones", "Streaming multicámara HD"],
     },
     {
-      icon: Monitor,
-      title: "Eventos Híbridos",
-      description: "Presencial + virtual integrado",
-      examples: ["Conferencias corporativas", "Summits internacionales", "Capacitaciones empresariales"],
+      icon: Trophy,
+      title: "Eventos Deportivos",
+      description: "Tecnología especializada para competencias",
+      examples: ["Sistemas de cronometraje", "Apps de seguimiento de resultados", "Transmisión en vivo especializada"],
+    },
+    {
+      icon: Globe,
+      title: "Eventos Híbridos Internacionales",
+      description: "Conexión global presencial y virtual",
+      examples: ["Plataformas de interacción global", "Traducción simultánea integrada", "Networking internacional"],
     },
   ]
 
   const tecnologia = [
     {
-      feature: "Desarrollo de Apps Nativas",
-      description: "iOS y Android personalizadas con agenda, speakers, networking, encuestas y notificaciones",
+      feature: "Análisis y Planificación Tech",
+      description: "Evaluación de necesidades tecnológicas, arquitectura de soluciones y planificación de implementación",
+      icon: Monitor,
+    },
+    {
+      feature: "Desarrollo e Integración",
+      description: "Creación de soluciones personalizadas, integración con sistemas existentes y testing completo",
       icon: Smartphone,
     },
     {
-      feature: "Plataforma de Streaming",
-      description: "Transmisión multi-canal con chat, Q&A, breakout rooms y analytics en tiempo real",
-      icon: Video,
+      feature: "Implementación y Soporte",
+      description: "Deploy en producción, capacitación de equipos y soporte técnico durante el evento",
+      icon: Users,
     },
     {
-      feature: "Experiencias Inmersivas",
-      description: "AR/VR personalizada, photo booths inteligentes, filtros branded y activaciones 3D",
-      icon: Camera,
-    },
-    {
-      feature: "Engagement Digital",
-      description: "Gamificación, social walls, encuestas live, networking AI y métricas de participación",
-      icon: BarChart3,
+      feature: "Monitoreo y Optimización",
+      description: "Monitoreo en tiempo real, resolución de incidencias y análisis post-evento para mejoras",
+      icon: Database,
     },
   ]
 
   const proyectosReales = [
     {
-      nombre: "Campus Party 2024/2025",
-      asistentes: "5,000+",
-      tecnologia: "App + Tech Integral",
-      resultado: "Engagement máximo 4 días",
-      badge: "Tecnológico",
-    },
-    {
-      nombre: "Manchester City AR Experience",
-      asistentes: "2,000+",
-      tecnologia: "AR Photobooth",
-      resultado: "650 shares virales",
-      badge: "Deportivo",
-    },
-    {
-      nombre: "Eventos Híbridos Corporativos",
-      asistentes: "Variable",
-      tecnologia: "Streaming + Interacción",
-      resultado: "Alcance global exitoso",
+      nombre: "Sistema de Sorteos - La Mirona con Migor",
+      asistentes: "Privado",
+      tecnologia: "Plataforma Custom de Sorteos",
+      resultado: "4 eventos exitosos",
       badge: "Corporativo",
+    },
+    {
+      nombre: "Indie Dev Argentina 2025",
+      asistentes: "Tech",
+      tecnologia: "Dashboard Personalizado + Accesos",
+      resultado: "Plataforma única implementada",
+      badge: "Tecnológico",
     },
   ]
 
@@ -178,9 +197,9 @@ export default function TecnologiaEventosPage() {
                 </Link>
 
                 <div className="flex items-center gap-3 mb-6">
-                  <Badge className="bg-orange-500 text-white">Innovación Digital</Badge>
-                  <Badge className="bg-red-500 text-white">Experiencias Inmersivas</Badge>
-                  <Badge className="bg-white text-orange-600">Engagement Máximo</Badge>
+                  <Badge className="bg-orange-500 text-white">Desarrollo Propio</Badge>
+                  <Badge className="bg-red-500 text-white">Apps Personalizadas</Badge>
+                  <Badge className="bg-white text-orange-600">AR/VR Inmersivo</Badge>
                 </div>
 
                 <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -188,28 +207,27 @@ export default function TecnologiaEventosPage() {
                 </h1>
 
                 <p className="text-xl md:text-2xl mb-8 opacity-90">
-                  <strong>Transformamos eventos con tecnología de vanguardia</strong> - apps personalizadas, streaming
-                  híbrido, AR/VR. Desde <strong>activaciones digitales hasta experiencias masivas</strong>
-                  con engagement garantizado.
+                  <strong>Soluciones tecnológicas integrales para eventos</strong> desde acreditaciones inteligentes hasta experiencias inmersivas. 
+                  Con <strong>desarrollo a medida, streaming híbrido y activaciones digitales</strong> que potencian cada evento.
                 </p>
 
                 {/* Quick Stats */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-300">5K+</div>
-                    <div className="text-sm opacity-80">Campus Party</div>
+                    <div className="text-3xl font-bold text-yellow-300">6</div>
+                    <div className="text-sm opacity-80">Soluciones Tech</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-300">650</div>
-                    <div className="text-sm opacity-80">AR Shares</div>
+                    <div className="text-3xl font-bold text-yellow-300">A Medida</div>
+                    <div className="text-sm opacity-80">Desarrollo</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-300">AR/VR</div>
+                    <div className="text-sm opacity-80">Inmersivo</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-yellow-300">24/7</div>
-                    <div className="text-sm opacity-80">Streaming Live</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-300">100%</div>
-                    <div className="text-sm opacity-80">Personalizado</div>
+                    <div className="text-sm opacity-80">Soporte</div>
                   </div>
                 </div>
 
@@ -220,7 +238,7 @@ export default function TecnologiaEventosPage() {
                       size="lg"
                       className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg shadow-xl"
                     >
-                      <Cpu className="mr-2 h-5 w-5" />
+                      <Smartphone className="mr-2 h-5 w-5" />
                       Cotizar Tecnología para Eventos
                     </Button>
                   </Link>
@@ -231,7 +249,7 @@ export default function TecnologiaEventosPage() {
                       variant="outline"
                       className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg"
                     >
-                      Ver Demo Tecnológico
+                      Ver Casos Tecnológicos
                       <Play className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
@@ -242,7 +260,7 @@ export default function TecnologiaEventosPage() {
               <div className="relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="https://res.cloudinary.com/dqiwqlu8v/image/upload/v1234567890/tecnologia-eventos-hero.jpg"
+                    src="https://res.cloudinary.com/dtuh208kh/image/upload/v1747908990/Captura_de_pantalla_2024-05-10_153233_mlh6y3.png"
                     alt="Tecnología para Eventos DER Event Hub"
                     width={600}
                     height={400}
@@ -250,7 +268,7 @@ export default function TecnologiaEventosPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white text-sm">AR Experience Manchester City - 650 shares virales</p>
+                    <p className="text-white text-sm">Tecnología avanzada - Apps, AR/VR y desarrollo a medida</p>
                   </div>
                 </div>
               </div>
@@ -265,12 +283,12 @@ export default function TecnologiaEventosPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Soluciones <span className="text-orange-500">Avanzadas</span>
+                Soluciones <span className="text-orange-500">Tecnológicas</span>
               </h2>
-              <p className="text-xl text-gray-700">Tecnología que potencia la experiencia del evento</p>
+              <p className="text-xl text-gray-700">6 áreas de especialización tecnológica</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <Card
                   key={index}
@@ -298,10 +316,10 @@ export default function TecnologiaEventosPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Casos de <span className="text-red-500">Uso</span>
               </h2>
-              <p className="text-xl text-gray-700">Adaptamos la tecnología según el tipo de evento</p>
+              <p className="text-xl text-gray-700">Tecnología adaptada según el tipo de evento</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {casosUso.map((caso, index) => (
                 <Card key={index} className="hover:shadow-xl transition-all duration-300">
                   <CardHeader>
@@ -312,7 +330,7 @@ export default function TecnologiaEventosPage() {
                     <p className="text-gray-600">{caso.description}</p>
                   </CardHeader>
                   <CardContent>
-                    <h4 className="font-semibold text-gray-900 mb-3">Ejemplos reales:</h4>
+                    <h4 className="font-semibold text-gray-900 mb-3">Soluciones aplicadas:</h4>
                     <ul className="space-y-2">
                       {caso.examples.map((example, exampleIndex) => (
                         <li key={exampleIndex} className="flex items-start text-sm">
@@ -329,15 +347,15 @@ export default function TecnologiaEventosPage() {
         </div>
       </section>
 
-      {/* Stack Tecnológico */}
+      {/* Metodología Detallada */}
       <section className="py-16 bg-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Stack <span className="text-orange-500">Tecnológico</span>
+                Metodología <span className="text-orange-500">Tecnológica</span>
               </h2>
-              <p className="text-xl text-gray-700">4 pilares de nuestra propuesta tecnológica</p>
+              <p className="text-xl text-gray-700">4 pasos para implementar tecnología sin fallas</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -369,7 +387,7 @@ export default function TecnologiaEventosPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Proyectos <span className="text-orange-500">Reales</span>
               </h2>
-              <p className="text-xl text-gray-700">Casos donde implementamos tecnología avanzada</p>
+              <p className="text-xl text-gray-700">Casos donde aplicamos soluciones tecnológicas</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -383,7 +401,7 @@ export default function TecnologiaEventosPage() {
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-orange-600">{proyecto.asistentes}</div>
-                        <div className="text-sm text-gray-600">usuarios</div>
+                        <div className="text-sm text-gray-600">escala</div>
                       </div>
                     </div>
 
@@ -405,324 +423,90 @@ export default function TecnologiaEventosPage() {
         </div>
       </section>
 
-      {/* Precios y Paquetes */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Precios <span className="text-red-500">Orientativos</span>
-              </h2>
-              <p className="text-xl text-gray-700">Inversión según la complejidad tecnológica del evento</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Básico */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-orange-100 text-orange-800 mx-auto mb-4">Activaciones Básicas</Badge>
-                  <CardTitle className="text-2xl">Tech Básico</CardTitle>
-                  <p className="text-gray-600">Para eventos hasta 1,000 personas</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-orange-600 mb-4">
-                    $2,000-4,000
-                    <span className="text-lg text-gray-600 font-normal">USD</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Photo booth inteligente</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Social wall en tiempo real</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Encuestas digitales live</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Streaming básico</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/cotizador">
-                    <Button className="w-full bg-orange-500 hover:bg-orange-600">Cotizar Tech Básico</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Premium */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-red-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-red-100 text-red-800 mx-auto mb-4">Más Popular</Badge>
-                  <CardTitle className="text-2xl">Tech Premium</CardTitle>
-                  <p className="text-gray-600">Para eventos hasta 5,000 personas</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-red-600 mb-4">
-                    $6,000-12,000
-                    <span className="text-lg text-gray-600 font-normal">USD</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">App personalizada completa</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Experiencias AR/VR</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Streaming multi-plataforma</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Gamificación avanzada</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/cotizador">
-                    <Button className="w-full bg-red-500 hover:bg-red-600">Cotizar Tech Premium</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Enterprise */}
-              <Card className="hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-500">
-                <CardHeader className="text-center">
-                  <Badge className="bg-gray-100 text-gray-800 mx-auto mb-4">Masivo</Badge>
-                  <CardTitle className="text-2xl">Tech Enterprise</CardTitle>
-                  <p className="text-gray-600">Para eventos +5,000 personas</p>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <div className="text-4xl font-bold text-gray-900 mb-4">
-                    Consultar
-                    <span className="text-lg text-gray-600 font-normal">Precio</span>
-                  </div>
-
-                  <ul className="space-y-3 text-left mb-6">
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Plataforma tecnológica completa</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Experiencias inmersivas 360°</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Integración IoT y sensores</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
-                      <span className="text-sm">Equipo tech dedicado</span>
-                    </li>
-                  </ul>
-
-                  <Link href="/contacto">
-                    <Button variant="outline" className="w-full border-gray-300 hover:border-orange-500 bg-transparent">
-                      Consultar Proyecto Enterprise
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Específico */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Preguntas <span className="text-orange-500">Frecuentes</span>
               </h2>
-              <p className="text-xl text-gray-700">
-                Todo lo que necesitás saber sobre nuestras soluciones tecnológicas
-              </p>
+              <p className="text-xl text-gray-700">Todo lo que necesitás saber sobre tecnología para eventos</p>
             </div>
 
-            <div className="space-y-6">
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué incluyen las apps personalizadas para eventos?
-                  </h3>
-                  <p className="text-gray-700">
-                    Nuestras apps incluyen agenda interactiva, perfiles de speakers, networking inteligente, encuestas
-                    en tiempo real, push notifications, gamificación, mapas del venue, y integración con redes sociales.
-                    Como en Campus Party, desarrollamos funcionalidades específicas para cada evento con branding
-                    personalizado y analytics completos.
-                  </p>
-                </CardContent>
-              </Card>
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem 
+                value="item-1"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué diferencia sus soluciones tecnológicas de otros proveedores?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Desarrollamos soluciones a medida en lugar de usar templates genéricos. Como en el sistema de sorteos para La Mirona con Migor, creamos plataformas únicas según las necesidades específicas. Para Indie Dev 2025 desarrollamos dashboards personalizados y sistemas de accesos únicos. Nuestro enfoque es 100% personalizado, no revendemos software de terceros.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Cómo funcionan las experiencias AR como en Manchester City?
-                  </h3>
-                  <p className="text-gray-700">
-                    Desarrollamos experiencias de realidad aumentada personalizadas usando tecnología de vanguardia. En
-                    Manchester City creamos un AR photobooth que permitía a los fanáticos fotografiarse con los trofeos
-                    virtuales, generando 650 shares virales. Incluimos filtros branded, activaciones 3D y experiencias
-                    inmersivas que conectan emocionalmente con la audiencia.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-2"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Pueden desarrollar apps móviles personalizadas para eventos?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Sí, desarrollamos apps nativas para iOS y Android con funcionalidades específicas: agenda interactiva, networking inteligente, encuestas en tiempo real, gamificación, push notifications y análisis de comportamiento. Cada app se diseña según las necesidades del evento, con branding personalizado y funciones únicas que no encontrarás en soluciones genéricas del mercado.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Pueden manejar streaming para eventos masivos como Campus Party?
-                  </h3>
-                  <p className="text-gray-700">
-                    Sí, tenemos experiencia comprobada en eventos masivos. Para Campus Party (5,000+ asistentes durante
-                    4 días) implementamos streaming multi-plataforma con interacción en tiempo real, breakout rooms,
-                    chat moderado, Q&A live y analytics detallados. Nuestra infraestructura soporta miles de usuarios
-                    simultáneos con calidad broadcast.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-3"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué incluyen las experiencias inmersivas con AR/VR?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Ofrecemos realidad aumentada para activaciones de marca (filtros personalizados, reconocimiento de objetos), realidad virtual para experiencias inmersivas (showrooms virtuales, simuladores), instalaciones interactivas con sensores de movimiento, y mapping projection para transformar espacios. Cada experiencia se diseña específicamente para los objetivos del evento y la marca.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué diferencia su tecnología de otros proveedores?
-                  </h3>
-                  <p className="text-gray-700">
-                    Nuestra diferencia está en la integración completa con nuestros otros servicios. No solo proveemos
-                    tecnología, sino que la integramos con control de accesos, producción y analytics. Desarrollamos
-                    soluciones personalizadas (no plantillas) y tenemos casos reales comprobados. Además, ofrecemos
-                    soporte técnico 24/7 durante el evento.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-4"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Cómo funcionan las plataformas de streaming híbrido?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Creamos plataformas que conectan audiencia presencial y virtual en tiempo real. Incluyen transmisión multicámara HD, chat interactivo, encuestas simultáneas, networking virtual, salas de breakout y grabación automática. La audiencia virtual puede participar activamente con preguntas, votaciones y networking, creando una experiencia verdaderamente híbrida e integrada.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Incluyen capacitación para el equipo del cliente?
-                  </h3>
-                  <p className="text-gray-700">
-                    Sí, incluimos capacitación completa para el equipo organizador. Proporcionamos manuales de usuario,
-                    sesiones de training en vivo, soporte durante el evento y documentación técnica. Para eventos como
-                    Campus Party, capacitamos al staff en el uso de todas las herramientas tecnológicas para garantizar
-                    una operación fluida.
-                  </p>
-                </CardContent>
-              </Card>
+              <AccordionItem 
+                value="item-5"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Qué tipo de activaciones digitales pueden implementar?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Desarrollamos photo booths interactivos con IA, social walls que agregan contenido de redes sociales, concursos digitales con gamificación, activaciones NFC para interacciones táctiles, quizzes interactivos, sorteos digitales en tiempo real, y sistemas de puntos y recompensas. Cada activación se integra con las redes sociales del evento para maximizar el alcance y engagement.
+                </AccordionContent>
+              </AccordionItem>
 
-              <Card className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    ¿Qué analytics y métricas proporcionan post-evento?
-                  </h3>
-                  <p className="text-gray-700">
-                    Entregamos reportes completos con métricas de engagement, uso de la app, interacciones en streaming,
-                    participación en activaciones AR/VR, alcance en redes sociales, y ROI de las activaciones digitales.
-                    Incluimos heatmaps de uso, demografía de usuarios, momentos pico de interacción y recomendaciones
-                    para futuros eventos.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparación con Competencia */}
-      <section className="py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                ¿Por qué elegir <span className="text-red-500">DER</span>?
-              </h2>
-              <p className="text-xl text-gray-700">Comparación con proveedores tecnológicos tradicionales</p>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse bg-white rounded-lg shadow-lg">
-                <thead>
-                  <tr className="bg-gray-50">
-                    <th className="px-6 py-4 text-left font-semibold text-gray-900">Característica</th>
-                    <th className="px-6 py-4 text-center font-semibold text-orange-600">DER Tech</th>
-                    <th className="px-6 py-4 text-center font-semibold text-gray-600">Competencia</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Personalización</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">100% Personalizado</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Plantillas genéricas</span>
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Integración de Servicios</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">360° Integrado</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Solo tecnología</span>
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Experiencia Masiva</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Campus Party 5K+</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Capacidad limitada</span>
-                    </td>
-                  </tr>
-                  <tr className="bg-gray-50 border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Experiencias AR/VR</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Manchester City 650 Shares</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Costo adicional</span>
-                    </td>
-                  </tr>
-                  <tr className="border-t">
-                    <td className="px-6 py-4 font-semibold text-gray-900">Soporte 24/7</td>
-                    <td className="px-6 py-4 text-center">
-                      <div className="flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
-                        <span className="text-green-600 font-semibold">Durante Todo el Evento</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-center">
-                      <span className="text-red-600">Horario limitado</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              <AccordionItem 
+                value="item-6"
+                className="bg-white rounded-xl border-2 border-transparent hover:border-orange-600/30 transition-all duration-300"
+              >
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-gray-900 hover:text-orange-600 transition-colors duration-300">
+                  ¿Cuánto tiempo necesitan para desarrollar una solución tecnológica?
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-gray-600 leading-relaxed">
+                  Depende de la complejidad: acreditaciones inteligentes básicas toman 1-2 semanas, apps personalizadas requieren 4-6 semanas, experiencias AR/VR necesitan 6-8 semanas, y plataformas de streaming híbrido toman 3-4 semanas. Incluimos análisis, desarrollo, testing, implementación y soporte durante el evento. Siempre comenzamos con un MVP funcional y iteramos según feedback.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
@@ -733,17 +517,17 @@ export default function TecnologiaEventosPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
               <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium mb-6">
-                <Cpu className="w-4 h-4 mr-2" />
+                <Smartphone className="w-4 h-4 mr-2" />
                 ¿Necesitás tecnología avanzada para tu evento?
               </div>
 
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Transformemos tu evento con <span className="text-yellow-300">tecnología de vanguardia</span>
+                Tecnología que <span className="text-yellow-300">transforma eventos</span>
               </h2>
 
               <p className="text-xl md:text-2xl mb-8 opacity-90">
-                Desde <strong>activaciones digitales hasta experiencias masivas</strong>, tenemos la tecnología y
-                experiencia para crear engagement máximo.
+                Desde <strong>sistemas de sorteos personalizados hasta experiencias AR/VR inmersivas</strong>, 
+                desarrollamos la tecnología exacta que tu evento necesita.
               </p>
             </div>
 
@@ -765,7 +549,7 @@ export default function TecnologiaEventosPage() {
                   variant="outline"
                   className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
-                  Ver Demo Tecnológico
+                  Ver Casos Tecnológicos
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -775,34 +559,34 @@ export default function TecnologiaEventosPage() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Smartphone className="h-6 w-6 text-white" />
+                  <Zap className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Apps Personalizadas</h3>
-                <p className="text-sm opacity-80">100% customizadas</p>
+                <h3 className="font-semibold mb-2">Desarrollo a Medida</h3>
+                <p className="text-sm opacity-80">Soluciones únicas</p>
               </div>
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Camera className="h-6 w-6 text-white" />
+                  <Eye className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Experiencias AR/VR</h3>
-                <p className="text-sm opacity-80">Inmersivas y virales</p>
+                <h3 className="font-semibold mb-2">AR/VR Inmersivo</h3>
+                <p className="text-sm opacity-80">Experiencias únicas</p>
               </div>
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Video className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Streaming 24/7</h3>
-                <p className="text-sm opacity-80">Multi-plataforma</p>
+                <h3 className="font-semibold mb-2">Streaming Híbrido</h3>
+                <p className="text-sm opacity-80">Multicámara HD</p>
               </div>
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold mb-2">Casos Reales</h3>
-                <p className="text-sm opacity-80">Campus Party, Manchester City</p>
+                <h3 className="font-semibold mb-2">Soporte 24/7</h3>
+                <p className="text-sm opacity-80">Durante el evento</p>
               </div>
             </div>
 
@@ -810,9 +594,9 @@ export default function TecnologiaEventosPage() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mt-12">
               <h3 className="text-2xl font-bold mb-4">Tu evento merece la mejor tecnología</h3>
               <p className="text-lg opacity-90">
-                Con casos reales como Campus Party (5,000+ usuarios durante 4 días) y Manchester City AR Experience (650
-                shares virales), nuestra tecnología está probada en eventos de todas las escalas.
-                <strong> Soluciones personalizadas, integración 360° y engagement garantizado.</strong>
+                Con casos reales como el sistema de sorteos para La Mirona con Migor y la plataforma única 
+                para Indie Dev Argentina 2025, desarrollamos tecnología que transforma eventos.
+                <strong> Soluciones a medida, AR/VR inmersivo y streaming híbrido garantizado.</strong>
               </p>
             </div>
           </div>
