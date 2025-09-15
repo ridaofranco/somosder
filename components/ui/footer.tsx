@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import { searchIndex } from "@/lib/search-index" // Importar el índice de búsqueda para obtener los servicios
 import { TikTok } from "./tiktok" // Importar el nuevo componente de icono de TikTok
+import { MessageCircle } from "lucide-react" // Importar el icono de WhatsApp
 
 export default function Footer() {
   // Filtrar los servicios del searchIndex
@@ -87,20 +88,24 @@ export default function Footer() {
           <div>
             <h3 className="font-medium mb-4 uppercase text-sm tracking-wider">Contacto</h3>
             <ul className="space-y-2">
-              <li className="text-muted-foreground text-sm font-semibold">Argentina</li>
+              <li className="text-muted-foreground text-sm font-bold">Argentina</li>
               <li className="text-muted-foreground text-sm">Aráoz 1146, Palermo, CABA.</li>
               <li className="text-muted-foreground text-sm mb-2">Buenos Aires, Argentina.</li>
-              <li className="text-muted-foreground text-sm font-semibold">Paraguay</li>
+              <li className="text-muted-foreground text-sm font-bold">Paraguay</li>
               <li className="text-muted-foreground text-sm">My. José de Jesús Martínez</li>
               <li className="text-muted-foreground text-sm mb-2">Asunción 001006, Paraguay</li>
+              <li className="text-muted-foreground text-sm font-bold">Email:</li>
               <li className="text-muted-foreground text-sm">
-                Email: <a href="mailto:contacto@derp.com.ar" className="hover:text-primary">contacto@derp.com.ar</a>
+                <a href="mailto:contacto@derp.com.ar" className="hover:text-primary">contacto@derp.com.ar</a>
               </li>
+              <li className="text-muted-foreground text-sm font-bold mt-2">Teléfono / WhatsApp:</li>
               <li className="text-muted-foreground text-sm">
-                Teléfono / WhatsApp: <a href="https://wa.me/5491171540675" target="_blank" rel="noopener noreferrer" className="hover:text-primary">+54 9 11 7154-0675</a>
+                <a href="https://wa.me/5491171540675" target="_blank" rel="noopener noreferrer" className="hover:text-primary">+54 9 11 7154-0675</a>
               </li>
-              <li className="text-muted-foreground text-sm">
-                <a href="https://wa.me/5491171540675" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Contactar por WhatsApp Business</a>
+              <li className="text-muted-foreground text-sm mt-2">
+                <a href="https://wa.me/5491171540675" target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center gap-1">
+                  <MessageCircle className="h-4 w-4" /> Contactar por WhatsApp Business
+                </a>
               </li>
             </ul>
           </div>
