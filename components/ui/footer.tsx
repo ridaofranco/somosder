@@ -22,14 +22,8 @@ export default function Footer() {
               Tu plataforma integral de soluciones para eventos. Más de 10 años creando experiencias memorables.
             </p>
             <div className="flex gap-4">
-              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-              </Link>
               <Link href="https://www.instagram.com/somosder.ar/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
-              </Link>
-              <Link href="https://twitter.com/somosder" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
               </Link>
               <Link href="https://ar.linkedin.com/company/somosderar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
