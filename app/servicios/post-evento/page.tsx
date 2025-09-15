@@ -22,8 +22,8 @@ import {
   Rocket,
   Mic,
   PieChart,
+  Building, // Agregado Building a la importación principal
 } from "lucide-react"
-import { Building } from "lucide-react" // Importación separada para Building
 
 export const metadata: Metadata = {
   title: "Servicios Post Evento - Análisis y Optimización | DER EVENT HUB",
