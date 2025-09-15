@@ -81,8 +81,8 @@ export default function ContactoPageClient() {
       icon: MessageCircle,
       title: "WhatsApp",
       description: "Respuesta inmediata",
-      value: "+54 9 11 1234-5678",
-      link: "https://wa.me/5491112345678",
+      value: "+54 9 11 7154-0675",
+      link: "https://wa.me/5491171540675",
       color: "green",
       available: "24/7",
     },
@@ -99,8 +99,8 @@ export default function ContactoPageClient() {
       icon: Phone,
       title: "Teléfono",
       description: "Llamada directa",
-      value: "+54 9 11 1234-5678",
-      link: "tel:+5491112345678",
+      value: "+54 9 11 7154-0675",
+      link: "tel:+5491171540675",
       color: "orange",
       available: "Lun-Vie 9-18hs",
     },
@@ -227,14 +227,14 @@ export default function ContactoPageClient() {
             {/* Quick Contact */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/5491112345678"
+                href="https://wa.me/5491171540675"
                 className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-colors"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp Directo
               </a>
               <a
-                href="tel:+5491112345678"
+                href="tel:+5491171540675"
                 className="inline-flex items-center px-6 py-3 bg-white/20 hover:bg-white/30 text-white rounded-lg font-semibold transition-colors"
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -656,7 +656,7 @@ export default function ContactoPageClient() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/5491112345678"
+                href="https://wa.me/5491171540675"
                 className="inline-flex items-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold text-lg transition-colors"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />

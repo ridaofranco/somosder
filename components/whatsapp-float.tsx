@@ -60,7 +60,7 @@ export default function WhatsAppFloat() {
               ¿Necesitas ayuda con tu próximo evento? Estamos aquí para asistirte.
             </p>
             <a
-              href="https://api.whatsapp.com/message/CLJ55YZQWNRFC1?autoload=1&app_absent=0"
+              href="https://wa.me/5491171540675"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-[#25D366] hover:bg-[#128C7E] text-white text-center py-2 px-4 rounded-md transition-colors"

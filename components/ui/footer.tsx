@@ -87,9 +87,21 @@ export default function Footer() {
           <div>
             <h3 className="font-medium mb-4 uppercase text-sm tracking-wider">Contacto</h3>
             <ul className="space-y-2">
-              <li className="text-muted-foreground text-sm">Buenos Aires, Argentina</li>
-              <li className="text-muted-foreground text-sm">contacto@somosder.com.ar</li>
-              <li className="text-muted-foreground text-sm">+54 9 11 7546-0675</li>
+              <li className="text-muted-foreground text-sm font-semibold">Argentina</li>
+              <li className="text-muted-foreground text-sm">Aráoz 1146, Palermo, CABA.</li>
+              <li className="text-muted-foreground text-sm mb-2">Buenos Aires, Argentina.</li>
+              <li className="text-muted-foreground text-sm font-semibold">Paraguay</li>
+              <li className="text-muted-foreground text-sm">My. José de Jesús Martínez</li>
+              <li className="text-muted-foreground text-sm mb-2">Asunción 001006, Paraguay</li>
+              <li className="text-muted-foreground text-sm">
+                Email: <a href="mailto:contacto@derp.com.ar" className="hover:text-primary">contacto@derp.com.ar</a>
+              </li>
+              <li className="text-muted-foreground text-sm">
+                Teléfono / WhatsApp: <a href="https://wa.me/5491171540675" target="_blank" rel="noopener noreferrer" className="hover:text-primary">+54 9 11 7154-0675</a>
+              </li>
+              <li className="text-muted-foreground text-sm">
+                <a href="https://wa.me/5491171540675" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Contactar por WhatsApp Business</a>
+              </li>
             </ul>
           </div>
         </div>

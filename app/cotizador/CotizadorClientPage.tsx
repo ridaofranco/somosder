@@ -570,11 +570,11 @@ export default function CotizadorClientPage() {
                   <p className="text-sm text-gray-300 mb-4">Hablá directamente con nuestro equipo</p>
                   <div className="space-y-3">
                     <a
-                      href="https://wa.me/5491112345678"
+                      href="https://wa.me/5491171540675"
                       className="flex items-center text-sm hover:text-green-400 transition-colors"
                     >
                       <MessageCircle className="w-4 h-4 mr-3" />
-                      WhatsApp: +54 9 11 1234-5678
+                      WhatsApp: +54 9 11 7154-0675
                     </a>
                     <a
                       href="mailto:contacto@somosder.ar"
@@ -584,11 +584,11 @@ export default function CotizadorClientPage() {
                       contacto@somosder.ar
                     </a>
                     <a
-                      href="tel:+5491112345678"
+                      href="tel:+5491171540675"
                       className="flex items-center text-sm hover:text-orange-400 transition-colors"
                     >
                       <Phone className="w-4 h-4 mr-3" />
-                      +54 9 11 1234-5678
+                      +54 9 11 7154-0675
                     </a>
                   </div>
                 </CardContent>

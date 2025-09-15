@@ -473,7 +473,7 @@ export default function NosotrosPage() {
                 </div>
                 <div className="flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
-                  <span>+54 9 11 1234-5678</span>
+                  <span>+54 9 11 7154-0675</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
