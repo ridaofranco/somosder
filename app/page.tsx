@@ -21,7 +21,9 @@ import {
   Palette,
   Ticket,
   Handshake,
-  Camera
+  Camera,
+  ChefHat,
+  Truck
 } from "lucide-react"
 
 export default function HomePage() {
@@ -53,7 +55,7 @@ export default function HomePage() {
     {
       title: "Soluciones Gastronómicas",
       description: "Experiencias culinarias memorables adaptadas a cada tipo de evento y presupuesto.",
-      icon: ChefHat, // Assuming ChefHat is also imported from lucide-react
+      icon: ChefHat,
       href: "/servicios/gastronomia",
     },
     {
@@ -65,7 +67,7 @@ export default function HomePage() {
     {
       title: "Logística Internacional",
       description: "Coordinación integral de logística para eventos nacionales e internacionales.",
-      icon: Truck, // Assuming Truck is also imported from lucide-react
+      icon: Truck,
       href: "/servicios/logistica",
     },
     {
@@ -95,7 +97,7 @@ export default function HomePage() {
     {
       title: "Tecnología Avanzada",
       description: "Soluciones tecnológicas de vanguardia para eventos del futuro.",
-      icon: Lightbulb, // Using Lightbulb as a generic tech icon
+      icon: Lightbulb,
       href: "/servicios/tecnologia",
     },
   ]
@@ -194,7 +196,7 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
                 ¿Por qué elegir <span className="text-orange-500">DER EVENT HUB</span>?
               </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700">
                 Somos la única empresa en LATAM que integra tecnología propia, producción 360° y analytics en tiempo real bajo un solo contrato.
               </p>
             </div>
