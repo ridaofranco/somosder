@@ -4,6 +4,7 @@ import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import { searchIndex } from "@/lib/search-index" // Importar el índice de búsqueda para obtener los servicios
 import { TikTok } from "./tiktok" // Importar el nuevo componente de icono de TikTok
 import { MessageCircle } from "lucide-react" // Importar el icono de WhatsApp
+import { WhatsappBusiness } from "./whatsapp-business" // Importar el nuevo icono de WhatsApp Business
 
 export default function Footer() {
   // Filtrar los servicios del searchIndex
@@ -104,7 +105,7 @@ export default function Footer() {
               </li>
               <li className="text-muted-foreground text-sm mt-2">
                 <a href="https://wa.me/5491171540675" target="_blank" rel="noopener noreferrer" className="hover:text-primary flex items-center gap-1">
-                  <MessageCircle className="h-4 w-4" /> Contactar por WhatsApp Business
+                  <WhatsappBusiness className="h-4 w-4" /> Contactar por WhatsApp Business
                 </a>
               </li>
             </ul>
