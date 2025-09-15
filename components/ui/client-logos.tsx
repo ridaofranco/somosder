@@ -7,10 +7,10 @@ export default function ClientLogos() {
   const { resolvedTheme } = useTheme()
   const isDark = resolvedTheme === "dark"
 
-  // All client logos - keeping only the first 10 real logos
+  // All client logos - keeping the existing Cloudinary URLs
   const logos = [
     "https://res.cloudinary.com/dtuh208kh/image/upload/v1747333505/image-2_wjdkdy_e_background_removal_f_png_gwxc5f.png",
-    "https://res.cloudinary.com/dtuh208kh/image/upload/v1747333112/1000002233_274362aa63d8d438f3c733a23b8a7081-16_1_2024_16_19_59_pxz9b8.png",
+    "https://res.cloudinary.com/dtuh208kh/image/upload/v1747331112/1000002233_274362aa63d8d438f3c733a23b8a7081-16_1_2024_16_19_59_pxz9b8.png",
     "https://res.cloudinary.com/dtuh208kh/image/upload/v1747330395/png-2_kfxfhw.png",
     "https://res.cloudinary.com/dtuh208kh/image/upload/v1747331093/png-13_vhrqcu.png",
     "https://res.cloudinary.com/dtuh208kh/image/upload/v1747335090/logo-garzia_t1dsn2.png",

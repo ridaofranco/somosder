@@ -4,35 +4,9 @@ import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import ServiceCard from "@/components/ui/service-card"
 import ClientLogos from "@/components/ui/client-logos"
-import {
-  ArrowRight,
-  Calculator,
-  Monitor,
-  Users,
-  BarChart,
-  Phone,
-  Mail,
-  MessageCircle,
-  Trophy,
-  Shield,
-  Clock,
-  Award,
-  Building,
-  Music,
-  Mic,
-  Lightbulb,
-  Calendar,
-  Palette,
-  Ticket,
-  Handshake,
-  Camera,
-  ChefHat, // Nuevo icono
-  Truck,    // Nuevo icono
-  Zap,      // Nuevo icono
-} from "lucide-react"
+import { Icons } from "@/components/icons" // Importamos el nuevo archivo de iconos
 
 export default function HomePage() {
-  // console.log('HomePage component is rendering'); // Eliminado el console.log
   
   const services = [
     {
@@ -164,7 +138,7 @@ export default function HomePage() {
                   size="lg"
                   className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
-                  <Calculator className="mr-2 h-5 w-5" />
+                  <Icons.Calculator className="mr-2 h-5 w-5" />
                   Cotizar Mi Evento Gratis
                 </Button>
               </Link>
@@ -176,7 +150,7 @@ export default function HomePage() {
                   className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 bg-transparent"
                 >
                   Ver Casos de Éxito
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <Icons.ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -219,7 +193,7 @@ export default function HomePage() {
               {/* Diferenciador 1 */}
               <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 hover:shadow-xl transition-all duration-300">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Monitor className="h-8 w-8 text-white" />
+                  <Icons.Monitor className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Tecnología Propia</h3>
                 <p className="text-gray-700 mb-4">
@@ -233,7 +207,7 @@ export default function HomePage() {
               {/* Diferenciador 2 */}
               <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 hover:shadow-xl transition-all duration-300">
                 <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Users className="h-8 w-8 text-white" />
+                  <Icons.Users className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Producción 360°</h3>
                 <p className="text-gray-700 mb-4">
@@ -247,7 +221,7 @@ export default function HomePage() {
               {/* Diferenciador 3 */}
               <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 hover:shadow-xl transition-all duration-300">
                 <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <BarChart className="h-8 w-8 text-white" />
+                  <Icons.BarChart className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">ROI Medible</h3>
                 <p className="text-gray-700 mb-4">
@@ -279,7 +253,7 @@ export default function HomePage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   <div>
                     <div className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
-                      <Trophy className="w-4 h-4 mr-1" />
+                      <Icons.Trophy className="w-4 h-4 mr-1" />
                       Deportivo
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Manchester City Treble Trophy Tour</h3>
@@ -335,7 +309,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium mb-4">
-                      <Mic className="w-4 h-4 mr-1" />
+                      <Icons.Mic className="w-4 h-4 mr-1" />
                       Musical
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Abel Pintos - Gira Nacional</h3>
@@ -367,7 +341,7 @@ export default function HomePage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   <div>
                     <div className="inline-flex items-center px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium mb-4">
-                      <Music className="w-4 h-4 mr-1" />
+                      <Icons.Music className="w-4 h-4 mr-1" />
                       Urbano
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Buenos Aires Trap Festival</h3>
@@ -423,7 +397,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-4">
-                      <Award className="w-4 h-4 mr-1" />
+                      <Icons.Award className="w-4 h-4 mr-1" />
                       Cultural
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Fiesta Nacional de la Manzana</h3>
@@ -455,7 +429,7 @@ export default function HomePage() {
               <Link href="/portfolio">
                 <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4">
                   Ver Todos los Casos de Éxito
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <Icons.ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -479,7 +453,7 @@ export default function HomePage() {
                 key={index}
                 title={service.title}
                 description={service.description}
-                icon={service.icon}
+                icon={service.icon as keyof typeof Icons} // Aseguramos el tipo correcto
                 href={service.href}
               />
             ))}
@@ -487,7 +461,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link href="/servicios">
               <Button className="bg-orange-500 hover:bg-orange-600 text-white">
-                Ver Todos los Servicios <ArrowRight className="ml-2 h-4 w-4" />
+                Ver Todos los Servicios <Icons.ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>
@@ -506,7 +480,7 @@ export default function HomePage() {
               </p>
               <Link href="/cotizador">
                 <Button size="lg" className="bg-white text-orange-600 hover:bg-white/90">
-                  <Calculator className="mr-2 h-5 w-5" />
+                  <Icons.Calculator className="mr-2 h-5 w-5" />
                   Ir al Cotizador Virtual
                 </Button>
               </Link>
@@ -663,7 +637,7 @@ export default function HomePage() {
                   size="lg"
                   className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
-                  <Calculator className="mr-2 h-5 w-5" />
+                  <Icons.Calculator className="mr-2 h-5 w-5" />
                   Cotizar Mi Evento Gratis
                 </Button>
               </Link>
@@ -675,7 +649,7 @@ export default function HomePage() {
                   className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
                   Hablar con un Experto
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <Icons.ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -684,7 +658,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
               <div className="text-center">
                 <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Phone className="h-6 w-6 text-orange-500" />
+                  <Icons.Phone className="h-6 w-6 text-orange-500" />
                 </div>
                 <h3 className="font-semibold mb-2">Llamanos</h3>
                 <p className="text-sm opacity-80">Respuesta inmediata</p>
@@ -692,7 +666,7 @@ export default function HomePage() {
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Mail className="h-6 w-6 text-orange-500" />
+                  <Icons.Mail className="h-6 w-6 text-orange-500" />
                 </div>
                 <h3 className="font-semibold mb-2">Email</h3>
                 <p className="text-sm opacity-80">24-48h respuesta</p>
@@ -700,7 +674,7 @@ export default function HomePage() {
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="h-6 w-6 text-orange-500" />
+                  <Icons.MessageCircle className="h-6 w-6 text-orange-500" />
                 </div>
                 <h3 className="font-semibold mb-2">WhatsApp</h3>
                 <p className="text-sm opacity-80">Chat directo</p>

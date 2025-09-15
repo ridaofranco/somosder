@@ -22,6 +22,7 @@ const nextConfig = {
       },
     ],
     unoptimized: true,
+    domains: ['res.cloudinary.com'], // Added this line as per your suggestion
   },
   
   // Performance optimizations
