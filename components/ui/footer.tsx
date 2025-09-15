@@ -88,7 +88,7 @@ export default function Footer() {
             <h3 className="font-medium mb-4 uppercase text-sm tracking-wider">Contacto</h3>
             <ul className="space-y-2">
               <li className="text-muted-foreground text-sm">Buenos Aires, Argentina</li>
-              <li className="text-muted-foreground text-sm">info@der.com.ar</li>
+              <li className="text-muted-foreground text-sm">contacto@somosder.com.ar</li>
               <li className="text-muted-foreground text-sm">+54 9 11 7546-0675</li>
             </ul>
           </div>

@@ -3,18 +3,10 @@ import React from 'react';
 export const TikTok = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    viewBox="0 0 448 512"
+    fill="currentColor"
     {...props}
   >
-    <path d="M21 8V5H10V2H7V8H21Z" />
-    <path d="M12 22V12H9V15H6V12H3V15H0V12H0V8H3V5H6V8H9V12H12V22Z" />
-    <path d="M16 12V15H13V12H16Z" />
+    <path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a8.2 8.2 0 0 0 4.9 7.5c14.7 4.7 30 7 45.3 7A86.2 86.2 0 0 0 329 241.8V171.7c14.7-1.8 29.3-6.7 42.9-12.9V209.9z"/>
   </svg>
 );
