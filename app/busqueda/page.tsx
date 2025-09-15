@@ -22,6 +22,7 @@ export default function SearchPage() {
   useEffect(() => {
     if (!query.trim()) {
       setResults([])
+      setLoading(false) // Asegurarse de que loading sea false si la consulta está vacía
       return
     }
 
@@ -150,7 +151,7 @@ export default function SearchPage() {
 
         {/* Resultados */}
         <div className="md:col-span-3">
-          {loading ? (
+          {loading && query.trim() ? ( // Mostrar loader solo si está cargando Y hay una consulta
             <div className="py-12 text-center text-muted-foreground">
               <Loader2 className="h-8 w-8 mx-auto mb-4 animate-spin" />
               <p>Buscando resultados para &quot;{query}&quot;...</p>
@@ -207,7 +208,7 @@ export default function SearchPage() {
                 ))}
               </div>
             </div>
-          ) : query ? (
+          ) : query.trim() ? ( // Mostrar "No se encontraron resultados" si hay consulta pero no resultados
             <div className="py-12 text-center">
               <div className="mx-auto w-16 h-16 rounded-full bg-muted flex items-center justify-center mb-4">
                 <Search className="h-8 w-8 text-muted-foreground" />
@@ -228,7 +229,7 @@ export default function SearchPage() {
                 </ul>
               </div>
             </div>
-          ) : (
+          ) : ( // Mostrar mensaje inicial si la consulta está vacía
             <div className="py-12 text-center">
               <p className="text-muted-foreground">Ingresa un término de búsqueda para ver resultados</p>
             </div>
