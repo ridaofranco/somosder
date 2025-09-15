@@ -1,8 +1,13 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { searchIndex } from "@/lib/search-index" // Importar el índice de búsqueda para obtener los servicios
+import { TikTok } from "./tiktok" // Importar el nuevo componente de icono de TikTok
 
 export default function Footer() {
+  // Filtrar los servicios del searchIndex
+  const services = searchIndex.filter((item) => item.type === "servicio")
+
   return (
     <footer className="bg-background border-t border-border/40">
       <div className="container px-4 md:px-6 py-12 md:py-16">
@@ -20,60 +25,30 @@ export default function Footer() {
               <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
               </Link>
-              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <Link href="https://www.instagram.com/somosder.ar/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
               </Link>
-              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <Link href="https://twitter.com/somosder" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
               </Link>
-              <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Link href="https://ar.linkedin.com/company/somosderar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+              </Link>
+              <Link href="https://www.tiktok.com/@app:somosder.ar" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <TikTok className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
               </Link>
             </div>
           </div>
           <div>
             <h3 className="font-medium mb-4 uppercase text-sm tracking-wider">Servicios</h3>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/servicios/consultoria-estrategica"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Consultoría Estratégica
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/servicios/produccion-integral"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Producción Integral
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/servicios/tecnologia-eventos"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Tecnología Audiovisual
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/servicios/marketing-experiencial"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Marketing y Activaciones
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/servicios/gestion-deportiva"
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  Gestión Deportiva
-                </Link>
-              </li>
+              {services.map((service) => (
+                <li key={service.id}>
+                  <Link href={service.url} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
@@ -94,11 +69,12 @@ export default function Footer() {
                   Blog
                 </Link>
               </li>
-              <li>
+              {/* Recurso oculto */}
+              {/* <li>
                 <Link href="/recursos" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Recursos
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/contacto" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Contacto
