@@ -22,7 +22,7 @@ import {
   Rocket,
   Mic,
   PieChart,
-  Building, // Añadido: Importa el icono Building
+  Building, // Asegurando que Building esté en su propia línea para la re-evaluación
 } from "lucide-react"
 
 export const metadata: Metadata = {
