@@ -1,3 +1,5 @@
+import { BlogListSkeleton } from "@/components/BlogListSkeleton"
+
 export default function Loading() {
-  return null
+  return <BlogListSkeleton />
 }
