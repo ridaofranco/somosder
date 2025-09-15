@@ -1,4 +1,4 @@
-import { services, featuredProjects, blogPosts, faqs } from "./data"
+import { featuredProjects, blogPosts, faqs } from "./data"
 
 // Tipo para cada elemento del índice de búsqueda
 export type SearchIndexItem = {
@@ -18,7 +18,82 @@ export function createSearchIndex(): SearchIndexItem[] {
   const searchIndex: SearchIndexItem[] = []
 
   // Añadir servicios al índice
-  services.forEach((service) => {
+  const currentServices = [
+    {
+      id: "accesos",
+      slug: "accesos",
+      title: "Control de Accesos Inteligente",
+      description: "Sistema propio con QR únicos, Face ID avanzado y dashboard en tiempo real. De 300 a 5,000+ asistentes.",
+    },
+    {
+      id: "tecnologia-eventos",
+      slug: "tecnologia-eventos",
+      title: "Tecnología Audiovisual",
+      description: "Streaming profesional, equipamiento de sonido e iluminación, producción audiovisual completa.",
+    },
+    {
+      id: "tecnologia",
+      slug: "tecnologia",
+      title: "Aplicaciones Interactivas",
+      description: "Apps personalizadas, sorteos digitales en tiempo real, plataformas de engagement para eventos.",
+    },
+    {
+      id: "produccion-integral",
+      slug: "produccion-integral",
+      title: "Producción Integral",
+      description: "Gestión 360° desde la planificación hasta la ejecución. Coordinación completa de proveedores y logística.",
+    },
+    {
+      id: "gestion-deportiva",
+      slug: "gestion-deportiva",
+      title: "Gestión Deportiva",
+      description: "Organización completa de torneos, competencias y eventos deportivos con logística especializada.",
+    },
+    {
+      id: "logistica",
+      slug: "logistica",
+      title: "Logística y Coordinación",
+      description: "Transporte, setup, coordinación de equipos y gestión operativa completa del evento.",
+    },
+    {
+      id: "marketing-experiencial",
+      slug: "marketing-experiencial",
+      title: "Marketing y Activaciones",
+      description: "Estrategias de marketing, activaciones de marca y experiencias memorables para tu audiencia.",
+    },
+    {
+      id: "fotografia-video",
+      slug: "fotografia-video",
+      title: "Fotografía y Video",
+      description: "Cobertura profesional completa, contenido audiovisual y documentación de tu evento.",
+    },
+    {
+      id: "gastronomia",
+      slug: "gastronomia",
+      title: "Gastronomía y Catering",
+      description: "Food trucks, catering premium, servicios gastronómicos adaptados a tu evento y audiencia.",
+    },
+    {
+      id: "post-evento",
+      slug: "post-evento",
+      title: "Post-Evento y Analytics",
+      description: "Análisis completo de datos, reportes de impacto y métricas de ROI para optimizar futuros eventos.",
+    },
+    {
+      id: "consultoria-estrategica",
+      slug: "consultoria-estrategica",
+      title: "Consultoría Estratégica",
+      description: "Asesoramiento integral desde la conceptualización hasta la ejecución de tu estrategia de eventos.",
+    },
+    {
+      id: "alianzas-estrategicas",
+      slug: "alianzas-estrategicas",
+      title: "Alianzas Estratégicas",
+      description: "Gestión de sponsors, partnerships corporativos y alianzas que potencien el impacto de tu evento.",
+    },
+  ]
+
+  currentServices.forEach((service) => {
     searchIndex.push({
       id: service.id,
       title: service.title,

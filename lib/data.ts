@@ -41,14 +41,6 @@ export interface FAQ {
   category: string
 }
 
-export interface Service {
-  id: string
-  name: string
-  description: string
-  features: string[]
-  icon: string
-}
-
 export const featuredProjects: Project[] = [
   {
     id: "1",
@@ -570,42 +562,6 @@ export const faqs: FAQ[] = [
     answer:
       "Garantizamos la ejecución profesional del evento según lo acordado, con seguros de responsabilidad civil, planes de contingencia y un equipo de soporte 24/7 durante el evento.",
     category: "Garantías",
-  },
-]
-
-export const services: Service[] = [
-  {
-    id: "1",
-    name: "Producción Integral",
-    description: "Gestión completa de eventos desde la conceptualización hasta la ejecución",
-    features: [
-      "Planificación estratégica",
-      "Coordinación logística",
-      "Gestión de proveedores",
-      "Supervisión en tiempo real",
-    ],
-    icon: "settings",
-  },
-  {
-    id: "2",
-    name: "Control de Accesos",
-    description: "Sistemas avanzados de control y gestión de asistentes",
-    features: ["Tecnología QR y Face ID", "Acreditación digital", "Analytics en tiempo real", "Soporte técnico 24/7"],
-    icon: "shield",
-  },
-  {
-    id: "3",
-    name: "Experiencias Digitales",
-    description: "Plataformas y activaciones digitales personalizadas",
-    features: ["Apps de evento", "Gamificación", "Streaming profesional", "Redes sociales"],
-    icon: "monitor",
-  },
-  {
-    id: "4",
-    name: "Eventos Corporativos",
-    description: "Soluciones especializadas para el sector empresarial",
-    features: ["Networking premium", "Conferencias magistrales", "Team building", "ROI medible"],
-    icon: "users",
   },
 ]
 

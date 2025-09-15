@@ -88,15 +88,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Páginas de servicios
   const servicePages = [
-    "consultoria",
-    "produccion",
-    "tecnologia",
-    "marketing",
-    "deportes",
-    "logistica",
     "accesos",
-    "venues",
-    "entradas",
+    "tecnologia-eventos",
+    "produccion-integral",
+    "gestion-deportiva",
+    "logistica",
+    "marketing-experiencial",
+    "fotografia-video",
+    "gastronomia",
+    "post-evento",
+    "consultoria-estrategica",
+    "alianzas-estrategicas",
+    "tecnologia", // for "Aplicaciones Interactivas"
   ].map((service) => ({
     url: `${baseUrl}/servicios/${service}`,
     lastModified: currentDate,
