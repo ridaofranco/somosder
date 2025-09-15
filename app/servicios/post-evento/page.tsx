@@ -22,7 +22,7 @@ import {
   Rocket,
   Mic,
   PieChart,
-  Building as BuildingIcon, // Renombrado Building a BuildingIcon
+  Building2, // Usando Building2 en lugar de Building
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -80,12 +80,6 @@ export default function PostEventoPage() {
       color: "text-red-600",
     },
     {
-      icon: TrendingUp,
-      title: "Optimización Continua",
-      description: "Identificación de mejoras, benchmarking y desarrollo de estrategias para futuros eventos",
-      color: "text-orange-500",
-    },
-    {
       icon: Award,
       title: "Certificación y Reconocimientos",
       description: "Gestión de certificados, reconocimientos especiales y documentación oficial",
@@ -107,7 +101,7 @@ export default function PostEventoPage() {
       examples: ["IDA 2025", "Análisis de satisfacción de participantes", "Medición de networking generado"],
     },
     {
-      icon: BuildingIcon, // Usando BuildingIcon
+      icon: Building2, // Usando Building2
       title: "Eventos Corporativos",
       description: "Análisis estratégico para objetivos empresariales",
       examples: ["Eventos de lanzamiento", "ROI y generación de oportunidades", "Insights para estrategias futuras"],
