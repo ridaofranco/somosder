@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link"
 import {
   ArrowRight,
@@ -13,9 +15,9 @@ import {
   Ticket,
   Trophy,
   Utensils,
-  ChefHat, // Nuevo icono
-  Truck,    // Nuevo icono
-  Zap,      // Nuevo icono
+  ChefHat,
+  Truck,
+  Zap,
 } from "lucide-react"
 
 interface ServiceCardProps {
@@ -38,9 +40,9 @@ const iconMap = {
   UtensilsIcon: Utensils,
   BarChartIcon: BarChart,
   HandshakeIcon: Handshake,
-  ChefHatIcon: ChefHat, // Mapeo del nuevo icono
-  TruckIcon: Truck,      // Mapeo del nuevo icono
-  ZapIcon: Zap,          // Mapeo del nuevo icono
+  ChefHatIcon: ChefHat,
+  TruckIcon: Truck,
+  ZapIcon: Zap,
 }
 
 export default function ServiceCard({ title, description, icon, href }: ServiceCardProps) {
