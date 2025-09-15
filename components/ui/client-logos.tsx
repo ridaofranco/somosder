@@ -1,12 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { useTheme } from "@/components/theme-provider"
 
 export default function ClientLogos() {
-  const { resolvedTheme } = useTheme()
-  const isDark = resolvedTheme === "dark"
-
   // All client logos - keeping the existing Cloudinary URLs
   const logos = [
     "https://res.cloudinary.com/dtuh208kh/image/upload/v1747333505/image-2_wjdkdy_e_background_removal_f_png_gwxc5f.png",
