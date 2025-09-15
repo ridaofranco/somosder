@@ -137,6 +137,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "neuromarketing-eventos",
     "tecnologia-rfid-eventos",
     "seleccion-venues",
+    "blog-post-skeleton-test", // Nuevo artículo de prueba
   ].map((post) => ({
     url: `${baseUrl}/blog/${post}`,
     lastModified: currentDate,
