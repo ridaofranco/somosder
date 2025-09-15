@@ -13,6 +13,9 @@ import {
   Ticket,
   Trophy,
   Utensils,
+  ChefHat, // Nuevo icono
+  Truck,    // Nuevo icono
+  Zap,      // Nuevo icono
 } from "lucide-react"
 
 interface ServiceCardProps {
@@ -35,6 +38,9 @@ const iconMap = {
   UtensilsIcon: Utensils,
   BarChartIcon: BarChart,
   HandshakeIcon: Handshake,
+  ChefHatIcon: ChefHat, // Mapeo del nuevo icono
+  TruckIcon: Truck,      // Mapeo del nuevo icono
+  ZapIcon: Zap,          // Mapeo del nuevo icono
 }
 
 export default function ServiceCard({ title, description, icon, href }: ServiceCardProps) {
