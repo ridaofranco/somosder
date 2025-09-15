@@ -22,7 +22,7 @@ import {
   Rocket,
   Mic,
   PieChart,
-  Building, // Agregado Building a la importación principal
+  Building as BuildingIcon, // Renombrado Building a BuildingIcon
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -107,7 +107,7 @@ export default function PostEventoPage() {
       examples: ["IDA 2025", "Análisis de satisfacción de participantes", "Medición de networking generado"],
     },
     {
-      icon: Building,
+      icon: BuildingIcon, // Usando BuildingIcon
       title: "Eventos Corporativos",
       description: "Análisis estratégico para objetivos empresariales",
       examples: ["Eventos de lanzamiento", "ROI y generación de oportunidades", "Insights para estrategias futuras"],
