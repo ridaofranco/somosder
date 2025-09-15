@@ -1,151 +1,13 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Calendar, User, Search } from "lucide-react"
+import { Calendar, User, Search, Clock } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { useSearchParams } from "next/navigation"
 import { getBlogCardImageUrl } from "@/lib/unsplash"
-
-// Datos de ejemplo de blogs
-const allBlogs = [
-  {
-    id: "tendencias-eventos-2025",
-    title: "Tendencias en Eventos para 2025: El Futuro de las Experiencias",
-    excerpt:
-      "Descubre las principales tendencias que transformarán la industria de eventos en 2025, desde tecnología inmersiva hasta sostenibilidad.",
-    date: "15 Dic 2024",
-    author: "María González",
-    categories: ["Tendencias", "Tecnología"],
-    readTime: "8 min",
-  },
-  {
-    id: "tecnologia-eventos-hibridos",
-    title: "Tecnología para Eventos Híbridos: Guía Completa",
-    excerpt: "Todo lo que necesitas saber sobre las herramientas y plataformas para crear eventos híbridos exitosos.",
-    date: "10 Dic 2024",
-    author: "Carlos Rodríguez",
-    categories: ["Tecnología", "Eventos Híbridos"],
-    readTime: "10 min",
-  },
-  {
-    id: "sostenibilidad-eventos",
-    title: "Eventos Sostenibles: Cómo Reducir el Impacto Ambiental",
-    excerpt: "Estrategias prácticas para organizar eventos más ecológicos y responsables con el medio ambiente.",
-    date: "5 Dic 2024",
-    author: "Ana Martínez",
-    categories: ["Sostenibilidad", "Mejores Prácticas"],
-    readTime: "7 min",
-  },
-  {
-    id: "metaverso-eventos",
-    title: "El Metaverso y los Eventos Virtuales: Nuevas Fronteras",
-    excerpt: "Explora cómo el metaverso está revolucionando la forma en que experimentamos los eventos virtuales.",
-    date: "28 Nov 2024",
-    author: "Luis Fernández",
-    categories: ["Tecnología", "Innovación"],
-    readTime: "9 min",
-  },
-  {
-    id: "roi-eventos-corporativos",
-    title: "Medición del ROI en Eventos Corporativos",
-    excerpt: "Aprende a medir y maximizar el retorno de inversión en tus eventos corporativos con métricas clave.",
-    date: "20 Nov 2024",
-    author: "Patricia López",
-    categories: ["Negocios", "Métricas"],
-    readTime: "12 min",
-  },
-  {
-    id: "gamificacion-eventos",
-    title: "Gamificación en Eventos: Engagement Garantizado",
-    excerpt: "Descubre cómo implementar estrategias de gamificación para aumentar la participación en tus eventos.",
-    date: "15 Nov 2024",
-    author: "Roberto Silva",
-    categories: ["Engagement", "Innovación"],
-    readTime: "6 min",
-  },
-  {
-    id: "seguridad-eventos-masivos",
-    title: "Protocolos de Seguridad para Eventos Masivos",
-    excerpt: "Guía completa sobre las mejores prácticas de seguridad para garantizar eventos seguros y exitosos.",
-    date: "10 Nov 2024",
-    author: "Elena Vargas",
-    categories: ["Seguridad", "Logística"],
-    readTime: "11 min",
-  },
-  {
-    id: "neuromarketing-eventos",
-    title: "Neuromarketing Aplicado a Eventos",
-    excerpt: "Cómo utilizar principios de neuromarketing para crear experiencias memorables en eventos.",
-    date: "5 Nov 2024",
-    author: "Diego Morales",
-    categories: ["Marketing", "Psicología"],
-    readTime: "8 min",
-  },
-  {
-    id: "tecnologia-rfid-eventos",
-    title: "RFID y NFC: Tecnología para Control de Accesos",
-    excerpt: "Implementación de tecnología RFID y NFC para mejorar la experiencia y seguridad en eventos.",
-    date: "1 Nov 2024",
-    author: "Sofía Ramírez",
-    categories: ["Tecnología", "Accesos"],
-    readTime: "7 min",
-  },
-  {
-    id: "seleccion-venues",
-    title: "Cómo Seleccionar el Venue Perfecto para tu Evento",
-    excerpt: "Factores clave a considerar al elegir la locación ideal para diferentes tipos de eventos.",
-    date: "25 Oct 2024",
-    author: "Miguel Torres",
-    categories: ["Venues", "Planificación"],
-    readTime: "9 min",
-  },
-  {
-    id: "inteligencia-artificial-eventos",
-    title: "IA en la Gestión de Eventos: Aplicaciones Prácticas",
-    excerpt: "Descubre cómo la inteligencia artificial está transformando la planificación y gestión de eventos.",
-    date: "20 Oct 2024",
-    author: "Laura Jiménez",
-    categories: ["Tecnología", "IA"],
-    readTime: "10 min",
-  },
-  {
-    id: "eventos-inclusivos-accesibles",
-    title: "Diseñando Eventos Inclusivos y Accesibles",
-    excerpt: "Guía para crear eventos que sean accesibles para todas las personas, sin importar sus capacidades.",
-    date: "15 Oct 2024",
-    author: "Carmen Díaz",
-    categories: ["Inclusión", "Accesibilidad"],
-    readTime: "8 min",
-  },
-  {
-    id: "networking-efectivo-eventos",
-    title: "Estrategias de Networking Efectivo en Eventos",
-    excerpt: "Maximiza las oportunidades de networking en tus eventos con estas estrategias probadas.",
-    date: "10 Oct 2024",
-    author: "Fernando Ruiz",
-    categories: ["Networking", "Estrategia"],
-    readTime: "6 min",
-  },
-  {
-    id: "streaming-profesional-eventos",
-    title: "Streaming Profesional para Eventos: Guía Técnica",
-    excerpt: "Todo lo que necesitas saber para transmitir eventos en vivo con calidad profesional.",
-    date: "5 Oct 2024",
-    author: "Andrea Castillo",
-    categories: ["Tecnología", "Streaming"],
-    readTime: "11 min",
-  },
-  {
-    id: "eventos-post-pandemia",
-    title: "Eventos en la Era Post-Pandemia: Nuevos Paradigmas",
-    excerpt: "Cómo la pandemia transformó permanentemente la industria de eventos y qué esperar en el futuro.",
-    date: "1 Oct 2024",
-    author: "José Mendoza",
-    categories: ["Tendencias", "Análisis"],
-    readTime: "9 min",
-  },
-]
+import { blogs as allBlogs } from "@/lib/blog-data" // Importar desde la fuente central
+import { ReadingTime } from "@/components/reading-time"
 
 // Obtener todas las categorías únicas
 const allCategories = Array.from(new Set(allBlogs.flatMap((blog) => blog.categories))).sort()
@@ -336,7 +198,7 @@ export default function BlogArchivoClientPage() {
                             <User className="h-4 w-4 mr-1" />
                             {blog.author}
                           </span>
-                          <span>{blog.readTime} de lectura</span>
+                          <ReadingTime content={blog.content || ""} />
                         </div>
 
                         <Link href={`/blog/${blog.id}`} className="text-orange-500 hover:text-orange-600 font-medium">
