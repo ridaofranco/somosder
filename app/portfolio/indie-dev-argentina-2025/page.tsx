@@ -41,7 +41,7 @@ export const metadata: Metadata = {
       "Control integral para el evento gaming más importante de desarrolladores independientes: 1,400+ asistentes, 5 puntos de control y tecnología DER propia.",
     images: [
       {
-        url: "https://res.cloudinary.com/dtuh208kh/image/upload/v1234567890/indie-dev-argentina-2025.jpg",
+        url: "https://res.cloudinary.com/dtuh208kh/image/upload/v1756484259/IMG-20250720-WA0054_pptc6k.jpg",
         width: 1200,
         height: 630,
         alt: "Indie Dev Argentina 2025 - Control de accesos gaming",
