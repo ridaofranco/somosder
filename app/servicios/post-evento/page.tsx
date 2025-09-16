@@ -15,6 +15,7 @@ import {
   ArrowRight,
   Play,
   FileText,
+  Building,
   Zap,
   TrendingUp,
   Globe,
