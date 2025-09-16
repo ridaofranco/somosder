@@ -33,7 +33,7 @@ jobs:
         run: pnpm exec tsc --noEmit
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm lint -- --no-error-on-unmatched-pattern
 
       - name: Build
         run: pnpm build
