@@ -21,7 +21,8 @@ import {
   Heart,
   Rocket,
   Mic,
-  PieChart,
+  PieChart
+  Building2,
 } from "lucide-react"
 
 export const metadata: Metadata = {
