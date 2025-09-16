@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="font-medium mb-4 uppercase text-sm tracking-wider">Servicios</h3>
-            <ul className="space-y-2">
+            {/* <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.id}>
                   <Link href={service.url} className="text-muted-foreground hover:text-primary transition-colors text-sm">
@@ -47,7 +47,7 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
           <div>
             <h3 className="font-medium mb-4 uppercase text-sm tracking-wider">Empresa</h3>

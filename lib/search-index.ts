@@ -93,18 +93,6 @@ export function createSearchIndex(): SearchIndexItem[] {
     },
   ]
 
-  currentServices.forEach((service) => {
-    searchIndex.push({
-      id: service.id,
-      title: service.title,
-      content: service.description,
-      url: `/servicios/${service.slug}`,
-      type: "servicio",
-      tags: [service.title, "servicio", ...service.description.split(" ")],
-      image: `/placeholder.svg?height=200&width=200&text=${encodeURIComponent(service.title)}`,
-    })
-  })
-
   // Añadir proyectos al índice
   featuredProjects.forEach((project) => {
     searchIndex.push({
