@@ -88,18 +88,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Páginas de servicios
   const servicePages = [
-    "accesos",
-    "tecnologia-eventos",
-    "produccion-integral",
-    "gestion-deportiva",
+    "consultoria",
+    "produccion",
+    "tecnologia",
+    "marketing",
+    "deportes",
     "logistica",
-    "marketing-experiencial",
-    "fotografia-video",
-    "gastronomia",
-    "post-evento",
-    "consultoria-estrategica",
-    "alianzas-estrategicas",
-    "tecnologia", // for "Aplicaciones Interactivas"
+    "accesos",
+    "venues",
+    "entradas",
   ].map((service) => ({
     url: `${baseUrl}/servicios/${service}`,
     lastModified: currentDate,
@@ -137,7 +134,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "neuromarketing-eventos",
     "tecnologia-rfid-eventos",
     "seleccion-venues",
-    "blog-post-skeleton-test", // Nuevo artículo de prueba
   ].map((post) => ({
     url: `${baseUrl}/blog/${post}`,
     lastModified: currentDate,

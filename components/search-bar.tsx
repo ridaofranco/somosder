@@ -24,7 +24,6 @@ export function SearchBar() {
     if (!query.trim()) {
       setResults([])
       setSuggestions([])
-      setLoading(false); // Asegurarse de que loading sea false si la consulta está vacía
       return
     }
 
@@ -32,21 +31,14 @@ export function SearchBar() {
 
     // Simular un pequeño retraso para evitar demasiadas búsquedas mientras se escribe
     const timer = setTimeout(() => {
-      try {
-        // Obtener sugerencias
-        const newSuggestions = getSuggestions(query)
-        setSuggestions(newSuggestions)
+      // Obtener sugerencias
+      const newSuggestions = getSuggestions(query)
+      setSuggestions(newSuggestions)
 
-        // Realizar la búsqueda
-        const searchResults = searchInIndex(query, 8)
-        setResults(searchResults)
-      } catch (error) {
-        console.error("Error durante la búsqueda en SearchBar:", error);
-        setResults([]);
-        setSuggestions([]);
-      } finally {
-        setLoading(false);
-      }
+      // Realizar la búsqueda
+      const searchResults = searchInIndex(query, 8)
+      setResults(searchResults)
+      setLoading(false)
     }, 300)
 
     return () => clearTimeout(timer)

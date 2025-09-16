@@ -22,7 +22,11 @@ const nextConfig = {
       },
     ],
     unoptimized: true,
-    domains: ['res.cloudinary.com'],
+  },
+  
+  // Performance optimizations
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
 
   // Compression and caching
@@ -87,4 +91,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+export default nextConfig

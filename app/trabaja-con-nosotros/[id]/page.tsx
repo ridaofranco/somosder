@@ -349,10 +349,10 @@ export default function JobDetailPage({ params }: JobDetailParams) {
                   <h3 className="text-xl font-bold mb-4">¿Preguntas?</h3>
                   <p className="mb-4">Si tienes dudas sobre esta posición o el proceso de selección, contáctanos:</p>
                   <p className="mb-2">
-                    <strong>Email:</strong> contacto@somosder.com.ar
+                    <strong>Email:</strong> careers@der.com.ar
                   </p>
                   <p>
-                    <strong>Teléfono:</strong> +54 9 11 7154-0675
+                    <strong>Teléfono:</strong> +54 11 1234-5678
                   </p>
                 </div>
               </div>

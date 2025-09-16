@@ -205,7 +205,7 @@ export default function PrivacyPage() {
                   </div>
                   <div className="flex items-center">
                     <Phone className="w-4 h-4 text-orange-500 mr-2" />
-                    <span>+54 9 11 7154-0675</span>
+                    <span>+54 9 11 1234-5678</span>
                   </div>
                 </div>
               </CardContent>

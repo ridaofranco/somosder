@@ -25,7 +25,6 @@ export function SearchDialog() {
     if (!query.trim() || !open) {
       setResults([])
       setSuggestions([])
-      setLoading(false); // Asegurarse de que loading sea false si la consulta está vacía o el diálogo está cerrado
       return
     }
 
@@ -33,25 +32,18 @@ export function SearchDialog() {
 
     // Simular un pequeño retraso para evitar demasiadas búsquedas mientras se escribe
     const timer = setTimeout(() => {
-      try {
-        // Obtener sugerencias si la consulta es corta
-        if (query.length < 4) {
-          const newSuggestions = getSuggestions(query, 6)
-          setSuggestions(newSuggestions)
-        } else {
-          setSuggestions([])
-        }
-
-        // Realizar la búsqueda
-        const searchResults = searchInIndex(query, 15)
-        setResults(searchResults)
-      } catch (error) {
-        console.error("Error durante la búsqueda en SearchDialog:", error);
-        setResults([]);
-        setSuggestions([]);
-      } finally {
-        setLoading(false);
+      // Obtener sugerencias si la consulta es corta
+      if (query.length < 4) {
+        const newSuggestions = getSuggestions(query, 6)
+        setSuggestions(newSuggestions)
+      } else {
+        setSuggestions([])
       }
+
+      // Realizar la búsqueda
+      const searchResults = searchInIndex(query, 15)
+      setResults(searchResults)
+      setLoading(false)
     }, 300)
 
     return () => clearTimeout(timer)

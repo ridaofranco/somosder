@@ -1,25 +1,23 @@
 "use client"
-
-import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-
-import { Button } from "@/components/ui/button"
+import { useTheme } from "@/components/theme-provider"
+import { useEffect, useState } from "react"
 
 export function ThemeToggle() {
-  const { setTheme, resolvedTheme } = useTheme()
-  const [mounted, setMounted] = React.useState(false)
+  const { theme, setTheme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
-  // useEffect solo se ejecuta en el cliente, por lo que ahora podemos mostrar la UI de forma segura.
-  React.useEffect(() => {
+  // Prevent hydration mismatch
+  useEffect(() => {
     setMounted(true)
   }, [])
 
   if (!mounted) {
-    // Renderizar un placeholder en el servidor para evitar cambios de diseño.
-    return <div className="w-9 h-9 rounded-full" />
+    return <div className="w-9 h-9" />
   }
 
+  return null // Temporalmente oculto por solicitud del cliente
+
+  /* Código original comentado para restaurar cuando sea necesario
   return (
     <Button
       variant="ghost"
@@ -33,4 +31,5 @@ export function ThemeToggle() {
       <span className="sr-only">{resolvedTheme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}</span>
     </Button>
   )
+  */
 }
