@@ -55,7 +55,7 @@
       <p class="lead">{{ t.cover_lead }}</p>
     </div>
     <div class="bottom">
-      <div class="se-stripe"><i></i><i></i><i></i></div>
+      <div style="width:22mm;height:2px;background:var(--orange)"></div>
       <div class="prep">{{ t.prepared }}</div>
       <div class="small muted" style="margin-top:1mm">{{ t.date }} · somosder.ar</div>
     </div>
@@ -106,7 +106,7 @@
   <h2 class="display">{{ t.services_title|safe }}</h2>
   <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:3mm;height:52mm;margin:3mm 0 6mm">
     <div class="ph"><img src="../assets/img/feelgin-escenario.jpg" alt=""></div>
-    <div class="ph"><img src="../assets/img/rd-ceviche.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/expoautos-gastronomia.jpg" alt=""></div>
     <div class="ph"><img src="../assets/img/campusparty-credencial.jpg" alt="" style="object-position:50% 40%"></div>
   </div>
   <div class="svc">
@@ -131,7 +131,40 @@
   <div class="folio"><span>Somos DER</span><span>05</span></div>
 </section>
 
-<!-- 6 · REP. DOMINICANA -->
+<!-- 6 · ASTURIAS -->
+{% if ast_photos|length >= 3 %}
+<section class="page">
+  <div class="kicker">{{ t.ast_kicker }}</div>
+  <h2 class="display" style="font-size:20pt">{{ t.ast_title|safe }}</h2>
+  <p class="small" style="color:var(--orange);font-weight:600;letter-spacing:.04em;margin:-2mm 0 4mm">{{ t.ast_meta }}</p>
+  <div class="ph" style="height:92mm"><img src="../assets/img/{{ ast_photos[0] }}" alt=""></div>
+  <div class="grid g2" style="gap:3mm;height:52mm;margin-top:3mm">
+    <div class="ph"><img src="../assets/img/{{ ast_photos[1] }}" alt=""></div>
+    <div class="ph"><img src="../assets/img/{{ ast_photos[2] }}" alt=""></div>
+  </div>
+  <div class="grid g2" style="gap:8mm;margin-top:5mm">
+    <div><p>{{ t.ast_lead }}</p><div class="stats" style="margin:4mm 0 0">{% for v,l in t.ast_stats %}<div class="stat"><div class="v" style="font-size:14pt">{{ v }}</div><div class="l">{{ l }}</div></div>{% endfor %}</div></div>
+    <ul class="dots">{% for b in t.ast_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+  </div>
+  <div class="folio"><span>Somos DER</span><span>06</span></div>
+</section>
+{% else %}
+<section class="page dark">
+  <div class="kicker">{{ t.ast_kicker }}</div>
+  <h2 class="display" style="font-size:26pt;margin-top:6mm">{{ t.ast_title|safe }}</h2>
+  <p class="small" style="color:var(--orange);font-weight:600;letter-spacing:.04em;margin-bottom:8mm">{{ t.ast_meta }}</p>
+  <p class="lead" style="max-width:150mm;color:#ddd">{{ t.ast_lead }}</p>
+  <div class="grid g3" style="margin:14mm 0;gap:6mm">{% for v,l in t.ast_stats %}<div style="border-top:2px solid var(--orange);padding-top:4mm"><div style="font-family:Michroma;font-size:34pt;line-height:1">{{ v }}</div><div class="muted" style="font-size:10pt;margin-top:2mm">{{ l }}</div></div>{% endfor %}</div>
+  <div class="grid g2" style="gap:10mm;align-items:start">
+    <ul class="dots">{% for b in t.ast_bullets %}<li style="color:#ddd">{{ b }}</li>{% endfor %}</ul>
+    <p class="quote" style="font-size:12pt;color:#fff">{{ t.ast_note }}</p>
+  </div>
+  <div style="position:absolute;left:16mm;bottom:22mm;background:#161616;border-radius:2mm;width:60mm;height:22mm;display:flex;align-items:center;justify-content:center"><img src="../assets/img/logos/asturias.png" style="max-height:85%;max-width:90%" alt="Principado de Asturias"></div>
+  <div class="folio"><span>Somos DER</span><span>06</span></div>
+</section>
+{% endif %}
+
+<!-- 7 · REP. DOMINICANA -->
 <section class="page grey">
   <div class="kicker">{{ t.rd_kicker }}</div>
   <h2 class="display">{{ t.rd_title|safe }}</h2>
@@ -146,10 +179,10 @@
     <ul class="dots">{% for b in t.rd_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
     <p class="quote" style="font-size:11.5pt">{{ t.rd_note }}</p>
   </div>
-  <div class="folio"><span>Somos DER</span><span>06</span></div>
+  <div class="folio"><span>Somos DER</span><span>07</span></div>
 </section>
 
-<!-- 7 · MAN CITY + CAMONDO -->
+<!-- 8 · MAN CITY + CAMONDO -->
 <section class="page">
   <div class="kicker">{{ t.mc_kicker }}</div>
   <h2 class="display" style="font-size:19pt">{{ t.mc_title|safe }}</h2>
@@ -173,10 +206,10 @@
   <div style="background:var(--orange);border-radius:3mm;padding:6mm 7mm;margin-top:8mm;display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm">
     {% for v,l in t.proto_stats %}<div><div style="font-family:Michroma;font-size:15pt">{{ v }}</div><div style="font-size:9pt;font-weight:500">{{ l }}</div></div>{% endfor %}
   </div>
-  <div class="folio"><span>Somos DER</span><span>07</span></div>
+  <div class="folio"><span>Somos DER</span><span>08</span></div>
 </section>
 
-<!-- 8 · DIDI + BEPANTHOL -->
+<!-- 9 · DIDI + BEPANTHOL -->
 <section class="page grey">
   <div class="kicker">{{ t.didi_kicker }}</div>
   <h2 class="display" style="font-size:19pt">{{ t.didi_title|safe }}</h2>
@@ -202,10 +235,10 @@
       <div class="ph"><img src="../assets/img/bepanthol-stand.jpg" alt=""></div>
     </div>
   </div>
-  <div class="folio"><span>Somos DER</span><span>08</span></div>
+  <div class="folio"><span>Somos DER</span><span>09</span></div>
 </section>
 
-<!-- 9 · TRAYECTORIA + CLIENTES -->
+<!-- 10 · TRAYECTORIA + CLIENTES -->
 <section class="page more">
   <div class="kicker">{{ t.more_kicker }}</div>
   <h2 class="display">{{ t.more_title|safe }}</h2>
@@ -215,63 +248,54 @@
   <div class="kicker" style="margin-top:10mm">{{ t.clients_title }}</div>
   <div class="logos">{% for l in logos %}<div><img src="../assets/img/logos/{{ l }}.png" alt=""></div>{% endfor %}</div>
   <p class="small muted" style="margin-top:4mm;letter-spacing:.18em;text-transform:uppercase;font-weight:600">{{ t.clients_foot }}</p>
-  <div class="folio"><span>Somos DER</span><span>09</span></div>
-</section>
-
-<!-- 10 · PROPUESTA -->
-<section class="page grey fmt">
-  <div class="kicker">{{ t.prop_kicker }}</div>
-  <h2 class="display">{{ t.prop_title|safe }}</h2>
-  <p class="lead muted" style="max-width:165mm;margin-bottom:7mm">{{ t.prop_lead }}</p>
-  <div class="grid g2" style="gap:4mm">
-    {% for h,w,p in t.formats %}<div class="card"><div class="when">{{ w }}</div><h3>{{ h }}</h3><p class="muted">{{ p }}</p></div>{% endfor %}
-  </div>
-  <div class="grid g3" style="gap:3mm;height:45mm;margin-top:6mm">
-    <div class="ph"><img src="../assets/img/didi-branding-salon.jpg" alt="" style="object-position:50% 70%"></div>
-    <div class="ph"><img src="../assets/img/didi-catering.jpg" alt=""></div>
-    <div class="ph"><img src="../assets/img/streaming.jpg" alt=""></div>
-  </div>
   <div class="folio"><span>Somos DER</span><span>10</span></div>
 </section>
 
-<!-- 11 · COMPROMISOS + PRÓXIMOS PASOS -->
-<section class="page">
-  <div class="kicker">{{ t.comm_kicker }}</div>
-  <h2 class="display" style="font-size:19pt">{{ t.comm_title|safe }}</h2>
-  <div class="grid g2" style="gap:6mm 8mm;margin-top:5mm">
-    {% for h,p in t.commitments %}<div class="bar"><h3>{{ h }}</h3><p>{{ p }}</p></div>{% endfor %}
+<!-- 11 · FORMATOS + COMPROMISOS -->
+<section class="page grey fmt">
+  <div class="kicker">{{ t.prop_kicker }}</div>
+  <h2 class="display" style="font-size:19pt">{{ t.prop_title|safe }}</h2>
+  <p class="muted" style="max-width:165mm;margin-bottom:5mm">{{ t.prop_lead }}</p>
+  <div class="grid g3" style="gap:3mm">
+    {% for h,w,p in t.formats %}<div class="card" style="padding:4mm"><div class="when">{{ w }}</div><h3 style="font-size:10.5pt">{{ h }}</h3><p class="muted" style="font-size:8.6pt">{{ p }}</p></div>{% endfor %}
   </div>
-  <div class="grid g3" style="gap:3mm;height:48mm;margin-top:9mm">
-    <div class="ph"><img src="../assets/img/campusparty-credencial.jpg" alt="" style="object-position:50% 40%"></div>
-    <div class="ph"><img src="../assets/img/expoautos-gastronomia.jpg" alt=""></div>
+  <div class="grid g3" style="gap:3mm;height:42mm;margin:5mm 0 7mm">
+    <div class="ph"><img src="../assets/img/didi-catering.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/streaming.jpg" alt=""></div>
     <div class="ph"><img src="../assets/img/bepanthol-producto.jpg" alt="" style="object-position:50% 35%"></div>
   </div>
-  <div style="background:var(--ink);color:#fff;border-radius:3mm;padding:8mm;margin-top:8mm">
-    <div class="kicker">{{ t.next_title }}</div>
-    <div class="grid g3" style="gap:6mm">
-      {% for h,p in t.next %}<div><div style="font-family:Michroma;color:var(--orange);font-size:18pt">0{{ loop.index }}</div><h3 style="margin-top:2mm">{{ h }}</h3><p style="color:#bdbdbd;font-size:9.5pt">{{ p }}</p></div>{% endfor %}
-    </div>
+  <div class="kicker">{{ t.comm_kicker }}</div>
+  <h2 class="display" style="font-size:15pt;margin-bottom:4mm">{{ t.comm_title|safe }}</h2>
+  <div class="grid g3" style="gap:4mm 6mm">
+    {% for h,p in t.commitments %}<div class="bar"><h3>{{ h }}</h3><p style="font-size:8.4pt">{{ p }}</p></div>{% endfor %}
   </div>
   <div class="folio"><span>Somos DER</span><span>11</span></div>
 </section>
 
+
+
 <!-- 12 · CONTRATAPA -->
-<section class="page dark bleed">
-  <div style="position:absolute;inset:0 0 50% 0"><img src="../assets/img/staff-equipo.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 55%;opacity:.85"></div>
-  <div style="position:absolute;inset:0 0 50% 0;background:linear-gradient(180deg,rgba(11,11,11,0) 40%,var(--ink) 100%)"></div>
-  <div style="position:absolute;left:16mm;right:16mm;top:52%">
-    <img class="logo" src="../assets/img/der-logo-white.png" alt="DER" style="height:10mm;margin-bottom:7mm">
-    <h2 class="display" style="font-size:24pt">{% for l in t.back_title %}{{ l|safe }}<br>{% endfor %}</h2>
-    <div style="margin-top:6mm">
-      <div class="contact-row"><span>{{ t.lbl_whatsapp }}</span><span>{{ c.whatsapp }}</span></div>
-      <div class="contact-row"><span>{{ t.lbl_mail }}</span><span>{{ c.mail }}</span></div>
-      <div class="contact-row"><span>{{ t.lbl_web }}</span><span>{{ c.web }}</span></div>
-      <div class="contact-row"><span>{{ t.lbl_office }}</span><span>{{ c.address }}</span></div>
+<section class="page dark">
+  <div style="background:var(--orange);color:var(--ink);border-radius:3mm;padding:8mm">
+    <div class="kicker" style="color:var(--ink)">{{ t.next_title }}</div>
+    <div class="grid g3" style="gap:6mm">
+      {% for h,p in t.next %}<div><div style="font-family:Michroma;font-size:20pt">0{{ loop.index }}</div><h3 style="margin-top:2mm">{{ h }}</h3><p style="font-size:9.5pt">{{ p }}</p></div>{% endfor %}
     </div>
-    <div class="qrs" style="margin-top:8mm">
-      <div class="item"><div class="qr"><img src="../assets/img/qr/portfolio.svg" alt=""></div>{{ t.qr_web }}</div>
-      <div class="item"><div class="qr"><img src="../assets/img/qr/pase.svg" alt=""></div>{{ t.qr_pase }}</div>
-      <div class="item"><div class="qr"><img src="../assets/img/qr/whatsapp.svg" alt=""></div>{{ t.qr_wa }}</div>
+  </div>
+  <div style="position:absolute;left:16mm;right:16mm;bottom:24mm">
+    <img class="logo" src="../assets/img/der-logo-white.png" alt="DER" style="height:12mm;margin-bottom:8mm">
+    <h2 class="display" style="font-size:26pt">{% for l in t.back_title %}{{ l|safe }}<br>{% endfor %}</h2>
+    <div class="grid" style="grid-template-columns:1fr auto;gap:8mm;align-items:end;margin-top:8mm">
+      <div>
+        <div class="contact-row"><span>{{ t.lbl_whatsapp }}</span><span>{{ c.whatsapp }}</span></div>
+        <div class="contact-row"><span>{{ t.lbl_mail }}</span><span>{{ c.mail }}</span></div>
+        <div class="contact-row"><span>{{ t.lbl_web }}</span><span>{{ c.web }}</span></div>
+        <div class="contact-row"><span>{{ t.lbl_office }}</span><span>{{ c.address }}</span></div>
+      </div>
+      <div class="qrs">
+        <div class="item"><div class="qr"><img src="../assets/img/qr/portfolio.svg" alt=""></div>{{ t.qr_web }}</div>
+        <div class="item"><div class="qr"><img src="../assets/img/qr/whatsapp.svg" alt=""></div>{{ t.qr_wa }}</div>
+      </div>
     </div>
   </div>
   <div class="folio" style="color:#777"><span>{{ t.back_tack }}</span><span>somosder.ar</span></div>

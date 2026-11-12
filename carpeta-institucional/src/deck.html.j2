@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DER · Embajada de Suecia</title>
+<title>DER · Portfolio institucional</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -94,7 +94,7 @@ body.idle #ui { opacity:0; pointer-events:none; }
 
 <!-- 1 COVER -->
 <section class="slide on" data-t="Cover">
-  <div class="ph kb" style="position:absolute;inset:0 0 0 45%;border-radius:0"><img src="img/mancity-trofeos.jpg" alt="Treble Trophy Tour, Buenos Aires"></div>
+  <div class="ph kb" style="position:absolute;inset:0 0 0 45%;border-radius:0"><img src="img/abel-credencial.jpg" alt="Credencial de staff DER" style="object-position:50% 40%"></div>
   <div style="position:absolute;inset:0 0 0 45%;background:linear-gradient(90deg,var(--k) 0%,rgba(11,11,11,.2) 40%,rgba(11,11,11,0) 100%)"></div>
   <div style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;width:58%">
     <img class="logo a" src="img/der-logo-white.png" alt="DER" style="height:70px">
@@ -102,8 +102,8 @@ body.idle #ui { opacity:0; pointer-events:none; }
       <div class="kicker a d1">{{ bi('cover_kicker') }}</div>
       <h1 class="display a d2">{% for i in range(3) %}{{ bit(es.cover_title[i], en.cover_title[i]) }}<br>{% endfor %}</h1>
       <p class="lead muted a d3" style="margin-top:30px;max-width:900px">{{ bi('cover_lead') }}</p>
-      <div class="a d4" style="margin-top:60px"><div class="se"><i></i><i></i><i></i></div>
-        <p style="font-size:19px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;margin-top:16px">{{ bi('prepared') }}</p></div>
+      <div class="a d4" style="margin-top:60px"><div style="width:120px;height:3px;background:var(--o)"></div>
+        <p style="font-size:19px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;margin-top:16px">somosder.ar · {{ bi('date') }}</p></div>
     </div>
   </div>
 </section>
@@ -132,7 +132,7 @@ body.idle #ui { opacity:0; pointer-events:none; }
     {% for i in range(4) %}<div class="card a d{{ i+2 }}" style="padding:40px"><div class="num">0{{ i+1 }}</div><h3 style="font-size:32px">{{ bit(es.intro_why[i][0], en.intro_why[i][0]) }}</h3><p style="font-size:23px">{{ bit(es.intro_why[i][1], en.intro_why[i][1]) }}</p></div>{% endfor %}
   </div>
   <div class="grid a d6" style="grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px">
-    {% for l in ['turismo-rd','asturias','incaa','beyond90','mancity'] %}<div style="background:#161616;border-radius:12px;height:96px;display:flex;align-items:center;justify-content:center"><img src="img/logos/{{ l }}.png" alt="" style="max-height:80%;max-width:90%"></div>{% endfor %}
+    {% for l in ['asturias','turismo-rd','incaa','beyond90','mancity'] %}<div style="background:#161616;border-radius:12px;height:96px;display:flex;align-items:center;justify-content:center"><img src="img/logos/{{ l }}.png" alt="" style="max-height:80%;max-width:90%"></div>{% endfor %}
   </div>
 </section>
 
@@ -152,7 +152,7 @@ body.idle #ui { opacity:0; pointer-events:none; }
   <div class="grid" style="grid-template-columns:1fr 1.25fr;gap:70px;height:100%">
     <div class="grid" style="grid-template-rows:1fr 1fr;grid-template-columns:1fr 1fr;gap:16px">
       <div class="ph a" style="grid-row:span 2"><img src="img/feelgin-escenario.jpg" alt="Escenario Feel Gin"></div>
-      <div class="ph a d1"><img src="img/rd-ceviche.jpg" alt="Gastronomía"></div>
+      <div class="ph a d1"><img src="img/expoautos-gastronomia.jpg" alt="Gastronomía"></div>
       <div class="ph a d2"><img src="img/campusparty-credencial.jpg" alt="Acreditación" style="object-position:50% 35%"></div>
     </div>
     <div>
@@ -178,6 +178,38 @@ body.idle #ui { opacity:0; pointer-events:none; }
     {% for i in range(6) %}<div class="bar a d{{ i+3 }}"><h3 style="font-size:22px">{{ bit(es.tech_features[i][0], en.tech_features[i][0]) }}</h3><p style="font-size:18px">{{ bit(es.tech_features[i][1], en.tech_features[i][1]) }}</p></div>{% endfor %}
   </div>
 </section>
+
+<!-- ASTURIAS -->
+{% if ast_photos|length >= 3 %}
+<section class="slide" data-t="Asturias" style="padding:0">
+  <div class="grid" style="grid-template-columns:1.35fr 1fr;gap:6px;height:100%">
+    <div class="ph kb a" style="border-radius:0"><img src="img/{{ ast_photos[0] }}" alt=""></div>
+    <div style="display:grid;grid-template-rows:1fr 1fr;gap:6px">
+      <div class="ph kb a d1" style="border-radius:0"><img src="img/{{ ast_photos[1] }}" alt=""></div>
+      <div class="ph kb a d2" style="border-radius:0"><img src="img/{{ ast_photos[2] }}" alt=""></div>
+    </div>
+  </div>
+  <div style="position:absolute;left:0;bottom:0;width:58%;padding:60px 70px 60px 120px;background:linear-gradient(0deg,rgba(11,11,11,.96) 70%,rgba(11,11,11,0))">
+    <div class="kicker a d2">{{ bi('ast_kicker') }}</div>
+    <h2 class="display a d3" style="font-size:46px">{{ bi('ast_title') }}</h2>
+    <p class="a d4" style="color:var(--o);font-weight:600;font-size:20px">{{ bi('ast_meta') }}</p>
+    <div class="stats a d5" style="margin-bottom:0">{% for i in range(3) %}<div class="stat"><div class="v" style="font-size:42px">{{ bit(es.ast_stats[i][0], en.ast_stats[i][0]) }}</div><div class="l">{{ bit(es.ast_stats[i][1], en.ast_stats[i][1]) }}</div></div>{% endfor %}</div>
+  </div>
+</section>
+{% else %}
+<section class="slide" data-t="Asturias">
+  <div style="position:absolute;width:900px;height:900px;border-radius:50%;background:var(--o);right:-380px;top:-420px"></div>
+  <div style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:1300px">
+    <div class="kicker a">{{ bi('ast_kicker') }}</div>
+    <h1 class="display a d1" style="font-size:70px">{{ bi('ast_title') }}</h1>
+    <p class="a d2" style="color:var(--o);font-weight:600;font-size:22px;margin:10px 0 24px">{{ bi('ast_meta') }}</p>
+    <p class="lead a d3" style="color:#ddd">{{ bi('ast_lead') }}</p>
+    <div class="grid a d4" style="grid-template-columns:repeat(3,1fr);gap:40px;margin:50px 0">{% for i in range(3) %}<div style="border-top:3px solid var(--o);padding-top:20px"><div class="display" style="font-size:72px">{{ bit(es.ast_stats[i][0], en.ast_stats[i][0]) }}</div><div class="muted" style="font-size:22px;margin-top:8px">{{ bit(es.ast_stats[i][1], en.ast_stats[i][1]) }}</div></div>{% endfor %}</div>
+    <ul class="a d5" style="list-style:none;display:flex;gap:40px;flex-wrap:wrap">{% for i in range(4) %}<li style="font-size:22px;color:#ccc">— {{ bit(es.ast_bullets[i], en.ast_bullets[i]) }}</li>{% endfor %}</ul>
+  </div>
+  <div class="a d6" style="position:absolute;right:120px;bottom:90px;background:#161616;border-radius:14px;width:300px;height:110px;display:flex;align-items:center;justify-content:center"><img src="img/logos/asturias.png" alt="Principado de Asturias" style="max-height:80%;max-width:90%"></div>
+</section>
+{% endif %}
 
 <!-- 7 RD -->
 <section class="slide light" data-t="Dominican Rep.">
@@ -291,7 +323,7 @@ body.idle #ui { opacity:0; pointer-events:none; }
 
 <!-- 14 CIERRE -->
 <section class="slide" data-t="Contact">
-  <div class="ph kb" style="position:absolute;inset:0 0 0 52%;border-radius:0"><img src="img/abel-credencial.jpg" alt=""></div>
+  <div class="ph kb" style="position:absolute;inset:0 0 0 52%;border-radius:0"><img src="img/mancity-montaje.jpg" alt="Montaje DER" style="object-position:50% 60%"></div>
   <div style="position:absolute;inset:0 0 0 52%;background:linear-gradient(90deg,var(--k),rgba(11,11,11,0) 35%)"></div>
   <div style="position:relative;z-index:2;width:52%;height:100%;display:flex;flex-direction:column;justify-content:center">
     <img class="logo a" src="img/der-logo-white.png" alt="DER" style="margin-bottom:40px">
@@ -304,7 +336,7 @@ body.idle #ui { opacity:0; pointer-events:none; }
     <div class="a d3" style="display:flex;gap:30px;margin-top:44px">
       {% for q,k in [('portfolio','qr_web'),('pase','qr_pase'),('whatsapp','qr_wa')] %}<div style="text-align:center;font-size:16px;color:var(--m)"><div style="width:150px;height:150px;background:#fff;padding:10px;border-radius:12px;margin-bottom:10px"><img src="img/qr/{{ q }}.svg" alt="QR" style="width:100%;height:100%"></div>{{ bi(k) }}</div>{% endfor %}
     </div>
-    <p class="a d4" style="margin-top:50px;font-size:20px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#777">Tack för er tid.</p>
+    <p class="a d4" style="margin-top:50px;font-size:20px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#777">{{ bi('back_tack') }}</p>
   </div>
 </section>
 

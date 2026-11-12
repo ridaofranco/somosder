@@ -35,15 +35,16 @@
   </div>
   <!-- TAPA (derecha) -->
   <div class="half front">
-    <div class="photo"><img src="../assets/img/mancity-trofeos.jpg" alt=""></div>
+    <div style="position:absolute;width:250mm;height:250mm;border-radius:50%;background:var(--orange);right:-120mm;top:-110mm"></div>
+    <div style="position:absolute;width:250mm;height:250mm;border-radius:50%;border:1.2px solid #2e2e2e;right:-70mm;top:-60mm"></div>
     <div class="in">
-      <img src="../assets/img/der-logo-white.png" style="height:13mm;width:auto;align-self:flex-start" alt="DER">
+      <img src="../assets/img/der-logo-white.png" style="height:13mm;width:auto;align-self:flex-start;position:relative;z-index:2" alt="DER">
       <div style="margin-top:auto">
         <div class="kicker">{{ t.cover_kicker }}</div>
         <h1 class="display" style="font-size:30pt">{% for l in t.cover_title %}{{ l|safe }}<br>{% endfor %}</h1>
-        <div class="se-stripe" style="margin-top:9mm"><i></i><i></i><i></i></div>
-        <p style="font-size:9.5pt;letter-spacing:.22em;text-transform:uppercase;font-weight:600;margin-top:3mm">{{ t.prepared }}</p>
-        <p class="small" style="color:#999;margin-top:1mm">{{ t.date }}</p>
+        <div style="width:26mm;height:2px;background:var(--orange);margin-top:9mm"></div>
+        <p style="font-size:9.5pt;letter-spacing:.22em;text-transform:uppercase;font-weight:600;margin-top:4mm">Congresos · Recepciones · Foros · Lanzamientos</p>
+        <p class="small" style="color:#999;margin-top:1mm">somosder.ar · {{ t.date }}</p>
       </div>
     </div>
   </div>

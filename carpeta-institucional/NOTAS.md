@@ -1,7 +1,7 @@
 # Notas de contenido
 
 ## Criterio de cifras
-Una embajada verifica lo que se le entrega. Por eso se usaron **solo** las cifras del portfolio PDF 2026 y, cuando no estaban ahí, la versión más conservadora de las fichas de caso del sitio.
+Los clientes institucionales verifican lo que se les entrega. Por eso se usaron **solo** las cifras del portfolio PDF 2026 y, cuando no estaban ahí, la versión más conservadora de las fichas de caso del sitio.
 
 | Caso | Cifra usada | Fuente |
 |---|---|---|
@@ -16,7 +16,7 @@ Una embajada verifica lo que se le entrega. Por eso se usaron **solo** las cifra
 | Abel Pintos | 30 funciones, 8 ciudades | Ficha de caso (se evitó el total de asistentes porque la suma no cierra) |
 
 ## Inconsistencias del sitio somosder.ar para corregir
-Conviene corregirlas antes de que la Embajada visite la web (el QR de la carpeta lleva a `/portfolio`):
+Conviene corregirlas antes de entregar la carpeta (el QR de la carpeta lleva a `/portfolio`):
 
 - **Año de fundación:** `components/schema-org.tsx` y el layout dicen 2013 / "más de 10 años"; Nosotros y la home dicen 2023 / 2 años.
 - **Mail:** el PDF usa `contacto@somosder.com.ar`; el sitio usa `contacto@somosder.ar`; el footer usa `contacto@derp.com.ar`. En la carpeta quedó el del PDF. **Confirmar cuál es el correcto** y, si cambia, editarlo en `src/content.py` y regenerar.
@@ -26,8 +26,9 @@ Conviene corregirlas antes de que la Embajada visite la web (el QR de la carpeta
 - **"MIGOR" / "MIRGOR"**: el logo del PDF dice Mirgor.
 
 ## Decisiones
-- **Marca país:** no se usó el escudo ni logos oficiales del Gobierno de Suecia. Solo una franja azul y amarilla como acento, más el saludo "Hej!" y el cierre "Tack för er tid" ("Gracias por su tiempo").
-- **Formatos propuestos** (Día Nacional 6/6, Nobel, Lucia, Midsommar, Team Sweden): se presentan como formatos posibles de la agenda sueca, sin afirmar que la Embajada los organiza ni con qué alcance. Confirmarlo en la reunión.
+- **Carpeta genérica:** ningún texto, nombre de archivo ni metadato menciona al destinatario. Los formatos institucionales (congresos, recepciones, misiones, delegaciones, pabellones país) apuntan a gobiernos y representaciones en general.
+- **Caso Asturias:** V Congreso Mundial de Asturianía (Centro Asturiano de Buenos Aires, 7 y 8 de octubre de 2026). Alcance de DER: producción y montaje, staff y mobiliario. Datos públicos: 35 centros y casas de Asturias, cerca de un centenar de participantes, primera edición fuera de España. Si hay fotos, se guardan como `assets/img/asturias-1.jpg`, `-2.jpg`, `-3.jpg` y la página pasa sola al diseño con fotos.
+- **Imágenes:** ninguna foto se repite dentro del dossier ni entre el dossier, la tapa y el one-pager. La tapa y el one-pager usan un diseño gráfico sin foto.
 - **Compromisos de sostenibilidad e inclusión:** están redactados como compromisos operativos que DER asume, no como certificaciones. Revisar que el equipo pueda cumplirlos (paridad en staff, menú sin TACC, relevamiento de accesibilidad).
 - **Casos que quedaron afuera:** conciertos (Anuel AA, Myke Towers, Buenos Aires Trap), porque no suman al perfil institucional, y el Mundial Sub-17 de Halterofilia, porque no se pudo verificar.
 - **Fotos:** el sitio está bloqueado desde el entorno de trabajo y Cloudinary también, así que las fotos se recortaron del PDF (resolución de pantalla). Alcanzan para impresión digital A4. Para offset o tamaños grandes, reemplazarlas por los originales.

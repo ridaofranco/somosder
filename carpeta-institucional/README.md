@@ -1,7 +1,7 @@
-# Carpeta DER · Embajada de Suecia en Argentina
+# Carpeta institucional DER · Edición 2026
 
-Material para la reunión presencial en la Embajada de Suecia (Olga Cossettini 731, piso 2, Puerto Madero).
-Se armó a partir del portfolio corporativo 2026 (PDF) y de los casos publicados en somosder.ar.
+Portfolio institucional genérico de DER, orientado a gobiernos, representaciones y organismos internacionales.
+No menciona a ningún destinatario en particular. Fuentes: portfolio corporativo 2026 (PDF) y casos de somosder.ar.
 
 ## Qué hay
 
@@ -9,15 +9,16 @@ Se armó a partir del portfolio corporativo 2026 (PDF) y de los casos publicados
 
 | Archivo | Formato | Qué es | Cómo imprimir |
 |---|---|---|---|
-| `01-Dossier-DER-Embajada-Suecia-ES.pdf` | A4 · 12 págs. | Dossier principal | Ilustración 150 g mate, color. Abrochado a caballete (12 págs. = 3 pliegos) o anillado |
-| `02-Dossier-DER-Embassy-of-Sweden-EN.pdf` | A4 · 12 págs. | El mismo dossier en inglés, para personal sueco | Igual que el anterior |
+| `01-Portfolio-institucional-DER-ES.pdf` | A4 · 12 págs. | Dossier principal | Ilustración 150 g mate, color. Abrochado a caballete (12 págs. = 3 pliegos) o anillado |
+| `02-Institutional-portfolio-DER-EN.pdf` | A4 · 12 págs. | El mismo dossier en inglés | Igual que el anterior |
 | `03-One-pager-ES.pdf` / `04-One-pager-EN.pdf` | A4 frente y dorso | Resumen para dejar | Ilustración 250–300 g, doble faz |
-| `05-Carta-de-presentacion-ES.pdf` | A4 | Carta a la Embajada | Completar los campos en naranja antes: usar el `.docx` editable, firmar a mano. Bond 90–120 g |
+| `05-Carta-de-presentacion-ES.pdf` | A4 | Carta de presentación genérica | Completar los campos en naranja antes: usar el `.docx` editable, firmar a mano. Bond 90–120 g |
 | `06-Tapa-carpeta-A3-con-sangrado.pdf` | 426 × 303 mm | Tapa y contratapa de la carpeta (A3 apaisado + 3 mm de sangrado) | Ilustración 300–350 g con laminado mate. Plegar al medio (lomo en 213 mm). Si la imprenta tiene troquel de carpeta con solapa, pedirle que adapte este arte a su molde |
 | `07-Tarjeta-QR-85x55-con-sangrado.pdf` | 91 × 61 mm · 2 caras | Tarjeta con QR al portfolio | 350 g mate, refilar a 85 × 55 mm |
-| `08-Guion-de-reunion-USO-INTERNO.pdf` | A4 · 3 págs. | Agenda, preguntas, objeciones, cifras y mail de seguimiento | **No entregar.** Solo para el equipo DER |
 
 **Armado sugerido de cada carpeta:** tapa A3 plegada → carta firmada (adelante) → dossier ES (o EN) → one-pager → tarjeta QR en la solapa o abrochada. Imprimir 2 carpetas en español y 1 en inglés.
+
+El guion de la reunión está aparte, en `uso-interno/`. **No va en la carpeta.**
 
 ### `multimedia/`: presentación para pantalla
 
@@ -32,7 +33,7 @@ Se armó a partir del portfolio corporativo 2026 (PDF) y de los casos publicados
 ## Cómo regenerar
 
 ```bash
-cd presentacion-embajada-suecia
+cd carpeta-institucional
 pip install jinja2 qrcode python-docx
 python3 src/build.py            # todos los PDF + multimedia/index.html
 python3 src/build.py dossier    # solo los dossiers

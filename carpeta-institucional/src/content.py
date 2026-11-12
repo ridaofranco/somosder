@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Contenido bilingüe de la carpeta para la Embajada de Suecia.
+"""Contenido bilingüe de la carpeta institucional DER (edición 2026).
 
 Fuente: portfolio corporativo PDF (2026) + casos del sitio somosder.ar (repo).
 Cifras: se usan solo las del PDF y las de las páginas de cada caso, en su
@@ -18,19 +18,19 @@ CONTACT = {
 T = {
 "es": {
   "lang": "es",
-  "date": "Noviembre 2026",
-  "prepared": "Preparado para la Embajada de Suecia en Argentina",
-  "cover_kicker": "Carpeta institucional",
+  "date": "Edición 2026",
+  "prepared": "Portfolio institucional",
+  "cover_kicker": "Portfolio institucional",
   "cover_title": ["Eventos que", "<span class='accent'>representan</span>", "a un país."],
-  "cover_lead": "Producción integral de recepciones, foros, visitas oficiales y experiencias culturales. Un solo equipo, de la primera reunión al desmontaje.",
+  "cover_lead": "Producción integral de congresos, recepciones, foros y experiencias de marca para gobiernos, organismos y empresas. Un solo equipo, de la primera reunión al desmontaje.",
 
-  "intro_kicker": "Hej! Somos DER",
-  "intro_title": "Tu socio local de <span class='accent'>producción</span>",
+  "intro_kicker": "Somos DER",
+  "intro_title": "Tu aliado en <span class='accent'>eventos</span>",
   "intro_p1": "DER es una productora de eventos corporativos, institucionales y masivos con base en Buenos Aires. Coordinamos proveedores, montaje, logística, gastronomía, staff y accesos con un mismo equipo, y usamos <b>plataformas propias</b> de acreditación y ticketing.",
   "intro_p2": "Trabajamos para marcas globales, gobiernos y agencias internacionales que necesitan algo simple de pedir y difícil de lograr: que todo salga bien, a tiempo, con la imagen correcta y sin sorpresas.",
-  "intro_why_title": "Por qué DER para la Embajada",
+  "intro_why_title": "Por qué DER",
   "intro_why": [
-    ("Experiencia con gobiernos", "Ministerio de Turismo de Rep. Dominicana, Principado de Asturias, INCAA y organismos provinciales."),
+    ("Experiencia con gobiernos", "Principado de Asturias, Ministerio de Turismo de Rep. Dominicana, INCAA y organismos provinciales."),
     ("Protocolo y seguridad", "Operativos coordinados con equipos de seguridad oficiales y resguardo de piezas con protocolo internacional."),
     ("Equipo bilingüe", "Atención y documentación en español e inglés. NDA ES/EN y contratos formales."),
     ("Un solo interlocutor", "Un productor responsable presente durante todo el proceso, del brief al reporte final."),
@@ -64,7 +64,7 @@ T = {
 
   "tech_kicker": "Tecnología propia",
   "tech_title": "Invitados <span class='accent'>sin fricción</span>",
-  "tech_lead": "Desarrollamos y operamos nuestras propias plataformas. Para una embajada esto significa listas de invitados confiables, ingreso ágil y un registro preciso de quién asistió.",
+  "tech_lead": "Desarrollamos y operamos nuestras propias plataformas: listas de invitados confiables, ingreso ágil y un registro preciso de quién asistió a cada evento.",
   "pase_desc": "Registro y acceso por QR, invitaciones intransferibles por mail, credenciales con foto y control de asistencia en tiempo real.",
   "entra_desc": "Venta online con QR único, Mercado Pago y control de ingresos, para eventos abiertos al público.",
   "tech_features": [
@@ -75,6 +75,14 @@ T = {
     ("Face ID", "Validación biométrica opcional para eventos de alta seguridad."),
     ("Reporte post-evento", "Métricas, horarios pico y listado final de asistentes."),
   ],
+
+  "ast_kicker": "Caso · Gobierno · Congreso internacional",
+  "ast_title": "V Congreso Mundial <span class='accent'>de Asturianía</span>",
+  "ast_lead": "Producción del congreso del Principado de Asturias que reunió en Buenos Aires a los centros y casas asturianas de todo el mundo. Fue la primera edición celebrada fuera de España.",
+  "ast_meta": "Centro Asturiano de Buenos Aires · Sala Alejandro Casona · 7 y 8 de octubre de 2026",
+  "ast_stats": [("35", "centros y casas de Asturias"), ("≈100", "participantes"), ("2", "jornadas")],
+  "ast_bullets": ["Producción y montaje de sala", "Staff de recepción y asistencia a delegaciones", "Mobiliario para plenarios y espacios de trabajo", "Acto inaugural con autoridades del Principado"],
+  "ast_note": "Una delegación internacional, autoridades de gobierno y un programa de dos días: el tipo de evento donde cada detalle representa a una institución.",
 
   "rd_kicker": "Caso · Gobierno · País invitado de honor",
   "rd_title": "República <span class='accent'>Dominicana</span> en la FIT 2026",
@@ -117,37 +125,37 @@ T = {
   "clients_title": "Confían en nosotros",
   "clients_foot": "Contratos formales · NDA ES/EN · Facturación local y de exportación",
 
-  "prop_kicker": "Propuesta",
-  "prop_title": "Lo que podemos producir <span class='accent'>para Suecia</span>",
-  "prop_lead": "Formatos pensados para la agenda institucional, comercial y cultural de la Embajada. Cada uno se cotiza a medida y puede tomarse completo o por módulos.",
+  "prop_kicker": "Eventos institucionales",
+  "prop_title": "Formatos que <span class='accent'>producimos</span>",
+  "prop_lead": "Para gobiernos, representaciones, cámaras y organismos internacionales. Cada formato se cotiza a medida y puede tomarse completo o por módulos.",
   "formats": [
-    ("Recepción del Día Nacional", "6 de junio", "Invitaciones con RSVP, acreditación de autoridades y prensa, ambientación, gastronomía y servicio de mozos."),
-    ("Ceremonias y fechas culturales", "Nobel · Lucia · Midsommar", "Montaje, puesta de luces, música en vivo, coros y gastronomía temática con productos suecos."),
-    ("Foros y misiones comerciales", "Team Sweden", "Rondas de negocios, seminarios de innovación y sostenibilidad, registro de participantes y streaming."),
+    ("Congresos y foros internacionales", "Delegaciones de varios países", "Montaje de sala, staff, mobiliario, acreditación, traducción y streaming."),
+    ("Recepciones oficiales", "Fechas nacionales y aniversarios", "Invitaciones con RSVP, acreditación de autoridades y prensa, ambientación y gastronomía."),
     ("Visitas oficiales y delegaciones", "Logística integral", "Traslados, agendas, credenciales, coordinación con seguridad y cobertura audiovisual."),
-    ("Lanzamientos de empresas suecas", "Marcas en Argentina", "Presentaciones de producto y experiencias de marca con la imagen país como respaldo."),
-    ("Cultura y diplomacia pública", "Abierto al público", "Ciclos de cine, muestras y activaciones con ticketing propio y control de aforo."),
+    ("Misiones comerciales", "Rondas de negocios", "Seminarios, encuentros B2B, registro de participantes y espacios de networking."),
+    ("Ceremonias y cultura", "Premiaciones, muestras, conciertos", "Puesta de luces, escenario, música en vivo y gastronomía temática."),
+    ("Ferias y pabellones país", "Stands y degustaciones", "Gastronomía con identidad, staff bilingüe y operación diaria del espacio."),
   ],
 
   "comm_kicker": "Valores compartidos",
-  "comm_title": "Compromisos para cada <span class='accent'>evento de la Embajada</span>",
+  "comm_title": "Nuestros compromisos en <span class='accent'>cada evento</span>",
   "commitments": [
     ("Sostenibilidad", "Acreditación digital sin papel, proveedores locales, plan de residuos con separación en origen y reducción de plásticos de un solo uso."),
     ("Igualdad e inclusión", "Equipos de staff con paridad de género y menús con opciones vegetarianas, veganas y sin TACC."),
     ("Accesibilidad", "Relevamiento de accesos, circulación y señalética para personas con movilidad reducida."),
     ("Confidencialidad", "NDA en español e inglés, manejo cuidadoso de listas de invitados y datos personales."),
     ("Transparencia", "Presupuestos abiertos sobre cotizaciones reales y reporte final con métricas."),
-    ("Protocolo", "Coordinación con el equipo de la Embajada, seguridad y ceremonial en cada etapa."),
+    ("Protocolo", "Coordinación con ceremonial, seguridad y el equipo del cliente en cada etapa."),
   ],
   "next_title": "Próximos pasos",
   "next": [
-    ("Brief", "Una reunión de 45 minutos para conocer la agenda 2026–2027 de la Embajada."),
+    ("Brief", "Una reunión para conocer su agenda anual de eventos y sus requisitos."),
     ("Propuesta", "En 5 días hábiles: plan operativo y presupuesto para el primer evento."),
     ("Piloto", "Un primer evento para medir resultados con un reporte completo."),
   ],
 
   "back_title": ["Hagamos que", "tu próximo evento", "<span class='accent'>pase.</span>"],
-  "back_tack": "Tack för er tid. · Gracias por su tiempo.",
+  "back_tack": "Somos DER · Tu aliado en eventos",
   "lbl_whatsapp": "WhatsApp", "lbl_mail": "Mail", "lbl_web": "Web", "lbl_office": "Oficina",
   "qr_web": "Sitio y portfolio", "qr_pase": "Plataforma PASE", "qr_wa": "WhatsApp directo",
   "photo": "Foto",
@@ -155,19 +163,19 @@ T = {
 
 "en": {
   "lang": "en",
-  "date": "November 2026",
-  "prepared": "Prepared for the Embassy of Sweden in Argentina",
-  "cover_kicker": "Company profile",
+  "date": "2026 Edition",
+  "prepared": "Institutional portfolio",
+  "cover_kicker": "Institutional portfolio",
   "cover_title": ["Events that", "<span class='accent'>represent</span>", "a country."],
-  "cover_lead": "End-to-end production of receptions, forums, official visits and cultural experiences. One team, from the first meeting to the final load-out.",
+  "cover_lead": "End-to-end production of congresses, receptions, forums and brand experiences for governments, institutions and companies. One team, from the first meeting to the final load-out.",
 
-  "intro_kicker": "Hej! We are DER",
-  "intro_title": "Your local <span class='accent'>production</span> partner",
+  "intro_kicker": "We are DER",
+  "intro_title": "Your partner in <span class='accent'>events</span>",
   "intro_p1": "DER is a Buenos Aires-based production company for corporate, institutional and large-scale events. One team coordinates suppliers, set-up, logistics, catering, staff and access, using our <b>own platforms</b> for accreditation and ticketing.",
   "intro_p2": "We work for global brands, governments and international agencies that need something simple to ask for and hard to deliver: everything done right, on time, with the right image and no surprises.",
-  "intro_why_title": "Why DER for the Embassy",
+  "intro_why_title": "Why DER",
   "intro_why": [
-    ("Government experience", "Dominican Republic Ministry of Tourism, Principality of Asturias, INCAA and provincial bodies."),
+    ("Government experience", "Principality of Asturias, Dominican Republic Ministry of Tourism, INCAA and provincial bodies."),
     ("Protocol and security", "Operations coordinated with official security teams and safeguarding of items under international protocol."),
     ("Bilingual team", "Service and documentation in Spanish and English. NDAs in ES/EN and formal contracts."),
     ("A single point of contact", "One producer in charge, present throughout, from the brief to the final report."),
@@ -201,7 +209,7 @@ T = {
 
   "tech_kicker": "In-house technology",
   "tech_title": "Guests <span class='accent'>without friction</span>",
-  "tech_lead": "We build and run our own platforms. For an embassy this means reliable guest lists, fast entry and an accurate record of who attended.",
+  "tech_lead": "We build and run our own platforms: reliable guest lists, fast entry and an accurate record of who attended every event.",
   "pase_desc": "QR registration and access, non-transferable email invitations, photo badges and real-time attendance control.",
   "entra_desc": "Online ticket sales with unique QR codes, Mercado Pago and entry control, for public events.",
   "tech_features": [
@@ -212,6 +220,14 @@ T = {
     ("Face ID", "Optional biometric validation for high-security events."),
     ("Post-event report", "Metrics, peak times and final attendee list."),
   ],
+
+  "ast_kicker": "Case · Government · International congress",
+  "ast_title": "5th World Congress <span class='accent'>of Asturianía</span>",
+  "ast_lead": "Production of the Principality of Asturias congress that brought Asturian centres from around the world together in Buenos Aires. It was the first edition held outside Spain.",
+  "ast_meta": "Centro Asturiano de Buenos Aires · Alejandro Casona hall · 7–8 October 2026",
+  "ast_stats": [("35", "Asturian centres and houses"), ("≈100", "participants"), ("2", "days")],
+  "ast_bullets": ["Production and room set-up", "Reception staff and delegation support", "Furniture for plenaries and working areas", "Opening ceremony with Principality officials"],
+  "ast_note": "An international delegation, government officials and a two-day programme: the kind of event where every detail represents an institution.",
 
   "rd_kicker": "Case · Government · Guest country of honour",
   "rd_title": "Dominican <span class='accent'>Republic</span> at FIT 2026",
@@ -254,37 +270,37 @@ T = {
   "clients_title": "Trusted by",
   "clients_foot": "Formal contracts · NDAs ES/EN · Local and export invoicing",
 
-  "prop_kicker": "Proposal",
-  "prop_title": "What we can produce <span class='accent'>for Sweden</span>",
-  "prop_lead": "Formats designed around the Embassy's institutional, trade and cultural agenda. Each is quoted to measure and can be taken end-to-end or by module.",
+  "prop_kicker": "Institutional events",
+  "prop_title": "Formats <span class='accent'>we produce</span>",
+  "prop_lead": "For governments, diplomatic missions, chambers of commerce and international organisations. Each format is quoted to measure and can be taken end-to-end or by module.",
   "formats": [
-    ("National Day reception", "6 June", "RSVP invitations, accreditation of officials and press, venue dressing, catering and waiting staff."),
-    ("Ceremonies and cultural dates", "Nobel · Lucia · Midsummer", "Set-up, lighting, live music, choirs and themed catering with Swedish products."),
-    ("Forums and trade missions", "Team Sweden", "B2B matchmaking, innovation and sustainability seminars, participant registration and streaming."),
+    ("Congresses and international forums", "Multi-country delegations", "Room set-up, staff, furniture, accreditation, interpreting and streaming."),
+    ("Official receptions", "National days and anniversaries", "RSVP invitations, accreditation of officials and press, venue dressing and catering."),
     ("Official visits and delegations", "End-to-end logistics", "Transfers, agendas, badges, coordination with security and audiovisual coverage."),
-    ("Swedish company launches", "Brands in Argentina", "Product presentations and brand experiences backed by Sweden's country image."),
-    ("Culture and public diplomacy", "Open to the public", "Film series, exhibitions and activations with our own ticketing and capacity control."),
+    ("Trade missions", "B2B matchmaking", "Seminars, B2B meetings, participant registration and networking areas."),
+    ("Ceremonies and culture", "Awards, exhibitions, concerts", "Lighting, staging, live music and themed catering."),
+    ("Fairs and country pavilions", "Stands and tastings", "Catering with a cultural identity, bilingual staff and daily operation of the space."),
   ],
 
   "comm_kicker": "Shared values",
-  "comm_title": "Our commitments for every <span class='accent'>Embassy event</span>",
+  "comm_title": "Our commitments at <span class='accent'>every event</span>",
   "commitments": [
     ("Sustainability", "Paperless digital accreditation, local suppliers, waste plan with source separation and fewer single-use plastics."),
     ("Equality and inclusion", "Gender-balanced staff teams and menus with vegetarian, vegan and gluten-free options."),
     ("Accessibility", "Survey of entrances, circulation and signage for people with reduced mobility."),
     ("Confidentiality", "NDAs in Spanish and English, careful handling of guest lists and personal data."),
     ("Transparency", "Open budgets built on real quotes and a final report with metrics."),
-    ("Protocol", "Coordination with the Embassy team, security and ceremonial staff at every stage."),
+    ("Protocol", "Coordination with ceremonial staff, security and the client team at every stage."),
   ],
   "next_title": "Next steps",
   "next": [
-    ("Brief", "A 45-minute meeting to learn about the Embassy's 2026–2027 agenda."),
+    ("Brief", "A meeting to learn about your annual events agenda and requirements."),
     ("Proposal", "Within 5 business days: operating plan and budget for the first event."),
     ("Pilot", "A first event to measure results, with a full report."),
   ],
 
   "back_title": ["Let's make", "your next event", "<span class='accent'>happen.</span>"],
-  "back_tack": "Tack för er tid. · Thank you for your time.",
+  "back_tack": "We are DER · Your partner in events",
   "lbl_whatsapp": "WhatsApp", "lbl_mail": "Email", "lbl_web": "Web", "lbl_office": "Office",
   "qr_web": "Website and portfolio", "qr_pase": "PASE platform", "qr_wa": "Direct WhatsApp",
   "photo": "Photo",
