@@ -180,20 +180,20 @@ body.idle #ui { opacity:0; pointer-events:none; }
 </section>
 
 <!-- ASTURIAS -->
-{% if ast_photos|length >= 3 %}
+{% if ast_photos|length >= 5 %}
 <section class="slide" data-t="Asturias" style="padding:0">
-  <div class="grid" style="grid-template-columns:1.35fr 1fr;gap:6px;height:100%">
-    <div class="ph kb a" style="border-radius:0"><img src="img/{{ ast_photos[0] }}" alt=""></div>
-    <div style="display:grid;grid-template-rows:1fr 1fr;gap:6px">
-      <div class="ph kb a d1" style="border-radius:0"><img src="img/{{ ast_photos[1] }}" alt=""></div>
-      <div class="ph kb a d2" style="border-radius:0"><img src="img/{{ ast_photos[2] }}" alt=""></div>
-    </div>
+  <div class="grid" style="position:absolute;left:44%;right:0;top:0;bottom:0;grid-template-columns:1fr 1fr 1fr;gap:6px">
+    <div class="ph kb a" style="border-radius:0"><img src="img/{{ ast_photos[3] }}" alt="" style="object-position:40% 55%"></div>
+    <div class="ph kb a d1" style="border-radius:0"><img src="img/{{ ast_photos[1] }}" alt="" style="object-position:62% 50%"></div>
+    <div class="ph kb a d2" style="border-radius:0"><img src="img/{{ ast_photos[2] }}" alt="" style="object-position:30% 45%"></div>
   </div>
-  <div style="position:absolute;left:0;bottom:0;width:58%;padding:60px 70px 60px 120px;background:linear-gradient(0deg,rgba(11,11,11,.96) 70%,rgba(11,11,11,0))">
-    <div class="kicker a d2">{{ bi('ast_kicker') }}</div>
-    <h2 class="display a d3" style="font-size:46px">{{ bi('ast_title') }}</h2>
-    <p class="a d4" style="color:var(--o);font-weight:600;font-size:20px">{{ bi('ast_meta') }}</p>
-    <div class="stats a d5" style="margin-bottom:0">{% for i in range(3) %}<div class="stat"><div class="v" style="font-size:42px">{{ bit(es.ast_stats[i][0], en.ast_stats[i][0]) }}</div><div class="l">{{ bit(es.ast_stats[i][1], en.ast_stats[i][1]) }}</div></div>{% endfor %}</div>
+  <div style="position:absolute;left:0;top:0;bottom:0;width:44%;padding:110px 70px 110px 120px;display:flex;flex-direction:column;justify-content:center">
+    <div class="kicker a">{{ bi('ast_kicker') }}</div>
+    <h2 class="display a d1" style="font-size:48px">{{ bi('ast_title') }}</h2>
+    <p class="a d2" style="color:var(--o);font-weight:600;font-size:19px;margin-bottom:22px">{{ bi('ast_meta') }}</p>
+    <p class="a d3" style="color:#ccc;font-size:23px">{{ bi('ast_lead') }}</p>
+    <div class="stats a d4">{% for i in range(3) %}<div class="stat"><div class="v" style="font-size:40px">{{ bit(es.ast_stats[i][0], en.ast_stats[i][0]) }}</div><div class="l">{{ bit(es.ast_stats[i][1], en.ast_stats[i][1]) }}</div></div>{% endfor %}</div>
+    <ul class="dots a d5">{% for i in range(3) %}<li style="font-size:21px">{{ bit(es.ast_bullets[i], en.ast_bullets[i]) }}</li>{% endfor %}</ul>
   </div>
 </section>
 {% else %}

@@ -137,15 +137,16 @@
   <div class="kicker">{{ t.ast_kicker }}</div>
   <h2 class="display" style="font-size:20pt">{{ t.ast_title|safe }}</h2>
   <p class="small" style="color:var(--orange);font-weight:600;letter-spacing:.04em;margin:-2mm 0 4mm">{{ t.ast_meta }}</p>
-  <div class="ph" style="height:92mm"><img src="../assets/img/{{ ast_photos[0] }}" alt=""></div>
-  <div class="grid g2" style="gap:3mm;height:52mm;margin-top:3mm">
-    <div class="ph"><img src="../assets/img/{{ ast_photos[1] }}" alt=""></div>
-    <div class="ph"><img src="../assets/img/{{ ast_photos[2] }}" alt=""></div>
+  <div class="grid" style="grid-template-columns:1.5fr 1fr 1fr;gap:3mm;height:112mm">
+    <div class="ph"><img src="../assets/img/{{ ast_photos[0] }}" alt="" style="object-position:35% 50%"></div>
+    <div class="ph"><img src="../assets/img/{{ ast_photos[1] }}" alt="" style="object-position:60% 50%"></div>
+    <div class="ph"><img src="../assets/img/{{ ast_photos[2] }}" alt="" style="object-position:30% 45%"></div>
   </div>
   <div class="grid g2" style="gap:8mm;margin-top:5mm">
     <div><p>{{ t.ast_lead }}</p><div class="stats" style="margin:4mm 0 0">{% for v,l in t.ast_stats %}<div class="stat"><div class="v" style="font-size:14pt">{{ v }}</div><div class="l">{{ l }}</div></div>{% endfor %}</div></div>
     <ul class="dots">{% for b in t.ast_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
   </div>
+  <p class="quote" style="font-size:11.5pt;margin-top:7mm">{{ t.ast_note }}</p>
   <div class="folio"><span>Somos DER</span><span>06</span></div>
 </section>
 {% else %}
@@ -276,6 +277,7 @@
 
 <!-- 12 · CONTRATAPA -->
 <section class="page dark">
+  <img src="../assets/img/pattern-a.png" alt="" style="position:absolute;left:0;top:86mm;width:100%">
   <div style="background:var(--orange);color:var(--ink);border-radius:3mm;padding:8mm">
     <div class="kicker" style="color:var(--ink)">{{ t.next_title }}</div>
     <div class="grid g3" style="gap:6mm">

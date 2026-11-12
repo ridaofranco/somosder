@@ -27,7 +27,8 @@ Conviene corregirlas antes de entregar la carpeta (el QR de la carpeta lleva a `
 
 ## Decisiones
 - **Carpeta genérica:** ningún texto, nombre de archivo ni metadato menciona al destinatario. Los formatos institucionales (congresos, recepciones, misiones, delegaciones, pabellones país) apuntan a gobiernos y representaciones en general.
-- **Caso Asturias:** V Congreso Mundial de Asturianía (Centro Asturiano de Buenos Aires, 7 y 8 de octubre de 2026). Alcance de DER: producción y montaje, staff y mobiliario. Datos públicos: 35 centros y casas de Asturias, cerca de un centenar de participantes, primera edición fuera de España. Si hay fotos, se guardan como `assets/img/asturias-1.jpg`, `-2.jpg`, `-3.jpg` y la página pasa sola al diseño con fotos.
+- **Caso Asturias:** V Congreso Mundial de Asturianía (Centro Asturiano de Buenos Aires, 7 y 8 de octubre de 2026). Alcance de DER: producción y montaje, staff y mobiliario. Datos públicos: 35 centros y casas de Asturias, cerca de un centenar de participantes, primera edición fuera de España. Fotos en `assets/img/asturias-1.jpg` a `-6.jpg`: el dossier usa la 1, 2 y 3; la presentación, la 4, 2 y 3.
+- **Elemento gráfico DER:** los patrones geométricos (`pattern-a/b/c.png`) se usan en la tapa (con "Tu aliado en eventos"), la contratapa del dossier y el one-pager.
 - **Imágenes:** ninguna foto se repite dentro del dossier ni entre el dossier, la tapa y el one-pager. La tapa y el one-pager usan un diseño gráfico sin foto.
 - **Compromisos de sostenibilidad e inclusión:** están redactados como compromisos operativos que DER asume, no como certificaciones. Revisar que el equipo pueda cumplirlos (paridad en staff, menú sin TACC, relevamiento de accesibilidad).
 - **Casos que quedaron afuera:** conciertos (Anuel AA, Myke Towers, Buenos Aires Trap), porque no suman al perfil institucional, y el Mundial Sub-17 de Halterofilia, porque no se pudo verificar.
