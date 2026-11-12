@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="{{ t.lang }}">
+<head><meta charset="utf-8"><title>DER · One-pager</title>
+<link rel="stylesheet" href="../src/print.css">
+<style>
+  .hero { position: absolute; left: 0; right: 0; top: 0; height: 92mm; }
+  .hero > img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,11,.15), rgba(11,11,11,.9)); }
+  .hero .txt { position: absolute; left: 16mm; right: 16mm; bottom: 9mm; z-index: 2; color: #fff; }
+  .hero h1 { font-size: 21pt; }
+  .body { position: absolute; left: 16mm; right: 16mm; top: 100mm; }
+  .case { display: grid; grid-template-columns: 30mm 1fr; gap: 4mm; padding: 2.6mm 0; border-bottom: 1px solid var(--line); }
+  .case .v { font-family: Michroma; color: var(--orange); font-size: 11pt; }
+  .case h3 { font-size: 10pt; margin: 0; }
+  .case p { font-size: 8.8pt; color: var(--muted); line-height: 1.35; }
+  .fm { border-left: 2px solid var(--orange); padding-left: 3mm; }
+  .fm .w { font-size: 7pt; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); }
+  .fm h3 { font-size: 10pt; margin: .5mm 0; }
+  .fm p { font-size: 8.6pt; color: var(--muted); line-height: 1.35; }
+</style></head>
+<body>
+<!-- FRENTE -->
+<section class="page bleed">
+  <div class="hero"><img src="../assets/img/staff-equipo.jpg" alt="" style="object-position:50% 62%">
+    <div class="txt">
+      <img src="../assets/img/der-logo-white.png" style="height:8mm;margin-bottom:5mm" alt="DER">
+      <h1 class="display">{{ t.intro_title|safe }}</h1>
+      <p style="color:#ddd;font-size:10pt;margin-top:2mm">{{ t.prepared }} · {{ t.date }}</p>
+    </div>
+  </div>
+  <div class="body">
+    <p class="lead" style="font-size:11.5pt">{{ t.intro_p1|safe }}</p>
+    <div class="stats" style="margin:5mm 0">{% for v,l in t.stats %}<div class="stat"><div class="v" style="font-size:12pt">{{ v }}</div><div class="l">{{ l }}</div></div>{% endfor %}</div>
+    <div class="grid g2" style="gap:9mm">
+      <div>
+        <div class="kicker">{{ t.services_kicker }}</div>
+        <ul class="dots">{% for h,p in t.services %}<li><b>{{ h }}</b> · <span class="muted" style="font-size:8.8pt">{{ p }}</span></li>{% endfor %}</ul>
+      </div>
+      <div>
+        <div class="kicker">{{ t.more_kicker }}</div>
+        <div class="case"><div class="v">400 m²</div><div><h3>{{ 'Rep. Dominicana · FIT 2026' }}</h3><p>{{ t.rd_stats[2][0] }} {{ t.rd_stats[2][1] }}</p></div></div>
+        <div class="case"><div class="v">{{ t.mc_stats[0][0] }}</div><div><h3>Manchester City · Trophy Tour</h3><p>{{ t.mc_stats[0][1] }} · Beyond 90 (UK)</p></div></div>
+        <div class="case"><div class="v">300+</div><div><h3>Camondo WWR</h3><p>{{ t.proto_stats[0][1] }}</p></div></div>
+        <div class="case"><div class="v">3</div><div><h3>DiDi</h3><p>{{ t.didi_stats[0][1] }}</p></div></div>
+        <div class="case" style="border:0"><div class="v">1.300+</div><div><h3>Espacio Shell</h3><p>Face ID</p></div></div>
+      </div>
+    </div>
+    <div class="logos" style="display:grid;grid-template-columns:repeat(8,1fr);gap:1.5mm;margin-top:6mm">
+      {% for l in ['mancity','aws','turismo-rd','incaa','asturias','shell','didi','beyond90'] %}<div style="background:#161616;border-radius:1.2mm;height:12mm;display:flex;align-items:center;justify-content:center"><img src="../assets/img/logos/{{ l }}.png" style="max-width:92%;max-height:90%" alt=""></div>{% endfor %}
+    </div>
+  </div>
+  <div class="folio"><span>Somos DER</span><span>somosder.ar</span></div>
+</section>
+
+<!-- DORSO -->
+<section class="page">
+  <div class="kicker">{{ t.prop_kicker }}</div>
+  <h2 class="display" style="font-size:18pt">{{ t.prop_title|safe }}</h2>
+  <div class="grid g2" style="gap:5mm 8mm;margin-top:3mm">
+    {% for h,w,p in t.formats %}<div class="fm"><div class="w">{{ w }}</div><h3>{{ h }}</h3><p>{{ p }}</p></div>{% endfor %}
+  </div>
+  <div class="kicker" style="margin-top:9mm">{{ t.comm_kicker }}</div>
+  <div class="grid g3" style="gap:4mm 6mm">
+    {% for h,p in t.commitments %}<div class="fm"><h3>{{ h }}</h3><p>{{ p }}</p></div>{% endfor %}
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:0;height:78mm;background:var(--ink);color:#fff;padding:10mm 16mm;display:grid;grid-template-columns:1fr auto;gap:8mm;align-items:center">
+    <div>
+      <img src="../assets/img/der-logo-white.png" style="height:8mm;margin-bottom:5mm" alt="DER">
+      <h2 class="display" style="font-size:15pt;margin-bottom:4mm">{% for l in t.back_title %}{{ l|safe }} {% endfor %}</h2>
+      <p style="font-size:10pt;line-height:1.7"><span style="color:#999">{{ t.lbl_whatsapp }}</span> {{ c.whatsapp }}<br><span style="color:#999">{{ t.lbl_mail }}</span> {{ c.mail }}<br><span style="color:#999">{{ t.lbl_web }}</span> {{ c.web }} · <span style="color:#999">{{ t.lbl_office }}</span> {{ c.address }}</p>
+    </div>
+    <div style="text-align:center;font-size:7.5pt;color:#999"><div class="qr" style="width:30mm;height:30mm;margin-bottom:1.5mm"><img src="../assets/img/qr/portfolio.svg" alt=""></div>{{ t.qr_web }}</div>
+  </div>
+</section>
+</body></html>

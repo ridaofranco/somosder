@@ -1,0 +1,390 @@
+{%- macro bi(key) -%}<span lang="es">{{ es[key]|safe }}</span><span lang="en">{{ en[key]|safe }}</span>{%- endmacro -%}
+{%- macro bit(a, b) -%}<span lang="es">{{ a|safe }}</span><span lang="en">{{ b|safe }}</span>{%- endmacro -%}
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DER · Embajada de Suecia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --o:#ff5c00; --k:#0b0b0b; --k2:#161616; --k3:#262626; --w:#fff; --p:#f2f2f0; --m:#9a9a9a; --se1:#006aa7; --se2:#fecc02; color-scheme: dark; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html,body { height:100%; background:#000; overflow:hidden; font-family:Jost,system-ui,sans-serif; font-weight:300; color:var(--w); }
+body[data-lang=es] [lang=en], body[data-lang=en] [lang=es] { display:none !important; }
+
+#viewport { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; }
+#stage { width:1920px; height:1080px; position:relative; transform-origin:center center; flex:none; }
+.slide { position:absolute; inset:0; overflow:hidden; background:var(--k); opacity:0; visibility:hidden; transition:opacity .7s ease, visibility .7s; padding:110px 120px; }
+.slide.light { background:var(--p); color:var(--k); }
+.slide.orange { background:var(--o); color:var(--k); }
+.slide.on { opacity:1; visibility:visible; }
+
+/* entry animation */
+.slide .a { opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+.slide.on .a { opacity:1; transform:none; }
+.slide.on .a.d1{transition-delay:.12s}.slide.on .a.d2{transition-delay:.24s}.slide.on .a.d3{transition-delay:.36s}.slide.on .a.d4{transition-delay:.48s}.slide.on .a.d5{transition-delay:.6s}.slide.on .a.d6{transition-delay:.72s}.slide.on .a.d7{transition-delay:.84s}.slide.on .a.d8{transition-delay:.96s}
+.kb img { animation:none; }
+.slide.on .kb img { animation:kb 16s ease-out forwards; }
+@keyframes kb { from { transform:scale(1.12); } to { transform:scale(1); } }
+
+.display { font-family:Michroma,sans-serif; text-transform:uppercase; line-height:1.1; font-weight:400; letter-spacing:.01em; }
+h1.display { font-size:84px; } h2.display { font-size:58px; margin-bottom:28px; }
+.accent { color:var(--o); }
+.orange .accent { color:var(--w); }
+.kicker { font-weight:600; font-size:22px; letter-spacing:.34em; text-transform:uppercase; color:var(--o); display:flex; align-items:center; gap:18px; margin-bottom:26px; }
+.kicker::before { content:""; width:56px; height:2px; background:currentColor; }
+.orange .kicker { color:var(--k); }
+.lead { font-size:32px; line-height:1.45; font-weight:300; max-width:1300px; }
+.muted { color:var(--m); } .light .muted { color:#666; }
+p { font-size:24px; line-height:1.5; }
+b { font-weight:600; }
+
+.grid { display:grid; gap:24px; }
+.card { background:var(--k2); border:1px solid var(--k3); border-radius:16px; padding:30px; }
+.light .card { background:#fff; border-color:#fff; }
+.card h3 { font-size:28px; font-weight:600; margin-bottom:8px; }
+.card p { font-size:21px; color:#bdbdbd; line-height:1.4; }
+.light .card p { color:#666; }
+.num { font-family:Michroma; color:var(--o); font-size:34px; margin-bottom:14px; }
+.bar { border-left:3px solid var(--o); padding-left:20px; }
+.bar h3 { font-size:26px; font-weight:600; margin-bottom:4px; }
+.bar p { font-size:21px; color:var(--m); line-height:1.38; }
+.light .bar p { color:#666; }
+.ph { border-radius:16px; overflow:hidden; background:#222; position:relative; }
+.ph img { width:100%; height:100%; object-fit:cover; display:block; }
+.stats { display:flex; gap:40px; border-top:1px solid rgba(128,128,128,.3); border-bottom:1px solid rgba(128,128,128,.3); padding:26px 0; margin:34px 0; }
+.stat { flex:1; } .stat .v { font-family:Michroma; color:var(--o); font-size:50px; line-height:1.1; white-space:nowrap; } .stat .l { font-size:21px; color:var(--m); margin-top:8px; }
+.light .stat .l { color:#666; }
+ul.dots { list-style:none; } ul.dots li { font-size:25px; line-height:1.55; padding-left:28px; position:relative; }
+ul.dots li::before { content:""; position:absolute; left:0; top:15px; width:10px; height:10px; border-radius:50%; background:var(--o); }
+.logo { height:56px; width:auto; display:block; align-self:flex-start; }
+.se { display:flex; width:120px; height:8px; } .se i { flex:1; background:var(--se1); } .se i:nth-child(2) { background:var(--se2); flex:.5; }
+.foot { position:absolute; left:120px; right:120px; bottom:46px; display:flex; justify-content:space-between; font-size:17px; letter-spacing:.3em; text-transform:uppercase; font-weight:600; color:#666; }
+
+/* UI */
+#ui { position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; gap:10px; padding:14px 18px; z-index:10; transition:opacity .4s; background:linear-gradient(0deg, rgba(0,0,0,.65), transparent); }
+body.idle #ui { opacity:0; pointer-events:none; }
+#ui button { font:600 13px Jost,sans-serif; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:9px 15px; cursor:pointer; min-height:40px; }
+#ui button:hover, #ui button:focus-visible { background:var(--o); border-color:var(--o); outline:none; }
+#ui button.act { background:var(--o); border-color:var(--o); }
+#count { font:600 13px Jost; letter-spacing:.15em; color:#bbb; margin-left:auto; }
+#prog { position:fixed; left:0; top:0; height:3px; background:var(--o); z-index:11; transition:width .5s; }
+#dots { display:flex; gap:6px; margin-left:12px; flex-wrap:wrap; }
+#dots i { width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.3); cursor:pointer; }
+#dots i.on { background:var(--o); }
+@media (max-width:700px) { #dots { display:none; } #ui button { padding:8px 11px; font-size:11px; } }
+@media (prefers-reduced-motion: reduce) { .slide, .slide .a { transition:none !important; } .slide.on .kb img { animation:none; } }
+
+/* print/export: one slide per page */
+@media print {
+  @page { size:1920px 1080px; margin:0; }
+  html,body { overflow:visible; height:auto; background:#000; }
+  #viewport { position:static; display:block; } #stage { transform:none !important; width:1920px; height:auto; }
+  .slide { position:relative; opacity:1; visibility:visible; width:1920px; height:1080px; page-break-after:always; break-after:page; }
+  .slide .a { opacity:1; transform:none; }
+  #ui, #prog { display:none; }
+}
+</style>
+</head>
+<body data-lang="es">
+<div id="prog"></div>
+<div id="viewport"><div id="stage">
+
+<!-- 1 COVER -->
+<section class="slide on" data-t="Cover">
+  <div class="ph kb" style="position:absolute;inset:0 0 0 45%;border-radius:0"><img src="img/mancity-trofeos.jpg" alt="Treble Trophy Tour, Buenos Aires"></div>
+  <div style="position:absolute;inset:0 0 0 45%;background:linear-gradient(90deg,var(--k) 0%,rgba(11,11,11,.2) 40%,rgba(11,11,11,0) 100%)"></div>
+  <div style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;width:58%">
+    <img class="logo a" src="img/der-logo-white.png" alt="DER" style="height:70px">
+    <div style="margin-top:auto">
+      <div class="kicker a d1">{{ bi('cover_kicker') }}</div>
+      <h1 class="display a d2">{% for i in range(3) %}{{ bit(es.cover_title[i], en.cover_title[i]) }}<br>{% endfor %}</h1>
+      <p class="lead muted a d3" style="margin-top:30px;max-width:900px">{{ bi('cover_lead') }}</p>
+      <div class="a d4" style="margin-top:60px"><div class="se"><i></i><i></i><i></i></div>
+        <p style="font-size:19px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;margin-top:16px">{{ bi('prepared') }}</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 INTRO -->
+<section class="slide" data-t="Intro">
+  <div class="grid" style="grid-template-columns:1.15fr 1fr;gap:80px;height:100%">
+    <div style="display:flex;flex-direction:column">
+      <div class="kicker a">{{ bi('intro_kicker') }}</div>
+      <h2 class="display a d1">{{ bi('intro_title') }}</h2>
+      <p class="lead a d2">{{ bi('intro_p1') }}</p>
+      <p class="muted a d3" style="margin-top:22px;font-size:26px;max-width:1000px">{{ bi('intro_p2') }}</p>
+      <div class="stats a d4" style="margin-top:auto">
+        {% for i in range(4) %}<div class="stat"><div class="v" style="font-size:38px">{{ bit(es.stats[i][0], en.stats[i][0]) }}</div><div class="l">{{ bit(es.stats[i][1], en.stats[i][1]) }}</div></div>{% endfor %}
+      </div>
+    </div>
+    <div class="ph kb a d2"><img src="img/staff-equipo.jpg" alt="Equipo DER"></div>
+  </div>
+</section>
+
+<!-- 3 POR QUÉ -->
+<section class="slide light" data-t="Why">
+  <div class="kicker a">{{ bit('Diferenciales', 'What sets us apart') }}</div>
+  <h2 class="display a d1">{{ bi('intro_why_title') }}</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:28px;margin-top:40px">
+    {% for i in range(4) %}<div class="card a d{{ i+2 }}" style="padding:40px"><div class="num">0{{ i+1 }}</div><h3 style="font-size:32px">{{ bit(es.intro_why[i][0], en.intro_why[i][0]) }}</h3><p style="font-size:23px">{{ bit(es.intro_why[i][1], en.intro_why[i][1]) }}</p></div>{% endfor %}
+  </div>
+  <div class="grid a d6" style="grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px">
+    {% for l in ['turismo-rd','asturias','incaa','beyond90','mancity'] %}<div style="background:#161616;border-radius:12px;height:96px;display:flex;align-items:center;justify-content:center"><img src="img/logos/{{ l }}.png" alt="" style="max-height:80%;max-width:90%"></div>{% endfor %}
+  </div>
+</section>
+
+<!-- 4 MÉTODO -->
+<section class="slide" data-t="Method">
+  <div class="kicker a">{{ bi('method_kicker') }}</div>
+  <h2 class="display a d1">{{ bi('method_title') }}</h2>
+  <p class="lead muted a d2">{{ bi('method_lead') }}</p>
+  <div class="grid" style="grid-template-columns:repeat(5,1fr);gap:22px;margin-top:60px">
+    {% for i in range(5) %}<div class="card a d{{ i+3 }}" style="min-height:300px"><div class="num" style="font-size:44px">0{{ i+1 }}</div><h3>{{ bit(es.steps[i][0], en.steps[i][0]) }}</h3><p>{{ bit(es.steps[i][1], en.steps[i][1]) }}</p></div>{% endfor %}
+  </div>
+  <p class="a d8" style="font-size:30px;margin-top:56px;border-left:4px solid var(--o);padding-left:28px;max-width:1400px;font-weight:400">{{ bi('method_quote') }}</p>
+</section>
+
+<!-- 5 SERVICIOS -->
+<section class="slide light" data-t="Services">
+  <div class="grid" style="grid-template-columns:1fr 1.25fr;gap:70px;height:100%">
+    <div class="grid" style="grid-template-rows:1fr 1fr;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="ph a" style="grid-row:span 2"><img src="img/feelgin-escenario.jpg" alt="Escenario Feel Gin"></div>
+      <div class="ph a d1"><img src="img/rd-ceviche.jpg" alt="Gastronomía"></div>
+      <div class="ph a d2"><img src="img/campusparty-credencial.jpg" alt="Acreditación" style="object-position:50% 35%"></div>
+    </div>
+    <div>
+      <div class="kicker a">{{ bi('services_kicker') }}</div>
+      <h2 class="display a d1">{{ bi('services_title') }}</h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:26px 36px;margin-top:36px">
+        {% for i in range(8) %}<div class="bar a d{{ (i//2)+2 }}"><h3>{{ bit(es.services[i][0], en.services[i][0]) }}</h3><p>{{ bit(es.services[i][1], en.services[i][1]) }}</p></div>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 TECNOLOGÍA -->
+<section class="slide" data-t="Tech">
+  <div class="kicker a">{{ bi('tech_kicker') }}</div>
+  <h2 class="display a d1">{{ bi('tech_title') }}</h2>
+  <p class="lead muted a d2">{{ bi('tech_lead') }}</p>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:28px;margin:44px 0 40px">
+    <div class="card a d3" style="padding:40px"><div style="font-weight:700;font-size:72px;line-height:1">P<span class="accent">A</span>SE</div><div style="font-weight:600;letter-spacing:.3em;color:var(--o);margin:12px 0 14px;font-size:18px">{{ bit('ACREDITACIÓN','ACCREDITATION') }}</div><p>{{ bi('pase_desc') }}</p><div style="color:var(--o);font-weight:600;font-size:21px;margin-top:12px">pase.somosder.ar →</div></div>
+    <div class="card a d4" style="padding:40px"><div style="font-weight:700;font-size:72px;line-height:1">ENTR<span class="accent">Á</span></div><div style="font-weight:600;letter-spacing:.3em;color:var(--o);margin:12px 0 14px;font-size:18px">{{ bit('TICKETERA','TICKETING') }}</div><p>{{ bi('entra_desc') }}</p><div style="color:var(--o);font-weight:600;font-size:21px;margin-top:12px">entratickets.com →</div></div>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(6,1fr);gap:24px">
+    {% for i in range(6) %}<div class="bar a d{{ i+3 }}"><h3 style="font-size:22px">{{ bit(es.tech_features[i][0], en.tech_features[i][0]) }}</h3><p style="font-size:18px">{{ bit(es.tech_features[i][1], en.tech_features[i][1]) }}</p></div>{% endfor %}
+  </div>
+</section>
+
+<!-- 7 RD -->
+<section class="slide light" data-t="Dominican Rep.">
+  <div class="grid" style="grid-template-columns:1fr 1.15fr;gap:70px;height:100%">
+    <div style="display:flex;flex-direction:column;justify-content:center">
+      <div class="kicker a">{{ bi('rd_kicker') }}</div>
+      <h2 class="display a d1" style="font-size:52px">{{ bi('rd_title') }}</h2>
+      <p class="a d2" style="font-size:26px">{{ bi('rd_lead') }}</p>
+      <div class="stats a d3">{% for i in range(3) %}<div class="stat"><div class="v" style="font-size:44px">{{ bit(es.rd_stats[i][0], en.rd_stats[i][0]) }}</div><div class="l">{{ bit(es.rd_stats[i][1], en.rd_stats[i][1]) }}</div></div>{% endfor %}</div>
+      <ul class="dots a d4">{% for i in range(4) %}<li>{{ bit(es.rd_bullets[i], en.rd_bullets[i]) }}</li>{% endfor %}</ul>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:16px">
+      <div class="ph kb a d2"><img src="img/rd-plato.jpg" alt=""></div>
+      <div class="ph kb a d3"><img src="img/rd-ceviche.jpg" alt=""></div>
+      <div class="ph kb a d4"><img src="img/rd-baile.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 MAN CITY -->
+<section class="slide" data-t="Manchester City" style="padding:0">
+  <div class="grid" style="grid-template-columns:1.35fr 1fr 1fr;gap:6px;height:520px">
+    <div class="ph kb a" style="border-radius:0"><img src="img/mancity-trofeos.jpg" alt=""></div>
+    <div class="ph kb a d1" style="border-radius:0"><img src="img/mancity-escenario.jpg" alt=""></div>
+    <div class="ph kb a d2" style="border-radius:0"><img src="img/mancity-fans.jpg" alt="" style="object-position:20% 50%"></div>
+  </div>
+  <div style="padding:60px 120px">
+    <div class="kicker a d2">{{ bi('mc_kicker') }}</div>
+    <div class="grid" style="grid-template-columns:1.2fr .8fr 1fr;gap:60px">
+      <div><h2 class="display a d3" style="font-size:46px">{{ bi('mc_title') }}</h2><p class="muted a d4">{{ bi('mc_lead') }}</p></div>
+      <div class="a d4">{% for i in range(2) %}<div style="margin-bottom:24px"><div class="stat"><div class="v">{{ bit(es.mc_stats[i][0], en.mc_stats[i][0]) }}</div><div class="l">{{ bit(es.mc_stats[i][1], en.mc_stats[i][1]) }}</div></div></div>{% endfor %}</div>
+      <ul class="dots a d5">{% for i in range(4) %}<li>{{ bit(es.mc_bullets[i], en.mc_bullets[i]) }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+</section>
+
+<!-- 9 CAMONDO -->
+<section class="slide orange" data-t="Camondo WWR">
+  <div style="height:100%;display:flex;flex-direction:column;justify-content:center">
+    <div class="kicker a">{{ bi('cw_kicker') }}</div>
+    <h1 class="display a d1" style="font-size:76px">{{ bi('cw_title') }}</h1>
+    <p class="lead a d2" style="margin-top:24px;font-weight:400">{{ bi('cw_lead') }}</p>
+    <div class="grid a d3" style="grid-template-columns:repeat(3,1fr);gap:40px;margin:60px 0;border-top:2px solid var(--k);border-bottom:2px solid var(--k);padding:36px 0">
+      {% for i in range(3) %}<div><div class="display" style="font-size:60px">{{ bit(es.proto_stats[i][0], en.proto_stats[i][0]) }}</div><div style="font-size:24px;font-weight:500;margin-top:8px">{{ bit(es.proto_stats[i][1], en.proto_stats[i][1]) }}</div></div>{% endfor %}
+    </div>
+    <ul class="a d4" style="list-style:none;display:flex;gap:50px">{% for i in range(3) %}<li style="font-size:24px;font-weight:500">— {{ bit(es.cw_bullets[i], en.cw_bullets[i]) }}</li>{% endfor %}</ul>
+  </div>
+</section>
+
+<!-- 10 DIDI + BEPANTHOL -->
+<section class="slide light" data-t="DiDi · Bepanthol">
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:70px;height:100%">
+    <div style="display:flex;flex-direction:column">
+      <div class="kicker a">{{ bi('didi_kicker') }}</div>
+      <h2 class="display a d1" style="font-size:44px">{{ bi('didi_title') }}</h2>
+      <div class="grid a d2" style="grid-template-columns:1fr 1fr;gap:14px;height:330px"><div class="ph"><img src="img/didi-speaker.jpg" alt="" style="object-position:50% 30%"></div><div class="ph"><img src="img/didi-regalos.jpg" alt=""></div></div>
+      <p class="a d3" style="margin-top:26px">{{ bi('didi_lead') }}</p>
+      <div class="stats a d4" style="margin-bottom:0">{% for i in range(2) %}<div class="stat"><div class="v">{{ bit(es.didi_stats[i][0], en.didi_stats[i][0]) }}</div><div class="l">{{ bit(es.didi_stats[i][1], en.didi_stats[i][1]) }}</div></div>{% endfor %}</div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div class="kicker a d2">{{ bi('bep_kicker') }}</div>
+      <h2 class="display a d3" style="font-size:44px">{{ bi('bep_title') }}</h2>
+      <div class="grid a d4" style="grid-template-columns:1fr 1fr;gap:14px;height:330px"><div class="ph"><img src="img/bepanthol-staff.jpg" alt=""></div><div class="ph"><img src="img/bepanthol-stand.jpg" alt=""></div></div>
+      <p class="a d5" style="margin-top:26px">{{ bi('bep_lead') }}</p>
+      <ul class="dots a d6" style="margin-top:20px">{% for i in range(3) %}<li style="font-size:22px">{{ bit(es.bep_bullets[i], en.bep_bullets[i]) }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11 TRAYECTORIA -->
+<section class="slide" data-t="Track record">
+  <div class="kicker a">{{ bi('more_kicker') }}</div>
+  <h2 class="display a d1">{{ bi('more_title') }}</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px">
+    {% for i in range(6) %}<div class="card a d{{ i+2 }}"><h3>{{ bit(es.more[i][0], en.more[i][0]) }}</h3><div style="color:var(--o);font-weight:600;font-size:17px;margin-bottom:10px">{{ bit(es.more[i][1], en.more[i][1]) }}</div><p>{{ bit(es.more[i][2], en.more[i][2]) }}</p></div>{% endfor %}
+  </div>
+  <div class="grid a d8" style="grid-template-columns:repeat(8,1fr);gap:12px;margin-top:40px">
+    {% for l in logos[:8] %}<div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/{{ l }}.png" alt="" style="max-height:80%;max-width:90%"></div>{% endfor %}
+  </div>
+  <div class="grid a d8" style="grid-template-columns:repeat(7,1fr);gap:12px;margin-top:12px;padding:0 6%">
+    {% for l in logos[8:] %}<div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/{{ l }}.png" alt="" style="max-height:80%;max-width:90%"></div>{% endfor %}
+  </div>
+</section>
+
+<!-- 12 PROPUESTA -->
+<section class="slide light" data-t="Proposal">
+  <div class="kicker a">{{ bi('prop_kicker') }}</div>
+  <h2 class="display a d1">{{ bi('prop_title') }}</h2>
+  <p class="lead muted a d2" style="font-size:28px">{{ bi('prop_lead') }}</p>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px">
+    {% for i in range(6) %}<div class="card a d{{ i+3 }}" style="padding:34px"><div style="font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:10px">{{ bit(es.formats[i][1], en.formats[i][1]) }}</div><h3>{{ bit(es.formats[i][0], en.formats[i][0]) }}</h3><p>{{ bit(es.formats[i][2], en.formats[i][2]) }}</p></div>{% endfor %}
+  </div>
+</section>
+
+<!-- 13 COMPROMISOS -->
+<section class="slide" data-t="Commitments">
+  <div class="grid" style="grid-template-columns:1.2fr 1fr;gap:80px;height:100%">
+    <div>
+      <div class="kicker a">{{ bi('comm_kicker') }}</div>
+      <h2 class="display a d1" style="font-size:48px">{{ bi('comm_title') }}</h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:30px 40px;margin-top:40px">
+        {% for i in range(6) %}<div class="bar a d{{ i+2 }}"><h3>{{ bit(es.commitments[i][0], en.commitments[i][0]) }}</h3><p>{{ bit(es.commitments[i][1], en.commitments[i][1]) }}</p></div>{% endfor %}
+      </div>
+    </div>
+    <div class="card a d4" style="padding:50px;align-self:center;background:var(--o);border-color:var(--o);color:var(--k)">
+      <div class="kicker" style="color:var(--k)">{{ bi('next_title') }}</div>
+      {% for i in range(3) %}<div style="display:grid;grid-template-columns:90px 1fr;padding:22px 0;border-top:{{ '0' if i==0 else '2px solid rgba(0,0,0,.2)' }}"><div class="display" style="font-size:44px">0{{ i+1 }}</div><div><h3 style="font-size:30px">{{ bit(es.next[i][0], en.next[i][0]) }}</h3><p style="color:var(--k);font-size:22px">{{ bit(es.next[i][1], en.next[i][1]) }}</p></div></div>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 14 CIERRE -->
+<section class="slide" data-t="Contact">
+  <div class="ph kb" style="position:absolute;inset:0 0 0 52%;border-radius:0"><img src="img/abel-credencial.jpg" alt=""></div>
+  <div style="position:absolute;inset:0 0 0 52%;background:linear-gradient(90deg,var(--k),rgba(11,11,11,0) 35%)"></div>
+  <div style="position:relative;z-index:2;width:52%;height:100%;display:flex;flex-direction:column;justify-content:center">
+    <img class="logo a" src="img/der-logo-white.png" alt="DER" style="margin-bottom:40px">
+    <h1 class="display a d1" style="font-size:66px">{% for i in range(3) %}{{ bit(es.back_title[i], en.back_title[i]) }}<br>{% endfor %}</h1>
+    <div class="a d2" style="margin-top:40px;font-size:30px;line-height:1.8">
+      <span class="muted">{{ bi('lbl_whatsapp') }}</span>&nbsp; {{ c.whatsapp }}<br>
+      <span class="muted">{{ bi('lbl_mail') }}</span>&nbsp; {{ c.mail }}<br>
+      <span class="muted">{{ bi('lbl_web') }}</span>&nbsp; {{ c.web }}
+    </div>
+    <div class="a d3" style="display:flex;gap:30px;margin-top:44px">
+      {% for q,k in [('portfolio','qr_web'),('pase','qr_pase'),('whatsapp','qr_wa')] %}<div style="text-align:center;font-size:16px;color:var(--m)"><div style="width:150px;height:150px;background:#fff;padding:10px;border-radius:12px;margin-bottom:10px"><img src="img/qr/{{ q }}.svg" alt="QR" style="width:100%;height:100%"></div>{{ bi(k) }}</div>{% endfor %}
+    </div>
+    <p class="a d4" style="margin-top:50px;font-size:20px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#777">Tack för er tid.</p>
+  </div>
+</section>
+
+</div></div>
+
+<div id="ui" role="toolbar" aria-label="Controles">
+  <button id="prev" aria-label="Anterior">←</button>
+  <button id="next" aria-label="Siguiente">→</button>
+  <button id="bes" class="act">ES</button><button id="ben">EN</button>
+  <button id="auto" title="Modo kiosko: avanza solo cada 9 s">▶ Auto</button>
+  <button id="fs" title="Pantalla completa (F)">⛶</button>
+  <div id="dots"></div>
+  <span id="count"></span>
+</div>
+
+<script>
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  const stage = document.getElementById('stage');
+  let i = 0, timer = null, idleT = null;
+  const q = new URLSearchParams(location.search);
+
+  function fit() {
+    const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    stage.style.transform = `scale(${s})`;
+  }
+  const dots = document.getElementById('dots');
+  slides.forEach((s, k) => { const d = document.createElement('i'); d.title = s.dataset.t; d.onclick = () => go(k); dots.appendChild(d); });
+
+  function go(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('on', k === i));
+    [...dots.children].forEach((d, k) => d.classList.toggle('on', k === i));
+    document.getElementById('count').textContent = `${i + 1} / ${slides.length}`;
+    document.getElementById('prog').style.width = `${((i + 1) / slides.length) * 100}%`;
+    try { history.replaceState(null, '', `#${i + 1}`); } catch (e) {}
+  }
+  function lang(l) {
+    document.body.dataset.lang = l; document.documentElement.lang = l;
+    document.getElementById('bes').classList.toggle('act', l === 'es');
+    document.getElementById('ben').classList.toggle('act', l === 'en');
+    try { localStorage.setItem('der-se-lang', l); } catch (e) {}
+  }
+  function auto(on) {
+    clearInterval(timer); timer = null;
+    const b = document.getElementById('auto');
+    if (on) { timer = setInterval(() => go(i + 1), 9000); b.classList.add('act'); b.textContent = '❚❚ Auto'; }
+    else { b.classList.remove('act'); b.textContent = '▶ Auto'; }
+  }
+  function fs() { if (!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); }
+  function wake() { document.body.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => document.body.classList.add('idle'), 2800); }
+
+  document.getElementById('prev').onclick = () => go(i - 1);
+  document.getElementById('next').onclick = () => go(i + 1);
+  document.getElementById('bes').onclick = () => lang('es');
+  document.getElementById('ben').onclick = () => lang('en');
+  document.getElementById('auto').onclick = () => auto(!timer);
+  document.getElementById('fs').onclick = fs;
+
+  addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' ', 'Enter'].includes(e.key)) { e.preventDefault(); go(i + 1); }
+    else if (['ArrowLeft', 'PageUp', 'Backspace'].includes(e.key)) { e.preventDefault(); go(i - 1); }
+    else if (e.key === 'Home') go(0); else if (e.key === 'End') go(slides.length - 1);
+    else if (e.key === 'f' || e.key === 'F') fs();
+    else if (e.key === 'l' || e.key === 'L') lang(document.body.dataset.lang === 'es' ? 'en' : 'es');
+    else if (e.key === 'a' || e.key === 'A') auto(!timer);
+    wake();
+  });
+  let x0 = null;
+  addEventListener('touchstart', e => { x0 = e.touches[0].clientX; wake(); }, { passive: true });
+  addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) go(i + (dx < 0 ? 1 : -1)); x0 = null; });
+  document.getElementById('viewport').addEventListener('click', e => { if (e.target.closest('#ui')) return; go(i + (e.clientX > innerWidth / 3 ? 1 : -1)); });
+  addEventListener('mousemove', wake);
+  addEventListener('resize', fit);
+
+  let saved = null; try { saved = localStorage.getItem('der-se-lang'); } catch (e) {}
+  lang(q.get('lang') || saved || 'es');
+  fit(); go(Math.max(0, parseInt(location.hash.slice(1) || '1', 10) - 1)); wake();
+  if (q.has('auto')) auto(true);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DER · Embajada de Suecia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --o:#ff5c00; --k:#0b0b0b; --k2:#161616; --k3:#262626; --w:#fff; --p:#f2f2f0; --m:#9a9a9a; --se1:#006aa7; --se2:#fecc02; color-scheme: dark; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html,body { height:100%; background:#000; overflow:hidden; font-family:Jost,system-ui,sans-serif; font-weight:300; color:var(--w); }
+body[data-lang=es] [lang=en], body[data-lang=en] [lang=es] { display:none !important; }
+
+#viewport { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; }
+#stage { width:1920px; height:1080px; position:relative; transform-origin:center center; flex:none; }
+.slide { position:absolute; inset:0; overflow:hidden; background:var(--k); opacity:0; visibility:hidden; transition:opacity .7s ease, visibility .7s; padding:110px 120px; }
+.slide.light { background:var(--p); color:var(--k); }
+.slide.orange { background:var(--o); color:var(--k); }
+.slide.on { opacity:1; visibility:visible; }
+
+/* entry animation */
+.slide .a { opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+.slide.on .a { opacity:1; transform:none; }
+.slide.on .a.d1{transition-delay:.12s}.slide.on .a.d2{transition-delay:.24s}.slide.on .a.d3{transition-delay:.36s}.slide.on .a.d4{transition-delay:.48s}.slide.on .a.d5{transition-delay:.6s}.slide.on .a.d6{transition-delay:.72s}.slide.on .a.d7{transition-delay:.84s}.slide.on .a.d8{transition-delay:.96s}
+.kb img { animation:none; }
+.slide.on .kb img { animation:kb 16s ease-out forwards; }
+@keyframes kb { from { transform:scale(1.12); } to { transform:scale(1); } }
+
+.display { font-family:Michroma,sans-serif; text-transform:uppercase; line-height:1.1; font-weight:400; letter-spacing:.01em; }
+h1.display { font-size:84px; } h2.display { font-size:58px; margin-bottom:28px; }
+.accent { color:var(--o); }
+.orange .accent { color:var(--w); }
+.kicker { font-weight:600; font-size:22px; letter-spacing:.34em; text-transform:uppercase; color:var(--o); display:flex; align-items:center; gap:18px; margin-bottom:26px; }
+.kicker::before { content:""; width:56px; height:2px; background:currentColor; }
+.orange .kicker { color:var(--k); }
+.lead { font-size:32px; line-height:1.45; font-weight:300; max-width:1300px; }
+.muted { color:var(--m); } .light .muted { color:#666; }
+p { font-size:24px; line-height:1.5; }
+b { font-weight:600; }
+
+.grid { display:grid; gap:24px; }
+.card { background:var(--k2); border:1px solid var(--k3); border-radius:16px; padding:30px; }
+.light .card { background:#fff; border-color:#fff; }
+.card h3 { font-size:28px; font-weight:600; margin-bottom:8px; }
+.card p { font-size:21px; color:#bdbdbd; line-height:1.4; }
+.light .card p { color:#666; }
+.num { font-family:Michroma; color:var(--o); font-size:34px; margin-bottom:14px; }
+.bar { border-left:3px solid var(--o); padding-left:20px; }
+.bar h3 { font-size:26px; font-weight:600; margin-bottom:4px; }
+.bar p { font-size:21px; color:var(--m); line-height:1.38; }
+.light .bar p { color:#666; }
+.ph { border-radius:16px; overflow:hidden; background:#222; position:relative; }
+.ph img { width:100%; height:100%; object-fit:cover; display:block; }
+.stats { display:flex; gap:40px; border-top:1px solid rgba(128,128,128,.3); border-bottom:1px solid rgba(128,128,128,.3); padding:26px 0; margin:34px 0; }
+.stat { flex:1; } .stat .v { font-family:Michroma; color:var(--o); font-size:50px; line-height:1.1; white-space:nowrap; } .stat .l { font-size:21px; color:var(--m); margin-top:8px; }
+.light .stat .l { color:#666; }
+ul.dots { list-style:none; } ul.dots li { font-size:25px; line-height:1.55; padding-left:28px; position:relative; }
+ul.dots li::before { content:""; position:absolute; left:0; top:15px; width:10px; height:10px; border-radius:50%; background:var(--o); }
+.logo { height:56px; width:auto; display:block; align-self:flex-start; }
+.se { display:flex; width:120px; height:8px; } .se i { flex:1; background:var(--se1); } .se i:nth-child(2) { background:var(--se2); flex:.5; }
+.foot { position:absolute; left:120px; right:120px; bottom:46px; display:flex; justify-content:space-between; font-size:17px; letter-spacing:.3em; text-transform:uppercase; font-weight:600; color:#666; }
+
+/* UI */
+#ui { position:fixed; left:0; right:0; bottom:0; display:flex; align-items:center; gap:10px; padding:14px 18px; z-index:10; transition:opacity .4s; background:linear-gradient(0deg, rgba(0,0,0,.65), transparent); }
+body.idle #ui { opacity:0; pointer-events:none; }
+#ui button { font:600 13px Jost,sans-serif; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:9px 15px; cursor:pointer; min-height:40px; }
+#ui button:hover, #ui button:focus-visible { background:var(--o); border-color:var(--o); outline:none; }
+#ui button.act { background:var(--o); border-color:var(--o); }
+#count { font:600 13px Jost; letter-spacing:.15em; color:#bbb; margin-left:auto; }
+#prog { position:fixed; left:0; top:0; height:3px; background:var(--o); z-index:11; transition:width .5s; }
+#dots { display:flex; gap:6px; margin-left:12px; flex-wrap:wrap; }
+#dots i { width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.3); cursor:pointer; }
+#dots i.on { background:var(--o); }
+@media (max-width:700px) { #dots { display:none; } #ui button { padding:8px 11px; font-size:11px; } }
+@media (prefers-reduced-motion: reduce) { .slide, .slide .a { transition:none !important; } .slide.on .kb img { animation:none; } }
+
+/* print/export: one slide per page */
+@media print {
+  @page { size:1920px 1080px; margin:0; }
+  html,body { overflow:visible; height:auto; background:#000; }
+  #viewport { position:static; display:block; } #stage { transform:none !important; width:1920px; height:auto; }
+  .slide { position:relative; opacity:1; visibility:visible; width:1920px; height:1080px; page-break-after:always; break-after:page; }
+  .slide .a { opacity:1; transform:none; }
+  #ui, #prog { display:none; }
+}
+</style>
+</head>
+<body data-lang="es">
+<div id="prog"></div>
+<div id="viewport"><div id="stage">
+
+<!-- 1 COVER -->
+<section class="slide on" data-t="Cover">
+  <div class="ph kb" style="position:absolute;inset:0 0 0 45%;border-radius:0"><img src="img/mancity-trofeos.jpg" alt="Treble Trophy Tour, Buenos Aires"></div>
+  <div style="position:absolute;inset:0 0 0 45%;background:linear-gradient(90deg,var(--k) 0%,rgba(11,11,11,.2) 40%,rgba(11,11,11,0) 100%)"></div>
+  <div style="position:relative;z-index:2;height:100%;display:flex;flex-direction:column;width:58%">
+    <img class="logo a" src="img/der-logo-white.png" alt="DER" style="height:70px">
+    <div style="margin-top:auto">
+      <div class="kicker a d1"><span lang="es">Carpeta institucional</span><span lang="en">Company profile</span></div>
+      <h1 class="display a d2"><span lang="es">Eventos que</span><span lang="en">Events that</span><br><span lang="es"><span class='accent'>representan</span></span><span lang="en"><span class='accent'>represent</span></span><br><span lang="es">a un país.</span><span lang="en">a country.</span><br></h1>
+      <p class="lead muted a d3" style="margin-top:30px;max-width:900px"><span lang="es">Producción integral de recepciones, foros, visitas oficiales y experiencias culturales. Un solo equipo, de la primera reunión al desmontaje.</span><span lang="en">End-to-end production of receptions, forums, official visits and cultural experiences. One team, from the first meeting to the final load-out.</span></p>
+      <div class="a d4" style="margin-top:60px"><div class="se"><i></i><i></i><i></i></div>
+        <p style="font-size:19px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;margin-top:16px"><span lang="es">Preparado para la Embajada de Suecia en Argentina</span><span lang="en">Prepared for the Embassy of Sweden in Argentina</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 INTRO -->
+<section class="slide" data-t="Intro">
+  <div class="grid" style="grid-template-columns:1.15fr 1fr;gap:80px;height:100%">
+    <div style="display:flex;flex-direction:column">
+      <div class="kicker a"><span lang="es">Hej! Somos DER</span><span lang="en">Hej! We are DER</span></div>
+      <h2 class="display a d1"><span lang="es">Tu socio local de <span class='accent'>producción</span></span><span lang="en">Your local <span class='accent'>production</span> partner</span></h2>
+      <p class="lead a d2"><span lang="es">DER es una productora de eventos corporativos, institucionales y masivos con base en Buenos Aires. Coordinamos proveedores, montaje, logística, gastronomía, staff y accesos con un mismo equipo, y usamos <b>plataformas propias</b> de acreditación y ticketing.</span><span lang="en">DER is a Buenos Aires-based production company for corporate, institutional and large-scale events. One team coordinates suppliers, set-up, logistics, catering, staff and access, using our <b>own platforms</b> for accreditation and ticketing.</span></p>
+      <p class="muted a d3" style="margin-top:22px;font-size:26px;max-width:1000px"><span lang="es">Trabajamos para marcas globales, gobiernos y agencias internacionales que necesitan algo simple de pedir y difícil de lograr: que todo salga bien, a tiempo, con la imagen correcta y sin sorpresas.</span><span lang="en">We work for global brands, governments and international agencies that need something simple to ask for and hard to deliver: everything done right, on time, with the right image and no surprises.</span></p>
+      <div class="stats a d4" style="margin-top:auto">
+        <div class="stat"><div class="v" style="font-size:38px"><span lang="es">30.000+</span><span lang="en">30,000+</span></div><div class="l"><span lang="es">personas por evento, desde 300</span><span lang="en">guests per event, from 300</span></div></div><div class="stat"><div class="v" style="font-size:38px"><span lang="es">15+</span><span lang="en">15+</span></div><div class="l"><span lang="es">marcas, gobiernos y agencias</span><span lang="en">brands, governments and agencies</span></div></div><div class="stat"><div class="v" style="font-size:38px"><span lang="es">2</span><span lang="en">2</span></div><div class="l"><span lang="es">plataformas propias</span><span lang="en">in-house platforms</span></div></div><div class="stat"><div class="v" style="font-size:38px"><span lang="es">ES · EN</span><span lang="en">ES · EN</span></div><div class="l"><span lang="es">equipo bilingüe</span><span lang="en">bilingual team</span></div></div>
+      </div>
+    </div>
+    <div class="ph kb a d2"><img src="img/staff-equipo.jpg" alt="Equipo DER"></div>
+  </div>
+</section>
+
+<!-- 3 POR QUÉ -->
+<section class="slide light" data-t="Why">
+  <div class="kicker a"><span lang="es">Diferenciales</span><span lang="en">What sets us apart</span></div>
+  <h2 class="display a d1"><span lang="es">Por qué DER para la Embajada</span><span lang="en">Why DER for the Embassy</span></h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:28px;margin-top:40px">
+    <div class="card a d2" style="padding:40px"><div class="num">01</div><h3 style="font-size:32px"><span lang="es">Experiencia con gobiernos</span><span lang="en">Government experience</span></h3><p style="font-size:23px"><span lang="es">Ministerio de Turismo de Rep. Dominicana, Principado de Asturias, INCAA y organismos provinciales.</span><span lang="en">Dominican Republic Ministry of Tourism, Principality of Asturias, INCAA and provincial bodies.</span></p></div><div class="card a d3" style="padding:40px"><div class="num">02</div><h3 style="font-size:32px"><span lang="es">Protocolo y seguridad</span><span lang="en">Protocol and security</span></h3><p style="font-size:23px"><span lang="es">Operativos coordinados con equipos de seguridad oficiales y resguardo de piezas con protocolo internacional.</span><span lang="en">Operations coordinated with official security teams and safeguarding of items under international protocol.</span></p></div><div class="card a d4" style="padding:40px"><div class="num">03</div><h3 style="font-size:32px"><span lang="es">Equipo bilingüe</span><span lang="en">Bilingual team</span></h3><p style="font-size:23px"><span lang="es">Atención y documentación en español e inglés. NDA ES/EN y contratos formales.</span><span lang="en">Service and documentation in Spanish and English. NDAs in ES/EN and formal contracts.</span></p></div><div class="card a d5" style="padding:40px"><div class="num">04</div><h3 style="font-size:32px"><span lang="es">Un solo interlocutor</span><span lang="en">A single point of contact</span></h3><p style="font-size:23px"><span lang="es">Un productor responsable presente durante todo el proceso, del brief al reporte final.</span><span lang="en">One producer in charge, present throughout, from the brief to the final report.</span></p></div>
+  </div>
+  <div class="grid a d6" style="grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px">
+    <div style="background:#161616;border-radius:12px;height:96px;display:flex;align-items:center;justify-content:center"><img src="img/logos/turismo-rd.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border-radius:12px;height:96px;display:flex;align-items:center;justify-content:center"><img src="img/logos/asturias.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border-radius:12px;height:96px;display:flex;align-items:center;justify-content:center"><img src="img/logos/incaa.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border-radius:12px;height:96px;display:flex;align-items:center;justify-content:center"><img src="img/logos/beyond90.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border-radius:12px;height:96px;display:flex;align-items:center;justify-content:center"><img src="img/logos/mancity.png" alt="" style="max-height:80%;max-width:90%"></div>
+  </div>
+</section>
+
+<!-- 4 MÉTODO -->
+<section class="slide" data-t="Method">
+  <div class="kicker a"><span lang="es">Cómo trabajamos</span><span lang="en">How we work</span></div>
+  <h2 class="display a d1"><span lang="es">De la primera reunión <span class='accent'>al desmontaje</span></span><span lang="en">From the first meeting <span class='accent'>to load-out</span></span></h2>
+  <p class="lead muted a d2"><span lang="es">Un proceso claro, con presupuesto sobre cotizaciones reales y un responsable de producción presente en cada etapa.</span><span lang="en">A clear process, budgets built on real supplier quotes, and a production manager on site at every stage.</span></p>
+  <div class="grid" style="grid-template-columns:repeat(5,1fr);gap:22px;margin-top:60px">
+    <div class="card a d3" style="min-height:300px"><div class="num" style="font-size:44px">01</div><h3><span lang="es">Brief y consultoría</span><span lang="en">Brief and consulting</span></h3><p><span lang="es">Viabilidad, presupuesto con cotizaciones reales y plan operativo.</span><span lang="en">Feasibility, budget based on real quotes and an operating plan.</span></p></div><div class="card a d4" style="min-height:300px"><div class="num" style="font-size:44px">02</div><h3><span lang="es">Preproducción</span><span lang="en">Pre-production</span></h3><p><span lang="es">Proveedores, permisos y seguros, diseño de branding, registro e invitaciones.</span><span lang="en">Suppliers, permits and insurance, branding design, registration and invitations.</span></p></div><div class="card a d5" style="min-height:300px"><div class="num" style="font-size:44px">03</div><h3><span lang="es">Montaje</span><span lang="en">Set-up</span></h3><p><span lang="es">Escenario, sonido, luces, pantallas, estructura, escenografía y señalética.</span><span lang="en">Stage, sound, lighting, screens, structures, scenography and signage.</span></p></div><div class="card a d6" style="min-height:300px"><div class="num" style="font-size:44px">04</div><h3><span lang="es">Día del evento</span><span lang="en">Event day</span></h3><p><span lang="es">Acreditación, accesos, gastronomía, staff, cobertura y supervisión en el lugar.</span><span lang="en">Accreditation, access, catering, staff, coverage and on-site supervision.</span></p></div><div class="card a d7" style="min-height:300px"><div class="num" style="font-size:44px">05</div><h3><span lang="es">Desmontaje y reporte</span><span lang="en">Load-out and report</span></h3><p><span lang="es">Retiro, entrega del espacio, métricas de asistencia y material audiovisual.</span><span lang="en">Removal, venue hand-over, attendance metrics and audiovisual material.</span></p></div>
+  </div>
+  <p class="a d8" style="font-size:30px;margin-top:56px;border-left:4px solid var(--o);padding-left:28px;max-width:1400px;font-weight:400"><span lang="es">Coordinamos todo con un mismo equipo: menos intermediarios, más control y una sola línea de responsabilidad.</span><span lang="en">One team coordinates everything: fewer intermediaries, more control and a single line of accountability.</span></p>
+</section>
+
+<!-- 5 SERVICIOS -->
+<section class="slide light" data-t="Services">
+  <div class="grid" style="grid-template-columns:1fr 1.25fr;gap:70px;height:100%">
+    <div class="grid" style="grid-template-rows:1fr 1fr;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="ph a" style="grid-row:span 2"><img src="img/feelgin-escenario.jpg" alt="Escenario Feel Gin"></div>
+      <div class="ph a d1"><img src="img/rd-ceviche.jpg" alt="Gastronomía"></div>
+      <div class="ph a d2"><img src="img/campusparty-credencial.jpg" alt="Acreditación" style="object-position:50% 35%"></div>
+    </div>
+    <div>
+      <div class="kicker a"><span lang="es">Qué hacemos</span><span lang="en">What we do</span></div>
+      <h2 class="display a d1"><span lang="es">Servicios <span class='accent'>integrales</span></span><span lang="en">Full-service <span class='accent'>production</span></span></h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:26px 36px;margin-top:36px">
+        <div class="bar a d2"><h3><span lang="es">Montaje y desmontaje</span><span lang="en">Set-up and load-out</span></h3><p><span lang="es">Escenario, sonido, luces, pantallas y escenografía.</span><span lang="en">Stage, sound, lighting, screens and scenography.</span></p></div><div class="bar a d2"><h3><span lang="es">Acreditaciones</span><span lang="en">Accreditation</span></h3><p><span lang="es">Registro, QR y credenciales con foto para prensa, VIP y staff.</span><span lang="en">Registration, QR and photo badges for press, VIPs and staff.</span></p></div><div class="bar a d3"><h3><span lang="es">Control de accesos</span><span lang="en">Access control</span></h3><p><span lang="es">QR, Face ID, listas de invitados y control de aforo.</span><span lang="en">QR, Face ID, guest lists and capacity control.</span></p></div><div class="bar a d3"><h3><span lang="es">Gastronomía</span><span lang="en">Catering</span></h3><p><span lang="es">Catering, coffee breaks, barras, menús a medida y cadena de frío.</span><span lang="en">Catering, coffee breaks, bars, custom menus and cold chain.</span></p></div><div class="bar a d4"><h3><span lang="es">Staff</span><span lang="en">Staff</span></h3><p><span lang="es">Anfitriones, acreditadores, promotores, supervisión y coordinación.</span><span lang="en">Hosts, accreditation staff, promoters, supervisors and coordinators.</span></p></div><div class="bar a d4"><h3><span lang="es">Branding y escenografía</span><span lang="en">Branding and scenography</span></h3><p><span lang="es">Ambientación, gráfica, señalética y uniformes de marca.</span><span lang="en">Venue dressing, graphics, signage and branded uniforms.</span></p></div><div class="bar a d5"><h3><span lang="es">Cobertura audiovisual</span><span lang="en">Audiovisual coverage</span></h3><p><span lang="es">Foto, video, streaming y drone.</span><span lang="en">Photo, video, streaming and drone.</span></p></div><div class="bar a d5"><h3><span lang="es">Logística y proveedores</span><span lang="en">Logistics and suppliers</span></h3><p><span lang="es">Permisos, seguros, transporte y traslados de delegaciones.</span><span lang="en">Permits, insurance, transport and delegation transfers.</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 TECNOLOGÍA -->
+<section class="slide" data-t="Tech">
+  <div class="kicker a"><span lang="es">Tecnología propia</span><span lang="en">In-house technology</span></div>
+  <h2 class="display a d1"><span lang="es">Invitados <span class='accent'>sin fricción</span></span><span lang="en">Guests <span class='accent'>without friction</span></span></h2>
+  <p class="lead muted a d2"><span lang="es">Desarrollamos y operamos nuestras propias plataformas. Para una embajada esto significa listas de invitados confiables, ingreso ágil y un registro preciso de quién asistió.</span><span lang="en">We build and run our own platforms. For an embassy this means reliable guest lists, fast entry and an accurate record of who attended.</span></p>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:28px;margin:44px 0 40px">
+    <div class="card a d3" style="padding:40px"><div style="font-weight:700;font-size:72px;line-height:1">P<span class="accent">A</span>SE</div><div style="font-weight:600;letter-spacing:.3em;color:var(--o);margin:12px 0 14px;font-size:18px"><span lang="es">ACREDITACIÓN</span><span lang="en">ACCREDITATION</span></div><p><span lang="es">Registro y acceso por QR, invitaciones intransferibles por mail, credenciales con foto y control de asistencia en tiempo real.</span><span lang="en">QR registration and access, non-transferable email invitations, photo badges and real-time attendance control.</span></p><div style="color:var(--o);font-weight:600;font-size:21px;margin-top:12px">pase.somosder.ar →</div></div>
+    <div class="card a d4" style="padding:40px"><div style="font-weight:700;font-size:72px;line-height:1">ENTR<span class="accent">Á</span></div><div style="font-weight:600;letter-spacing:.3em;color:var(--o);margin:12px 0 14px;font-size:18px"><span lang="es">TICKETERA</span><span lang="en">TICKETING</span></div><p><span lang="es">Venta online con QR único, Mercado Pago y control de ingresos, para eventos abiertos al público.</span><span lang="en">Online ticket sales with unique QR codes, Mercado Pago and entry control, for public events.</span></p><div style="color:var(--o);font-weight:600;font-size:21px;margin-top:12px">entratickets.com →</div></div>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(6,1fr);gap:24px">
+    <div class="bar a d3"><h3 style="font-size:22px"><span lang="es">Invitaciones con QR</span><span lang="en">QR invitations</span></h3><p style="font-size:18px"><span lang="es">Intransferibles, enviadas por mail con confirmación de asistencia (RSVP).</span><span lang="en">Non-transferable, sent by email with attendance confirmation (RSVP).</span></p></div><div class="bar a d4"><h3 style="font-size:22px"><span lang="es">Credenciales con foto</span><span lang="en">Photo badges</span></h3><p style="font-size:18px"><span lang="es">Prensa, VIP, autoridades y staff, con niveles de acceso diferenciados.</span><span lang="en">Press, VIPs, officials and staff, with different access levels.</span></p></div><div class="bar a d5"><h3 style="font-size:22px"><span lang="es">Panel de asistencia</span><span lang="en">Attendance dashboard</span></h3><p style="font-size:18px"><span lang="es">Ingresos actualizados durante el evento para el equipo de protocolo.</span><span lang="en">Live check-ins during the event for the protocol team.</span></p></div><div class="bar a d6"><h3 style="font-size:22px"><span lang="es">Respaldo de conexión</span><span lang="en">Connection backup</span></h3><p style="font-size:18px"><span lang="es">Operación offline y conexión de respaldo vía Starlink.</span><span lang="en">Offline operation and Starlink backup connectivity.</span></p></div><div class="bar a d7"><h3 style="font-size:22px"><span lang="es">Face ID</span><span lang="en">Face ID</span></h3><p style="font-size:18px"><span lang="es">Validación biométrica opcional para eventos de alta seguridad.</span><span lang="en">Optional biometric validation for high-security events.</span></p></div><div class="bar a d8"><h3 style="font-size:22px"><span lang="es">Reporte post-evento</span><span lang="en">Post-event report</span></h3><p style="font-size:18px"><span lang="es">Métricas, horarios pico y listado final de asistentes.</span><span lang="en">Metrics, peak times and final attendee list.</span></p></div>
+  </div>
+</section>
+
+<!-- 7 RD -->
+<section class="slide light" data-t="Dominican Rep.">
+  <div class="grid" style="grid-template-columns:1fr 1.15fr;gap:70px;height:100%">
+    <div style="display:flex;flex-direction:column;justify-content:center">
+      <div class="kicker a"><span lang="es">Caso · Gobierno · País invitado de honor</span><span lang="en">Case · Government · Guest country of honour</span></div>
+      <h2 class="display a d1" style="font-size:52px"><span lang="es">República <span class='accent'>Dominicana</span> en la FIT 2026</span><span lang="en">Dominican <span class='accent'>Republic</span> at FIT 2026</span></h2>
+      <p class="a d2" style="font-size:26px"><span lang="es">Gastronomía del stand del país invitado de honor en la Feria Internacional de Turismo (La Rural, Buenos Aires), para la Oficina de Turismo de República Dominicana en Argentina.</span><span lang="en">Catering for the guest-of-honour country pavilion at the International Tourism Fair (La Rural, Buenos Aires), for the Dominican Republic Tourism Office in Argentina.</span></p>
+      <div class="stats a d3"><div class="stat"><div class="v" style="font-size:44px"><span lang="es">400 m²</span><span lang="en">400 m²</span></div><div class="l"><span lang="es">de stand</span><span lang="en">pavilion</span></div></div><div class="stat"><div class="v" style="font-size:44px"><span lang="es">4</span><span lang="en">4</span></div><div class="l"><span lang="es">jornadas</span><span lang="en">days</span></div></div><div class="stat"><div class="v" style="font-size:44px"><span lang="es">+7.000</span><span lang="en">7,000+</span></div><div class="l"><span lang="es">porciones por día</span><span lang="en">servings per day</span></div></div></div>
+      <ul class="dots a d4"><li><span lang="es">Cocina externa y traslado diario a temperatura</span><span lang="en">Off-site kitchen with daily temperature-controlled transport</span></li><li><span lang="es">Recetas adaptadas con insumos locales</span><span lang="en">Recipes adapted to local ingredients</span></li><li><span lang="es">Menú de degustación y 4 cócteles de autor</span><span lang="en">Tasting menu and 4 signature cocktails</span></li><li><span lang="es">Coordinación con la oficina oficial del país</span><span lang="en">Coordination with the country's official office</span></li></ul>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:16px">
+      <div class="ph kb a d2"><img src="img/rd-plato.jpg" alt=""></div>
+      <div class="ph kb a d3"><img src="img/rd-ceviche.jpg" alt=""></div>
+      <div class="ph kb a d4"><img src="img/rd-baile.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 MAN CITY -->
+<section class="slide" data-t="Manchester City" style="padding:0">
+  <div class="grid" style="grid-template-columns:1.35fr 1fr 1fr;gap:6px;height:520px">
+    <div class="ph kb a" style="border-radius:0"><img src="img/mancity-trofeos.jpg" alt=""></div>
+    <div class="ph kb a d1" style="border-radius:0"><img src="img/mancity-escenario.jpg" alt=""></div>
+    <div class="ph kb a d2" style="border-radius:0"><img src="img/mancity-fans.jpg" alt="" style="object-position:20% 50%"></div>
+  </div>
+  <div style="padding:60px 120px">
+    <div class="kicker a d2"><span lang="es">Caso · Experiencia internacional · Protocolo</span><span lang="en">Case · International experience · Protocol</span></div>
+    <div class="grid" style="grid-template-columns:1.2fr .8fr 1fr;gap:60px">
+      <div><h2 class="display a d3" style="font-size:46px"><span lang="es">Manchester City <span class='accent'>Treble Trophy Tour</span></span><span lang="en">Manchester City <span class='accent'>Treble Trophy Tour</span></span></h2><p class="muted a d4"><span lang="es">La gira de los trofeos del triplete en Buenos Aires. Concepto de Beyond 90 (Reino Unido), producción local a cargo de DER.</span><span lang="en">The treble trophy tour in Buenos Aires. Concept by Beyond 90 (United Kingdom), local production by DER.</span></p></div>
+      <div class="a d4"><div style="margin-bottom:24px"><div class="stat"><div class="v"><span lang="es">+2.000</span><span lang="en">2,000+</span></div><div class="l"><span lang="es">fans atendidos</span><span lang="en">fans served</span></div></div></div><div style="margin-bottom:24px"><div class="stat"><div class="v"><span lang="es">3</span><span lang="en">3</span></div><div class="l"><span lang="es">trofeos bajo protocolo</span><span lang="en">trophies under protocol</span></div></div></div></div>
+      <ul class="dots a d5"><li><span lang="es">Montaje, escenografía y desmontaje</span><span lang="en">Set-up, scenography and load-out</span></li><li><span lang="es">Recorrido y experiencia de fans</span><span lang="en">Fan journey and experience</span></li><li><span lang="es">Gestión de prensa, logística y permisos</span><span lang="en">Press, logistics and permits</span></li><li><span lang="es">Resguardo de trofeos con protocolo del club</span><span lang="en">Trophy safeguarding under club protocol</span></li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 9 CAMONDO -->
+<section class="slide orange" data-t="Camondo WWR">
+  <div style="height:100%;display:flex;flex-direction:column;justify-content:center">
+    <div class="kicker a"><span lang="es">Caso · Foro empresarial internacional</span><span lang="en">Case · International business forum</span></div>
+    <h1 class="display a d1" style="font-size:76px"><span lang="es">Camondo <span class='accent'>WWR</span> · 11ª edición</span><span lang="en">Camondo <span class='accent'>WWR</span> · 11th edition</span></h1>
+    <p class="lead a d2" style="margin-top:24px;font-weight:400"><span lang="es">Encuentro de más de 300 empresarios internacionales de seis sectores, con presencia del Presidente de la Nación.</span><span lang="en">A gathering of 300+ international business leaders from six sectors, attended by the President of Argentina.</span></p>
+    <div class="grid a d3" style="grid-template-columns:repeat(3,1fr);gap:40px;margin:60px 0;border-top:2px solid var(--k);border-bottom:2px solid var(--k);padding:36px 0">
+      <div><div class="display" style="font-size:60px"><span lang="es">300+</span><span lang="en">300+</span></div><div style="font-size:24px;font-weight:500;margin-top:8px"><span lang="es">empresarios internacionales</span><span lang="en">international business leaders</span></div></div><div><div class="display" style="font-size:60px"><span lang="es">6</span><span lang="en">6</span></div><div style="font-size:24px;font-weight:500;margin-top:8px"><span lang="es">sectores representados</span><span lang="en">sectors represented</span></div></div><div><div class="display" style="font-size:60px"><span lang="es">< 30 s</span><span lang="en">< 30 s</span></div><div style="font-size:24px;font-weight:500;margin-top:8px"><span lang="es">de ingreso por persona</span><span lang="en">entry time per guest</span></div></div>
+    </div>
+    <ul class="a d4" style="list-style:none;display:flex;gap:50px"><li style="font-size:24px;font-weight:500">— <span lang="es">Credenciales físicas con QR y pre-acreditación online</span><span lang="en">Physical QR badges and online pre-accreditation</span></li><li style="font-size:24px;font-weight:500">— <span lang="es">Protocolos coordinados con la seguridad presidencial</span><span lang="en">Protocols coordinated with presidential security</span></li><li style="font-size:24px;font-weight:500">— <span lang="es">Staff especializado en ingreso de autoridades</span><span lang="en">Staff trained for VIP and official arrivals</span></li></ul>
+  </div>
+</section>
+
+<!-- 10 DIDI + BEPANTHOL -->
+<section class="slide light" data-t="DiDi · Bepanthol">
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:70px;height:100%">
+    <div style="display:flex;flex-direction:column">
+      <div class="kicker a"><span lang="es">Caso · Lanzamiento de marca internacional</span><span lang="en">Case · International brand launch</span></div>
+      <h2 class="display a d1" style="font-size:44px"><span lang="es">DiDi · <span class='accent'>Tu ciudad se conecta</span></span><span lang="en">DiDi · <span class='accent'>Your city connects</span></span></h2>
+      <div class="grid a d2" style="grid-template-columns:1fr 1fr;gap:14px;height:330px"><div class="ph"><img src="img/didi-speaker.jpg" alt="" style="object-position:50% 30%"></div><div class="ph"><img src="img/didi-regalos.jpg" alt=""></div></div>
+      <p class="a d3" style="margin-top:26px"><span lang="es">Eventos de lanzamiento por la llegada de DiDi a nuevas ciudades del país: Bariloche, Formosa y Catamarca.</span><span lang="en">Launch events for DiDi's arrival in new Argentine cities: Bariloche, Formosa and Catamarca.</span></p>
+      <div class="stats a d4" style="margin-bottom:0"><div class="stat"><div class="v"><span lang="es">3</span><span lang="en">3</span></div><div class="l"><span lang="es">eventos de lanzamiento</span><span lang="en">launch events</span></div></div><div class="stat"><div class="v"><span lang="es">1</span><span lang="en">1</span></div><div class="l"><span lang="es">contrato marco internacional</span><span lang="en">international framework contract</span></div></div></div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div class="kicker a d2"><span lang="es">Caso · Presentación de producto</span><span lang="en">Case · Product presentation</span></div>
+      <h2 class="display a d3" style="font-size:44px"><span lang="es">Bepanthol <span class='accent'>Regeneradora</span></span><span lang="en">Bepanthol <span class='accent'>Regeneradora</span></span></h2>
+      <div class="grid a d4" style="grid-template-columns:1fr 1fr;gap:14px;height:330px"><div class="ph"><img src="img/bepanthol-staff.jpg" alt=""></div><div class="ph"><img src="img/bepanthol-stand.jpg" alt=""></div></div>
+      <p class="a d5" style="margin-top:26px"><span lang="es">Gestión de staff para la presentación de producto en la Carrera Primavera Buenos Aires.</span><span lang="en">Staff management for the product presentation at the Carrera Primavera Buenos Aires race.</span></p>
+      <ul class="dots a d6" style="margin-top:20px"><li style="font-size:22px"><span lang="es">Selección y coordinación de promotoras</span><span lang="en">Selection and coordination of brand ambassadors</span></li><li style="font-size:22px"><span lang="es">Staff con indumentaria de marca</span><span lang="en">Staff in branded outfits</span></li><li style="font-size:22px"><span lang="es">Atención del stand y entrega de producto</span><span lang="en">Stand service and product sampling</span></li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11 TRAYECTORIA -->
+<section class="slide" data-t="Track record">
+  <div class="kicker a"><span lang="es">Trayectoria</span><span lang="en">Track record</span></div>
+  <h2 class="display a d1"><span lang="es">Más eventos que <span class='accent'>ya produjimos</span></span><span lang="en">More events <span class='accent'>we have produced</span></span></h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px">
+    <div class="card a d2"><h3><span lang="es">Campus Party Entre Ríos</span><span lang="en">Campus Party Entre Ríos</span></h3><div style="color:var(--o);font-weight:600;font-size:17px;margin-bottom:10px"><span lang="es">Centro Provincial de Convenciones, Paraná · 2025</span><span lang="en">Provincial Convention Centre, Paraná · 2025</span></div><p><span lang="es">Primera edición provincial. +13.000 registros y +5.000 asistentes con acreditación digital.</span><span lang="en">First provincial edition. 13,000+ registrations and 5,000+ attendees with digital accreditation.</span></p></div><div class="card a d3"><h3><span lang="es">Espacio Shell</span><span lang="en">Espacio Shell</span></h3><div style="color:var(--o);font-weight:600;font-size:17px;margin-bottom:10px"><span lang="es">Shell Argentina · Buenos Aires</span><span lang="en">Shell Argentina · Buenos Aires</span></div><p><span lang="es">Acreditación con Face ID para más de 1.300 ejecutivos y socios estratégicos.</span><span lang="en">Face ID accreditation for more than 1,300 executives and strategic partners.</span></p></div><div class="card a d4"><h3><span lang="es">Synerfy · IASP Latinoamérica</span><span lang="en">Synerfy · IASP Latin America</span></h3><div style="color:var(--o);font-weight:600;font-size:17px;margin-bottom:10px"><span lang="es">Parque de Innovación, Buenos Aires · 2025</span><span lang="en">Innovation Park, Buenos Aires · 2025</span></div><p><span lang="es">Cobertura del encuentro regional de parques científicos y tecnológicos.</span><span lang="en">Coverage of the regional meeting of science and technology parks.</span></p></div><div class="card a d5"><h3><span lang="es">Leyendas de México</span><span lang="en">Leyendas de México</span></h3><div style="color:var(--o);font-weight:600;font-size:17px;margin-bottom:10px"><span lang="es">Tecnópolis · 2 ediciones</span><span lang="en">Tecnópolis · 2 editions</span></div><p><span lang="es">Control de accesos para más de 25.000 asistentes, sin incidentes.</span><span lang="en">Access control for 25,000+ attendees, with zero incidents.</span></p></div><div class="card a d6"><h3><span lang="es">Expo Autos CeNARD</span><span lang="en">Expo Autos CeNARD</span></h3><div style="color:var(--o);font-weight:600;font-size:17px;margin-bottom:10px"><span lang="es">CeNARD, Buenos Aires · 2024</span><span lang="en">CeNARD, Buenos Aires · 2024</span></div><p><span lang="es">Zona gastronómica, permisos y circulación en una expo de 4 días con apoyo institucional.</span><span lang="en">Food area, permits and visitor flow for a 4-day expo with institutional support.</span></p></div><div class="card a d7"><h3><span lang="es">Giras de Abel Pintos</span><span lang="en">Abel Pintos tours</span></h3><div style="color:var(--o);font-weight:600;font-size:17px;margin-bottom:10px"><span lang="es">Patagonia, Mar del Plata y Teatro Alvear · 2025</span><span lang="en">Patagonia, Mar del Plata and Teatro Alvear · 2025</span></div><p><span lang="es">Control de accesos en 30 funciones en 8 ciudades.</span><span lang="en">Access control across 30 shows in 8 cities.</span></p></div>
+  </div>
+  <div class="grid a d8" style="grid-template-columns:repeat(8,1fr);gap:12px;margin-top:40px">
+    <div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/mancity.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/aws.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/turismo-rd.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/incaa.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/asturias.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/campusparty.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/arpa.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/venue.png" alt="" style="max-height:80%;max-width:90%"></div>
+  </div>
+  <div class="grid a d8" style="grid-template-columns:repeat(7,1fr);gap:12px;margin-top:12px;padding:0 6%">
+    <div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/backyard.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/linkearte.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/shell.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/didi.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/mirgor.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/lamirona.png" alt="" style="max-height:80%;max-width:90%"></div><div style="background:#161616;border:1px solid #262626;border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center"><img src="img/logos/beyond90.png" alt="" style="max-height:80%;max-width:90%"></div>
+  </div>
+</section>
+
+<!-- 12 PROPUESTA -->
+<section class="slide light" data-t="Proposal">
+  <div class="kicker a"><span lang="es">Propuesta</span><span lang="en">Proposal</span></div>
+  <h2 class="display a d1"><span lang="es">Lo que podemos producir <span class='accent'>para Suecia</span></span><span lang="en">What we can produce <span class='accent'>for Sweden</span></span></h2>
+  <p class="lead muted a d2" style="font-size:28px"><span lang="es">Formatos pensados para la agenda institucional, comercial y cultural de la Embajada. Cada uno se cotiza a medida y puede tomarse completo o por módulos.</span><span lang="en">Formats designed around the Embassy's institutional, trade and cultural agenda. Each is quoted to measure and can be taken end-to-end or by module.</span></p>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px">
+    <div class="card a d3" style="padding:34px"><div style="font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:10px"><span lang="es">6 de junio</span><span lang="en">6 June</span></div><h3><span lang="es">Recepción del Día Nacional</span><span lang="en">National Day reception</span></h3><p><span lang="es">Invitaciones con RSVP, acreditación de autoridades y prensa, ambientación, gastronomía y servicio de mozos.</span><span lang="en">RSVP invitations, accreditation of officials and press, venue dressing, catering and waiting staff.</span></p></div><div class="card a d4" style="padding:34px"><div style="font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:10px"><span lang="es">Nobel · Lucia · Midsommar</span><span lang="en">Nobel · Lucia · Midsummer</span></div><h3><span lang="es">Ceremonias y fechas culturales</span><span lang="en">Ceremonies and cultural dates</span></h3><p><span lang="es">Montaje, puesta de luces, música en vivo, coros y gastronomía temática con productos suecos.</span><span lang="en">Set-up, lighting, live music, choirs and themed catering with Swedish products.</span></p></div><div class="card a d5" style="padding:34px"><div style="font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:10px"><span lang="es">Team Sweden</span><span lang="en">Team Sweden</span></div><h3><span lang="es">Foros y misiones comerciales</span><span lang="en">Forums and trade missions</span></h3><p><span lang="es">Rondas de negocios, seminarios de innovación y sostenibilidad, registro de participantes y streaming.</span><span lang="en">B2B matchmaking, innovation and sustainability seminars, participant registration and streaming.</span></p></div><div class="card a d6" style="padding:34px"><div style="font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:10px"><span lang="es">Logística integral</span><span lang="en">End-to-end logistics</span></div><h3><span lang="es">Visitas oficiales y delegaciones</span><span lang="en">Official visits and delegations</span></h3><p><span lang="es">Traslados, agendas, credenciales, coordinación con seguridad y cobertura audiovisual.</span><span lang="en">Transfers, agendas, badges, coordination with security and audiovisual coverage.</span></p></div><div class="card a d7" style="padding:34px"><div style="font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:10px"><span lang="es">Marcas en Argentina</span><span lang="en">Brands in Argentina</span></div><h3><span lang="es">Lanzamientos de empresas suecas</span><span lang="en">Swedish company launches</span></h3><p><span lang="es">Presentaciones de producto y experiencias de marca con la imagen país como respaldo.</span><span lang="en">Product presentations and brand experiences backed by Sweden's country image.</span></p></div><div class="card a d8" style="padding:34px"><div style="font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--o);margin-bottom:10px"><span lang="es">Abierto al público</span><span lang="en">Open to the public</span></div><h3><span lang="es">Cultura y diplomacia pública</span><span lang="en">Culture and public diplomacy</span></h3><p><span lang="es">Ciclos de cine, muestras y activaciones con ticketing propio y control de aforo.</span><span lang="en">Film series, exhibitions and activations with our own ticketing and capacity control.</span></p></div>
+  </div>
+</section>
+
+<!-- 13 COMPROMISOS -->
+<section class="slide" data-t="Commitments">
+  <div class="grid" style="grid-template-columns:1.2fr 1fr;gap:80px;height:100%">
+    <div>
+      <div class="kicker a"><span lang="es">Valores compartidos</span><span lang="en">Shared values</span></div>
+      <h2 class="display a d1" style="font-size:48px"><span lang="es">Compromisos para cada <span class='accent'>evento de la Embajada</span></span><span lang="en">Our commitments for every <span class='accent'>Embassy event</span></span></h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:30px 40px;margin-top:40px">
+        <div class="bar a d2"><h3><span lang="es">Sostenibilidad</span><span lang="en">Sustainability</span></h3><p><span lang="es">Acreditación digital sin papel, proveedores locales, plan de residuos con separación en origen y reducción de plásticos de un solo uso.</span><span lang="en">Paperless digital accreditation, local suppliers, waste plan with source separation and fewer single-use plastics.</span></p></div><div class="bar a d3"><h3><span lang="es">Igualdad e inclusión</span><span lang="en">Equality and inclusion</span></h3><p><span lang="es">Equipos de staff con paridad de género y menús con opciones vegetarianas, veganas y sin TACC.</span><span lang="en">Gender-balanced staff teams and menus with vegetarian, vegan and gluten-free options.</span></p></div><div class="bar a d4"><h3><span lang="es">Accesibilidad</span><span lang="en">Accessibility</span></h3><p><span lang="es">Relevamiento de accesos, circulación y señalética para personas con movilidad reducida.</span><span lang="en">Survey of entrances, circulation and signage for people with reduced mobility.</span></p></div><div class="bar a d5"><h3><span lang="es">Confidencialidad</span><span lang="en">Confidentiality</span></h3><p><span lang="es">NDA en español e inglés, manejo cuidadoso de listas de invitados y datos personales.</span><span lang="en">NDAs in Spanish and English, careful handling of guest lists and personal data.</span></p></div><div class="bar a d6"><h3><span lang="es">Transparencia</span><span lang="en">Transparency</span></h3><p><span lang="es">Presupuestos abiertos sobre cotizaciones reales y reporte final con métricas.</span><span lang="en">Open budgets built on real quotes and a final report with metrics.</span></p></div><div class="bar a d7"><h3><span lang="es">Protocolo</span><span lang="en">Protocol</span></h3><p><span lang="es">Coordinación con el equipo de la Embajada, seguridad y ceremonial en cada etapa.</span><span lang="en">Coordination with the Embassy team, security and ceremonial staff at every stage.</span></p></div>
+      </div>
+    </div>
+    <div class="card a d4" style="padding:50px;align-self:center;background:var(--o);border-color:var(--o);color:var(--k)">
+      <div class="kicker" style="color:var(--k)"><span lang="es">Próximos pasos</span><span lang="en">Next steps</span></div>
+      <div style="display:grid;grid-template-columns:90px 1fr;padding:22px 0;border-top:0"><div class="display" style="font-size:44px">01</div><div><h3 style="font-size:30px"><span lang="es">Brief</span><span lang="en">Brief</span></h3><p style="color:var(--k);font-size:22px"><span lang="es">Una reunión de 45 minutos para conocer la agenda 2026–2027 de la Embajada.</span><span lang="en">A 45-minute meeting to learn about the Embassy's 2026–2027 agenda.</span></p></div></div><div style="display:grid;grid-template-columns:90px 1fr;padding:22px 0;border-top:2px solid rgba(0,0,0,.2)"><div class="display" style="font-size:44px">02</div><div><h3 style="font-size:30px"><span lang="es">Propuesta</span><span lang="en">Proposal</span></h3><p style="color:var(--k);font-size:22px"><span lang="es">En 5 días hábiles: plan operativo y presupuesto para el primer evento.</span><span lang="en">Within 5 business days: operating plan and budget for the first event.</span></p></div></div><div style="display:grid;grid-template-columns:90px 1fr;padding:22px 0;border-top:2px solid rgba(0,0,0,.2)"><div class="display" style="font-size:44px">03</div><div><h3 style="font-size:30px"><span lang="es">Piloto</span><span lang="en">Pilot</span></h3><p style="color:var(--k);font-size:22px"><span lang="es">Un primer evento para medir resultados con un reporte completo.</span><span lang="en">A first event to measure results, with a full report.</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 CIERRE -->
+<section class="slide" data-t="Contact">
+  <div class="ph kb" style="position:absolute;inset:0 0 0 52%;border-radius:0"><img src="img/abel-credencial.jpg" alt=""></div>
+  <div style="position:absolute;inset:0 0 0 52%;background:linear-gradient(90deg,var(--k),rgba(11,11,11,0) 35%)"></div>
+  <div style="position:relative;z-index:2;width:52%;height:100%;display:flex;flex-direction:column;justify-content:center">
+    <img class="logo a" src="img/der-logo-white.png" alt="DER" style="margin-bottom:40px">
+    <h1 class="display a d1" style="font-size:66px"><span lang="es">Hagamos que</span><span lang="en">Let's make</span><br><span lang="es">tu próximo evento</span><span lang="en">your next event</span><br><span lang="es"><span class='accent'>pase.</span></span><span lang="en"><span class='accent'>happen.</span></span><br></h1>
+    <div class="a d2" style="margin-top:40px;font-size:30px;line-height:1.8">
+      <span class="muted"><span lang="es">WhatsApp</span><span lang="en">WhatsApp</span></span>&nbsp; +54 9 11 7154-0675<br>
+      <span class="muted"><span lang="es">Mail</span><span lang="en">Email</span></span>&nbsp; contacto@somosder.com.ar<br>
+      <span class="muted"><span lang="es">Web</span><span lang="en">Web</span></span>&nbsp; somosder.ar
+    </div>
+    <div class="a d3" style="display:flex;gap:30px;margin-top:44px">
+      <div style="text-align:center;font-size:16px;color:var(--m)"><div style="width:150px;height:150px;background:#fff;padding:10px;border-radius:12px;margin-bottom:10px"><img src="img/qr/portfolio.svg" alt="QR" style="width:100%;height:100%"></div><span lang="es">Sitio y portfolio</span><span lang="en">Website and portfolio</span></div><div style="text-align:center;font-size:16px;color:var(--m)"><div style="width:150px;height:150px;background:#fff;padding:10px;border-radius:12px;margin-bottom:10px"><img src="img/qr/pase.svg" alt="QR" style="width:100%;height:100%"></div><span lang="es">Plataforma PASE</span><span lang="en">PASE platform</span></div><div style="text-align:center;font-size:16px;color:var(--m)"><div style="width:150px;height:150px;background:#fff;padding:10px;border-radius:12px;margin-bottom:10px"><img src="img/qr/whatsapp.svg" alt="QR" style="width:100%;height:100%"></div><span lang="es">WhatsApp directo</span><span lang="en">Direct WhatsApp</span></div>
+    </div>
+    <p class="a d4" style="margin-top:50px;font-size:20px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:#777">Tack för er tid.</p>
+  </div>
+</section>
+
+</div></div>
+
+<div id="ui" role="toolbar" aria-label="Controles">
+  <button id="prev" aria-label="Anterior">←</button>
+  <button id="next" aria-label="Siguiente">→</button>
+  <button id="bes" class="act">ES</button><button id="ben">EN</button>
+  <button id="auto" title="Modo kiosko: avanza solo cada 9 s">▶ Auto</button>
+  <button id="fs" title="Pantalla completa (F)">⛶</button>
+  <div id="dots"></div>
+  <span id="count"></span>
+</div>
+
+<script>
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  const stage = document.getElementById('stage');
+  let i = 0, timer = null, idleT = null;
+  const q = new URLSearchParams(location.search);
+
+  function fit() {
+    const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    stage.style.transform = `scale(${s})`;
+  }
+  const dots = document.getElementById('dots');
+  slides.forEach((s, k) => { const d = document.createElement('i'); d.title = s.dataset.t; d.onclick = () => go(k); dots.appendChild(d); });
+
+  function go(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('on', k === i));
+    [...dots.children].forEach((d, k) => d.classList.toggle('on', k === i));
+    document.getElementById('count').textContent = `${i + 1} / ${slides.length}`;
+    document.getElementById('prog').style.width = `${((i + 1) / slides.length) * 100}%`;
+    try { history.replaceState(null, '', `#${i + 1}`); } catch (e) {}
+  }
+  function lang(l) {
+    document.body.dataset.lang = l; document.documentElement.lang = l;
+    document.getElementById('bes').classList.toggle('act', l === 'es');
+    document.getElementById('ben').classList.toggle('act', l === 'en');
+    try { localStorage.setItem('der-se-lang', l); } catch (e) {}
+  }
+  function auto(on) {
+    clearInterval(timer); timer = null;
+    const b = document.getElementById('auto');
+    if (on) { timer = setInterval(() => go(i + 1), 9000); b.classList.add('act'); b.textContent = '❚❚ Auto'; }
+    else { b.classList.remove('act'); b.textContent = '▶ Auto'; }
+  }
+  function fs() { if (!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); }
+  function wake() { document.body.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => document.body.classList.add('idle'), 2800); }
+
+  document.getElementById('prev').onclick = () => go(i - 1);
+  document.getElementById('next').onclick = () => go(i + 1);
+  document.getElementById('bes').onclick = () => lang('es');
+  document.getElementById('ben').onclick = () => lang('en');
+  document.getElementById('auto').onclick = () => auto(!timer);
+  document.getElementById('fs').onclick = fs;
+
+  addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' ', 'Enter'].includes(e.key)) { e.preventDefault(); go(i + 1); }
+    else if (['ArrowLeft', 'PageUp', 'Backspace'].includes(e.key)) { e.preventDefault(); go(i - 1); }
+    else if (e.key === 'Home') go(0); else if (e.key === 'End') go(slides.length - 1);
+    else if (e.key === 'f' || e.key === 'F') fs();
+    else if (e.key === 'l' || e.key === 'L') lang(document.body.dataset.lang === 'es' ? 'en' : 'es');
+    else if (e.key === 'a' || e.key === 'A') auto(!timer);
+    wake();
+  });
+  let x0 = null;
+  addEventListener('touchstart', e => { x0 = e.touches[0].clientX; wake(); }, { passive: true });
+  addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) go(i + (dx < 0 ? 1 : -1)); x0 = null; });
+  document.getElementById('viewport').addEventListener('click', e => { if (e.target.closest('#ui')) return; go(i + (e.clientX > innerWidth / 3 ? 1 : -1)); });
+  addEventListener('mousemove', wake);
+  addEventListener('resize', fit);
+
+  let saved = null; try { saved = localStorage.getItem('der-se-lang'); } catch (e) {}
+  lang(q.get('lang') || saved || 'es');
+  fit(); go(Math.max(0, parseInt(location.hash.slice(1) || '1', 10) - 1)); wake();
+  if (q.has('auto')) auto(true);
+})();
+</script>
+</body>
+</html>

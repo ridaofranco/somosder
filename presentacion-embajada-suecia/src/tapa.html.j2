@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>DER · Tapa de carpeta</title>
+<link rel="stylesheet" href="../src/print.css">
+<style>
+  @page { size: 426mm 303mm; margin: 0; }
+  /* 426x303 = A3 apaisado (420x297) + 3 mm de sangrado. Lomo en x = 213 mm. */
+  .sheet { width: 426mm; height: 303mm; position: relative; overflow: hidden; background: var(--ink); color: #fff; }
+  .half { position: absolute; top: 0; bottom: 0; width: 213mm; }
+  .back { left: 0; } .front { left: 213mm; }
+  .front .photo { position: absolute; inset: 0; }
+  .front .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+  .front .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,11,.35) 0%, rgba(11,11,11,.2) 40%, rgba(11,11,11,.95) 78%); }
+  .front .in { position: absolute; left: 19mm; right: 19mm; top: 21mm; bottom: 21mm; display: flex; flex-direction: column; z-index: 2; }
+  .back .in { position: absolute; left: 19mm; right: 19mm; top: 21mm; bottom: 21mm; display: flex; flex-direction: column; }
+  .marks { position: absolute; inset: 0; pointer-events: none; }
+  .marks i { position: absolute; background: #888; }
+</style></head>
+<body style="padding:0;background:#777">
+<div class="sheet">
+  <!-- CONTRATAPA (izquierda) -->
+  <div class="half back">
+    <div class="in">
+      <img src="../assets/img/der-logo-white.png" style="height:10mm;width:auto;align-self:flex-start" alt="DER">
+      <div style="margin-top:auto">
+        <h2 class="display" style="font-size:20pt">{% for l in t.back_title %}{{ l|safe }}<br>{% endfor %}</h2>
+        <p style="margin-top:7mm;font-size:12pt;line-height:1.8"><span style="color:#999">{{ t.lbl_whatsapp }}</span>&nbsp; {{ c.whatsapp }}<br><span style="color:#999">{{ t.lbl_mail }}</span>&nbsp; {{ c.mail }}<br><span style="color:#999">{{ t.lbl_web }}</span>&nbsp; {{ c.web }}<br><span style="color:#999">{{ t.lbl_office }}</span>&nbsp; {{ c.address }}</p>
+        <div style="display:flex;gap:6mm;margin-top:9mm;align-items:flex-end">
+          <div class="qr" style="width:28mm;height:28mm"><img src="../assets/img/qr/portfolio.svg" alt=""></div>
+          <div class="small" style="color:#999">{{ t.qr_web }}<br>somosder.ar/portfolio</div>
+        </div>
+        <p class="small" style="color:#777;margin-top:12mm;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Montaje · Acreditación · Accesos · Gastronomía · Staff · Branding · Audiovisual · Logística</p>
+      </div>
+    </div>
+  </div>
+  <!-- TAPA (derecha) -->
+  <div class="half front">
+    <div class="photo"><img src="../assets/img/mancity-trofeos.jpg" alt=""></div>
+    <div class="in">
+      <img src="../assets/img/der-logo-white.png" style="height:13mm;width:auto;align-self:flex-start" alt="DER">
+      <div style="margin-top:auto">
+        <div class="kicker">{{ t.cover_kicker }}</div>
+        <h1 class="display" style="font-size:30pt">{% for l in t.cover_title %}{{ l|safe }}<br>{% endfor %}</h1>
+        <div class="se-stripe" style="margin-top:9mm"><i></i><i></i><i></i></div>
+        <p style="font-size:9.5pt;letter-spacing:.22em;text-transform:uppercase;font-weight:600;margin-top:3mm">{{ t.prepared }}</p>
+        <p class="small" style="color:#999;margin-top:1mm">{{ t.date }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

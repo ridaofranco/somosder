@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="{{ t.lang }}">
+<head>
+<meta charset="utf-8">
+<title>DER · {{ t.prepared }}</title>
+<link rel="stylesheet" href="../src/print.css">
+<style>
+  .cover { display: grid; grid-template-columns: 1fr; }
+  .cover .photo { position: absolute; inset: 0 0 0 46%; }
+  .cover .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .cover .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--ink) 0%, rgba(11,11,11,.0) 35%); }
+  .cover .inner { position: relative; z-index: 2; padding: 20mm 16mm; height: 100%; display: flex; flex-direction: column; width: 62%; }
+  .cover h1 { font-size: 25pt; margin: 0 0 7mm; }
+  .cover .lead { color: #cfcfcf; max-width: 95mm; }
+  .cover .bottom { margin-top: auto; }
+  .cover .prep { font-size: 9pt; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; margin-top: 3mm; }
+  .twocol { display: grid; grid-template-columns: 1.05fr 1fr; gap: 9mm; }
+  .steps { display: grid; grid-template-columns: 1fr; gap: 3mm; }
+  .step { display: grid; grid-template-columns: 16mm 1fr; align-items: start; border-bottom: 1px solid var(--line); padding: 3.5mm 0; }
+  .step .num { font-family: Michroma; color: var(--orange); font-size: 18pt; }
+  .step h3 { font-size: 12pt; }
+  .quote { font-size: 14pt; line-height: 1.45; font-weight: 400; border-left: 3px solid var(--orange); padding-left: 5mm; }
+  .svc { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; }
+  .svc .card h3 { font-size: 10.5pt; }
+  .platform { padding: 6mm; }
+  .platform .name { font-weight: 700; font-size: 26pt; letter-spacing: .02em; line-height: 1; }
+  .platform .name i { font-style: normal; color: var(--orange); }
+  .platform .sub { font-weight: 600; letter-spacing: .25em; font-size: 8pt; color: var(--orange); margin: 2mm 0 2.5mm; }
+  .platform .url { font-weight: 600; color: var(--orange); font-size: 9pt; margin-top: 2mm; }
+  .more .card h3 { font-size: 11pt; }
+  .more .card .meta { font-size: 8pt; color: var(--orange); font-weight: 600; letter-spacing: .04em; margin-bottom: 1.5mm; }
+  .logos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; }
+  .logos div { background: #161616; border-radius: 1.5mm; height: 19mm; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .logos img { max-width: 92%; max-height: 92%; }
+  .fmt .card { padding: 4.5mm 4.5mm 4mm; }
+  .fmt .when { font-size: 7.6pt; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.5mm; }
+  .fmt h3 { font-size: 11.5pt; }
+  .contact-row { display: grid; grid-template-columns: 26mm 1fr; font-size: 12pt; padding: 2mm 0; }
+  .contact-row span:first-child { color: var(--muted-dark); }
+  .qrs { display: flex; gap: 6mm; }
+  .qrs .item { text-align: center; font-size: 7.5pt; color: var(--muted-dark); }
+  .qrs .item .qr { margin-bottom: 1.5mm; }
+</style>
+</head>
+<body>
+
+<!-- 1 · TAPA -->
+<section class="page dark bleed cover">
+  <div class="photo"><img src="../assets/img/abel-credencial.jpg" alt=""></div>
+  <div class="inner">
+    <img class="logo" src="../assets/img/der-logo-white.png" alt="DER" style="height:11mm">
+    <div style="margin-top:58mm">
+      <div class="kicker">{{ t.cover_kicker }}</div>
+      <h1 class="display">{% for l in t.cover_title %}{{ l|safe }}<br>{% endfor %}</h1>
+      <p class="lead">{{ t.cover_lead }}</p>
+    </div>
+    <div class="bottom">
+      <div class="se-stripe"><i></i><i></i><i></i></div>
+      <div class="prep">{{ t.prepared }}</div>
+      <div class="small muted" style="margin-top:1mm">{{ t.date }} · somosder.ar</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · INTRO -->
+<section class="page">
+  <div class="kicker">{{ t.intro_kicker }}</div>
+  <h2 class="display">{{ t.intro_title|safe }}</h2>
+  <div class="twocol" style="margin-top:4mm">
+    <div>
+      <p class="lead" style="margin-bottom:4mm">{{ t.intro_p1|safe }}</p>
+      <p class="muted">{{ t.intro_p2 }}</p>
+      <div class="ph" style="height:78mm;margin-top:7mm"><img src="../assets/img/staff-equipo.jpg" alt=""></div>
+    </div>
+    <div>
+      <h3 style="font-size:9pt;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:4mm">{{ t.intro_why_title }}</h3>
+      <div class="grid" style="gap:5mm">
+      {% for h,p in t.intro_why %}<div class="bar"><h3>{{ h }}</h3><p>{{ p }}</p></div>{% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="stats" style="margin-top:10mm">
+    {% for v,l in t.stats %}<div class="stat"><div class="v">{{ v }}</div><div class="l">{{ l }}</div></div>{% endfor %}
+  </div>
+  <div class="folio"><span>Somos DER</span><span>02</span></div>
+</section>
+
+<!-- 3 · MÉTODO -->
+<section class="page grey">
+  <div class="kicker">{{ t.method_kicker }}</div>
+  <h2 class="display">{{ t.method_title|safe }}</h2>
+  <p class="lead muted" style="max-width:150mm">{{ t.method_lead }}</p>
+  <div class="steps" style="margin-top:7mm">
+    {% for h,p in t.steps %}<div class="step"><div class="num">0{{ loop.index }}</div><div><h3>{{ h }}</h3><p class="muted">{{ p }}</p></div></div>{% endfor %}
+  </div>
+  <div class="grid g2" style="margin-top:9mm;align-items:center">
+    <p class="quote">{{ t.method_quote }}</p>
+    <div class="ph" style="height:58mm"><img src="../assets/img/mancity-montaje.jpg" alt="" style="object-position:50% 60%"></div>
+  </div>
+  <div class="folio"><span>Somos DER</span><span>03</span></div>
+</section>
+
+<!-- 4 · SERVICIOS -->
+<section class="page">
+  <div class="kicker">{{ t.services_kicker }}</div>
+  <h2 class="display">{{ t.services_title|safe }}</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:3mm;height:52mm;margin:3mm 0 6mm">
+    <div class="ph"><img src="../assets/img/feelgin-escenario.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/rd-ceviche.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/campusparty-credencial.jpg" alt="" style="object-position:50% 40%"></div>
+  </div>
+  <div class="svc">
+    {% for h,p in t.services %}<div class="card"><div class="num" style="font-size:10pt">0{{ loop.index }}</div><h3>{{ h }}</h3><p class="muted">{{ p }}</p></div>{% endfor %}
+  </div>
+  <div class="folio"><span>Somos DER</span><span>04</span></div>
+</section>
+
+<!-- 5 · TECNOLOGÍA -->
+<section class="page dark">
+  <div class="kicker">{{ t.tech_kicker }}</div>
+  <h2 class="display">{{ t.tech_title|safe }}</h2>
+  <p class="lead muted" style="max-width:160mm">{{ t.tech_lead }}</p>
+  <div class="grid g2" style="margin:8mm 0">
+    <div class="card platform"><div class="name">P<i>A</i>SE</div><div class="sub">{{ 'ACREDITACIÓN' if t.lang=='es' else 'ACCREDITATION' }}</div><p>{{ t.pase_desc }}</p><div class="url">pase.somosder.ar →</div></div>
+    <div class="card platform"><div class="name">ENTR<i>Á</i></div><div class="sub">{{ 'TICKETERA' if t.lang=='es' else 'TICKETING' }}</div><p>{{ t.entra_desc }}</p><div class="url">entratickets.com →</div></div>
+  </div>
+  <div class="grid g3" style="gap:6mm 5mm">
+    {% for h,p in t.tech_features %}<div class="bar"><h3>{{ h }}</h3><p>{{ p }}</p></div>{% endfor %}
+  </div>
+  <div class="ph" style="position:absolute;left:16mm;right:16mm;bottom:20mm;height:62mm"><img src="../assets/img/tecnopolis-staff.jpg" alt="" style="object-position:50% 60%"></div>
+  <div class="folio"><span>Somos DER</span><span>05</span></div>
+</section>
+
+<!-- 6 · REP. DOMINICANA -->
+<section class="page grey">
+  <div class="kicker">{{ t.rd_kicker }}</div>
+  <h2 class="display">{{ t.rd_title|safe }}</h2>
+  <p class="lead" style="max-width:165mm">{{ t.rd_lead }}</p>
+  <div class="stats">{% for v,l in t.rd_stats %}<div class="stat"><div class="v">{{ v }}</div><div class="l">{{ l }}</div></div>{% endfor %}</div>
+  <div class="grid g3" style="height:105mm;gap:3mm">
+    <div class="ph"><img src="../assets/img/rd-plato.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/rd-ceviche.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/rd-baile.jpg" alt=""></div>
+  </div>
+  <div class="grid g2" style="margin-top:6mm;gap:8mm">
+    <ul class="dots">{% for b in t.rd_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+    <p class="quote" style="font-size:11.5pt">{{ t.rd_note }}</p>
+  </div>
+  <div class="folio"><span>Somos DER</span><span>06</span></div>
+</section>
+
+<!-- 7 · MAN CITY + CAMONDO -->
+<section class="page">
+  <div class="kicker">{{ t.mc_kicker }}</div>
+  <h2 class="display" style="font-size:19pt">{{ t.mc_title|safe }}</h2>
+  <div class="grid" style="grid-template-columns:1.3fr 1fr 1fr;height:82mm;gap:3mm">
+    <div class="ph"><img src="../assets/img/mancity-trofeos.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/mancity-escenario.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/mancity-fans.jpg" alt="" style="object-position:20% 50%"></div>
+  </div>
+  <div class="grid g2" style="margin-top:5mm;gap:8mm">
+    <div><p>{{ t.mc_lead }}</p>
+      <div class="stats" style="margin:4mm 0 0;gap:4mm">{% for v,l in t.mc_stats %}<div class="stat"><div class="v" style="font-size:13pt">{{ v }}</div><div class="l">{{ l }}</div></div>{% endfor %}</div></div>
+    <ul class="dots" style="padding-top:1mm">{% for b in t.mc_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+  </div>
+  <div style="border-top:1px solid var(--line);margin:9mm 0 7mm"></div>
+  <div class="kicker">{{ t.cw_kicker }}</div>
+  <h2 class="display" style="font-size:19pt">{{ t.cw_title|safe }}</h2>
+  <div class="grid g2" style="gap:8mm">
+    <p class="lead">{{ t.cw_lead }}</p>
+    <ul class="dots">{% for b in t.cw_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+  </div>
+  <div style="background:var(--orange);border-radius:3mm;padding:6mm 7mm;margin-top:8mm;display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm">
+    {% for v,l in t.proto_stats %}<div><div style="font-family:Michroma;font-size:15pt">{{ v }}</div><div style="font-size:9pt;font-weight:500">{{ l }}</div></div>{% endfor %}
+  </div>
+  <div class="folio"><span>Somos DER</span><span>07</span></div>
+</section>
+
+<!-- 8 · DIDI + BEPANTHOL -->
+<section class="page grey">
+  <div class="kicker">{{ t.didi_kicker }}</div>
+  <h2 class="display" style="font-size:19pt">{{ t.didi_title|safe }}</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:3mm;height:62mm">
+    <div class="ph"><img src="../assets/img/didi-speaker.jpg" alt="" style="object-position:50% 30%"></div>
+    <div class="ph"><img src="../assets/img/didi-branding-salon.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/didi-regalos.jpg" alt=""></div>
+  </div>
+  <div class="grid g2" style="margin-top:5mm;gap:8mm">
+    <div><p>{{ t.didi_lead }}</p><div class="stats" style="margin:4mm 0 0">{% for v,l in t.didi_stats %}<div class="stat"><div class="v">{{ v }}</div><div class="l">{{ l }}</div></div>{% endfor %}</div></div>
+    <ul class="dots">{% for b in t.didi_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+  </div>
+  <div style="border-top:1px solid #dcdcd8;margin:8mm 0 7mm"></div>
+  <div class="grid" style="grid-template-columns:1fr 1.15fr;gap:8mm;align-items:start">
+    <div>
+      <div class="kicker">{{ t.bep_kicker }}</div>
+      <h2 class="display" style="font-size:17pt">{{ t.bep_title|safe }}</h2>
+      <p style="margin-bottom:3mm">{{ t.bep_lead }}</p>
+      <ul class="dots">{% for b in t.bep_bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+    </div>
+    <div class="grid g2" style="gap:3mm;height:72mm">
+      <div class="ph"><img src="../assets/img/bepanthol-staff.jpg" alt=""></div>
+      <div class="ph"><img src="../assets/img/bepanthol-stand.jpg" alt=""></div>
+    </div>
+  </div>
+  <div class="folio"><span>Somos DER</span><span>08</span></div>
+</section>
+
+<!-- 9 · TRAYECTORIA + CLIENTES -->
+<section class="page more">
+  <div class="kicker">{{ t.more_kicker }}</div>
+  <h2 class="display">{{ t.more_title|safe }}</h2>
+  <div class="grid g2" style="gap:3.5mm">
+    {% for h,m,p in t.more %}<div class="card"><h3>{{ h }}</h3><div class="meta">{{ m }}</div><p class="muted">{{ p }}</p></div>{% endfor %}
+  </div>
+  <div class="kicker" style="margin-top:10mm">{{ t.clients_title }}</div>
+  <div class="logos">{% for l in logos %}<div><img src="../assets/img/logos/{{ l }}.png" alt=""></div>{% endfor %}</div>
+  <p class="small muted" style="margin-top:4mm;letter-spacing:.18em;text-transform:uppercase;font-weight:600">{{ t.clients_foot }}</p>
+  <div class="folio"><span>Somos DER</span><span>09</span></div>
+</section>
+
+<!-- 10 · PROPUESTA -->
+<section class="page grey fmt">
+  <div class="kicker">{{ t.prop_kicker }}</div>
+  <h2 class="display">{{ t.prop_title|safe }}</h2>
+  <p class="lead muted" style="max-width:165mm;margin-bottom:7mm">{{ t.prop_lead }}</p>
+  <div class="grid g2" style="gap:4mm">
+    {% for h,w,p in t.formats %}<div class="card"><div class="when">{{ w }}</div><h3>{{ h }}</h3><p class="muted">{{ p }}</p></div>{% endfor %}
+  </div>
+  <div class="grid g3" style="gap:3mm;height:45mm;margin-top:6mm">
+    <div class="ph"><img src="../assets/img/didi-branding-salon.jpg" alt="" style="object-position:50% 70%"></div>
+    <div class="ph"><img src="../assets/img/didi-catering.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/streaming.jpg" alt=""></div>
+  </div>
+  <div class="folio"><span>Somos DER</span><span>10</span></div>
+</section>
+
+<!-- 11 · COMPROMISOS + PRÓXIMOS PASOS -->
+<section class="page">
+  <div class="kicker">{{ t.comm_kicker }}</div>
+  <h2 class="display" style="font-size:19pt">{{ t.comm_title|safe }}</h2>
+  <div class="grid g2" style="gap:6mm 8mm;margin-top:5mm">
+    {% for h,p in t.commitments %}<div class="bar"><h3>{{ h }}</h3><p>{{ p }}</p></div>{% endfor %}
+  </div>
+  <div class="grid g3" style="gap:3mm;height:48mm;margin-top:9mm">
+    <div class="ph"><img src="../assets/img/campusparty-credencial.jpg" alt="" style="object-position:50% 40%"></div>
+    <div class="ph"><img src="../assets/img/expoautos-gastronomia.jpg" alt=""></div>
+    <div class="ph"><img src="../assets/img/bepanthol-producto.jpg" alt="" style="object-position:50% 35%"></div>
+  </div>
+  <div style="background:var(--ink);color:#fff;border-radius:3mm;padding:8mm;margin-top:8mm">
+    <div class="kicker">{{ t.next_title }}</div>
+    <div class="grid g3" style="gap:6mm">
+      {% for h,p in t.next %}<div><div style="font-family:Michroma;color:var(--orange);font-size:18pt">0{{ loop.index }}</div><h3 style="margin-top:2mm">{{ h }}</h3><p style="color:#bdbdbd;font-size:9.5pt">{{ p }}</p></div>{% endfor %}
+    </div>
+  </div>
+  <div class="folio"><span>Somos DER</span><span>11</span></div>
+</section>
+
+<!-- 12 · CONTRATAPA -->
+<section class="page dark bleed">
+  <div style="position:absolute;inset:0 0 50% 0"><img src="../assets/img/staff-equipo.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 55%;opacity:.85"></div>
+  <div style="position:absolute;inset:0 0 50% 0;background:linear-gradient(180deg,rgba(11,11,11,0) 40%,var(--ink) 100%)"></div>
+  <div style="position:absolute;left:16mm;right:16mm;top:52%">
+    <img class="logo" src="../assets/img/der-logo-white.png" alt="DER" style="height:10mm;margin-bottom:7mm">
+    <h2 class="display" style="font-size:24pt">{% for l in t.back_title %}{{ l|safe }}<br>{% endfor %}</h2>
+    <div style="margin-top:6mm">
+      <div class="contact-row"><span>{{ t.lbl_whatsapp }}</span><span>{{ c.whatsapp }}</span></div>
+      <div class="contact-row"><span>{{ t.lbl_mail }}</span><span>{{ c.mail }}</span></div>
+      <div class="contact-row"><span>{{ t.lbl_web }}</span><span>{{ c.web }}</span></div>
+      <div class="contact-row"><span>{{ t.lbl_office }}</span><span>{{ c.address }}</span></div>
+    </div>
+    <div class="qrs" style="margin-top:8mm">
+      <div class="item"><div class="qr"><img src="../assets/img/qr/portfolio.svg" alt=""></div>{{ t.qr_web }}</div>
+      <div class="item"><div class="qr"><img src="../assets/img/qr/pase.svg" alt=""></div>{{ t.qr_pase }}</div>
+      <div class="item"><div class="qr"><img src="../assets/img/qr/whatsapp.svg" alt=""></div>{{ t.qr_wa }}</div>
+    </div>
+  </div>
+  <div class="folio" style="color:#777"><span>{{ t.back_tack }}</span><span>somosder.ar</span></div>
+</section>
+
+</body>
+</html>
